@@ -1,6 +1,8 @@
 # MiniHawk-artwork
 Mechanical artwork for the MiniHawk VTOL, the successor to the OrangeHawk VTOL.
 
+Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)
+
 # MiniHawk Build Parts List and Tools:
 ## Recommended Tools and Equipment
  - FDM/FFF 3D Printer with build volume greater than 23.1x210.7x330.0mm (Dimensions of largest part, which is Left/Right Wing. Adventurous builders might try printing larger parts in sections)
