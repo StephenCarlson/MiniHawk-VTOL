@@ -47,7 +47,8 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
  - Right Nacelle Left Half - *MH5_NacelleA.stl Mirrored*
  - Right Nacelle Right Half - *MH5_NacelleB.stl Mirrored*
  - Right Motor Mount  - *MH5_TiltMount.stl Mirrored*
- 
+ - Flight Controller Tray - *MH5_ControllerTray.stl*
+ - Battery Tray - *MH5_BatteryTray.stl* 
  
 # Build Sequence
 
