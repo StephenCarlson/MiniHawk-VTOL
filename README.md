@@ -2,6 +2,16 @@
 Mechanical artwork for the MiniHawk VTOL, the successor to the OrangeHawk VTOL.
 
 Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)
+0:00:09 Cleaning off the 3D Printed Parts
+0:01:09 Nacelle Pieces Overview
+0:02:34 Gluing the Nacelle Shells/Halves
+0:04:51 Quick look at the Empennage/Tail (Glued previous to this series)
+0:05:23 Control Horns and Elevon reinforcements
+0:05:57 Gluing the Right Wing to the Fuselage
+0:08:58 Nacelle Hinge
+0:26:50 Gluing the Left Wing to the Fuselage
+0:31:10 Nacelle Ball Link Attachment
+0:38:09 Soldering the Flight Controller
 
 # MiniHawk Build Parts List and Tools:
 ## Recommended Tools and Equipment
@@ -47,3 +57,32 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
  - Right Nacelle Left Half
  - Right Nacelle Right Half
  - Right Motor Mount
+ 
+ 
+# Build Sequence
+
+## Part 1 - Airframe Structures and Motor Mount/Tilt Attachment
+1. Clean all 3D-Printed parts, remove all brim/support material.
+2. Bond the Empennage Halves together. Thin or Medium Cyanoacrylate, or Epoxy, are acceptable. Set aside to cure.
+3. Bond the Control Horn pieces (2) into each Elevon (Left Wing and Right Wing). Thin or Medium Cyanoacrylate, or Epoxy, are acceptable. The Control Horn should be fairly flush on the Elevon Top Surface, approximately 0.5mm extending above the surface. Fit should be tight; carefully carve away any burrs or over-extrusion from the slot in the elevon if needed.
+4. Glue the Du-Bro Nylon Mini-Hinge pieces (3 per wing, Du-Bro SKU#118) into the recesses along each elevon hinge. Hot-Melt-Adhesive, CA, or Epoxy should work.
+3. Lightly sand the bonded empennage/tail interface surface until smooth and planar/flush. Test-fit to the Fuselage/Nose to confirm a proper flush joint, and then bond to the Fuselage/Nose using Thin or Medium Cyanoacrylate, or Epoxy. Set aside to cure.
+4. Bond the Nacelle Pair Halves together. Thin or Medium Cyanoacrylate, or Epoxy, are acceptable. Proper alignment is cricital, be careful and precise. Set aside to cure.
+5. Lightly sand both wing root interface surfaces on the completed fuselage/body until flush and smooth. Test-fit both wings to each respective surface to confim a proper flush joint. Bond either the left or right wing to the fuselage (not reccomended to attach both at once) using Epoxy. (Cyanoacrylate may not have the strength needed.) Set aside to cure. When the first wing is cured, bond the second wing and set aside to cure.
+6. Test-fit each Motor Mount (Tilt Mount/Pod) with its respective completed nacelle. Sand or trim as needed such that the Motor Mount is able to tilt fully flush forward, and able to tilt up past 90 degrees of rotation.
+7. For each Nacelle with its respective Motor Mount aligned and present, Ream (Drill to size) using a 1.58mm (1/16 Inch, 62.5mil) drill bit. (Should be 85% to 90% of diameter of hinge rod to be fitted. Hinge Rod diameter is 1.84mm or 72mil for this case.) Keep the Motor Mount and Nacelle together. Adapt a section of hinge rod to be used as a final precision reaming tool by sharpening the tip using a grinder or emery wheel. Use this improvised reaming tool to ream the hole in each nacelle-mount pair to the final diameter of 1.84mm (72mil).
+8. Remove each Motor Mount from its respective Nacelle and ream only the Motor Mount hole to the next higher drill bit size, not to exceed 107% of diameter of the the hinge rod. Too large will allow for excessive play and possible rattling; too small will result in binding. 1.95mm (77mil, 5/64 Inch) is acceptable for hinge rod diamater of 1.84mm.
+9. Cut the hinge rod pieces, not to exceed 24mm length. Roughen/knurl one or both ends if desired. Press-fit each hinge rod to each Nacelle through the respective Motor Mount. Verify that each Motor Mount can rotate freely and with minimal play in the hinge.
+10. For each Motor Mount, ream the Motor Mount linkage mount hole to 1.19mm (3/64 Inch, 47mil). This should be about 80% of the major diameter of the threaded ball link to be mounted. (Great Planes Threaded Ball Link Set 1/16", GPMQ3843; ball-link is 1.50mm major diameter.) Mount the threaded ball-link to the linkage mount hole. The Motor Mount can sustain up to 3.3mm threaded bolt depth, verify that the bolt does not extend too far into the well, such that it will not make contact with the motor.
+11. Bond each Nacelle to its respective wing; note that the ball-link should align with the respective servo linkage slot/well. Epoxy is recommended, as this is a significant load-bearing structure. Verify alignment and tweak/tune while the glue cures.
+12. Bond both vertical fins to the wing(s). Medium Cyanoacrylate should be sufficient.
+
+## Part 2 - Linkages and Initial Component Mounting
+
+## Part 3 - Electronics
+
+
+
+
+
+
