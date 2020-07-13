@@ -2,16 +2,6 @@
 Mechanical artwork for the MiniHawk VTOL, the successor to the OrangeHawk VTOL.
 
 Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)
-0:00:09 Cleaning off the 3D Printed Parts
-0:01:09 Nacelle Pieces Overview
-0:02:34 Gluing the Nacelle Shells/Halves
-0:04:51 Quick look at the Empennage/Tail (Glued previous to this series)
-0:05:23 Control Horns and Elevon reinforcements
-0:05:57 Gluing the Right Wing to the Fuselage
-0:08:58 Nacelle Hinge
-0:26:50 Gluing the Left Wing to the Fuselage
-0:31:10 Nacelle Ball Link Attachment
-0:38:09 Soldering the Flight Controller
 
 # MiniHawk Build Parts List and Tools:
 ## Recommended Tools and Equipment
@@ -42,21 +32,21 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
    
  
 ## Airframe Parts:
- - Fuselage Nose
- - Empennage Left Half
- - Empennage Right Half
- - Lid Left Half
- - Lid Right Half
- - Fin (2)
- - Left Wing
- - Right Wing
- - Elevon Control Horn (2)
- - Left Nacelle Left Half
- - Left Nacelle Right Half
- - Left Motor Mount
- - Right Nacelle Left Half
- - Right Nacelle Right Half
- - Right Motor Mount
+ - Fuselage Nose - *MH5_Nose.stl*
+ - Empennage Left Half - *MH5_Empennage.stl*
+ - Empennage Right Half - *MH5_Empennage.stl Mirrored*
+ - Lid Left Half - *MH5_Lid.stl*
+ - Lid Right Half - *MH5_Lid.stl Mirrored*
+ - Fin (2) - *MH5_FinLeft.stl*
+ - Left Wing - *MH5_WingLeft_NoSolar.stl*
+ - Right Wing - *MH5_WingLeft_NoSolar.stl Mirrored*
+ - Elevon Control Horn (2) - *MH5_ControlHorn.stl*
+ - Left Nacelle Left Half - *MH5_NacelleB.stl*
+ - Left Nacelle Right Half - *MH5_NacelleA.stl*
+ - Left Motor Mount - *MH5_TiltMount.stl*
+ - Right Nacelle Left Half - *MH5_NacelleA.stl Mirrored*
+ - Right Nacelle Right Half - *MH5_NacelleB.stl Mirrored*
+ - Right Motor Mount  - *MH5_TiltMount.stl Mirrored*
  
  
 # Build Sequence
