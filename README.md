@@ -1,7 +1,37 @@
 # MiniHawk-artwork
-Mechanical artwork for the MiniHawk VTOL, the successor to the OrangeHawk VTOL.
+Mechanical artwork for the MiniHawk VTOL, the successor to the OrangeHawk VTOL.  
 
-Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)
+## Description
+The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in mind, and is intended to provide the community with a common and accessable VTOL testbed for experimentation and tinkering. The vehicle uses three (3) brushless DC motors for propulsion, with the forward pair tilting for forward flight and yaw control, and the rear motor fixed for hover only. Four (4) servos are used to tilt the forward motors and to control the elevon control surfaces of the wing. The airframe is a "plank"-style wing with a center body containing avionics and battery, and internal conduits routing to the nacelles and servos. Twin vertical stabilizer fins provide mild directional stability.  
+
+## Remarks
+As this is a totally 3D-printed airframe, the fully-finished vehicle is moderately heavy, which is a handicap, especially in the hovering mode of flight. As such, be gentle and cautious in adding any additional weight. For the recommended print settings with a 0.4mm nozzle, the airframe alone weights a bit over 300g, and the all-up-weight of the finished vehicle is between 700g and 800g.  
+
+The parts used in this project are commonly available in the drone racing and R/C plane market(s). The only known limiting component is the DYS BE1806 motor, which is an older (~2015) motor with a diameter of 23mm and around 80W power. A standard 22xx- or 23xx-sized motor can be used on the tail, but the nacelle design was modeled specifically for the DYS BE1806-2300KV. A future revision may increase the nacelle size to be able to mount 22xx-sized motors. Another potentially limiting component is the GreatPlanes GPMQ3843 Threaded Ball-Link set.  
+
+The aerodynamics and stability of the vehicle are still under analysis and subject to revision. The CFD poses/cases used for aerodynamics analysis are included for independent study.  
+
+This design is referenced and prefixed with "MH5", as this is the 5th internal revision of the design of the MiniHawk VTOL.  
+
+Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)  
+
+## Metrics
+| Description              | Value                     |
+|--------------------------|---------------------------|
+| Wing Span                | 800mm                     |
+| Wing Area                | 15.6dm^2                  |
+| Aspect Ratio             | 4.1                       |
+| Airfoil (Root and Tip)   | MH45                      |
+| Length                   | 396mm                     |
+| Rotor Spacing            | 315mm Circle              |
+| Lipoly Battery           | 3s to 4s, 1300mAh         |
+| Motors (front)           | DYS BE1806 2300kV or eqv. |
+| Motor (rear)             | 22xx or 23xx ~2000kV      |
+| Servos                   | HS-65HB/MG or eqv.        |
+| Flight Controller (size) | 30.50mm to 16.0mm Grid    |
+| Propellers (front)       | 5050 to ~5249             |
+| Propeller (rear)         | 6030 to ~5249             |
+
 
 # MiniHawk Build Parts List and Tools:
 ## Recommended Tools and Equipment
@@ -13,8 +43,8 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
 ## Components and Electronics:
  - qty:1 Flight Controller (3 Motor, 4 Servo Outputs)(Matek Systems F722-WING)
  - qty:3 ESCs (3s, 20A or better)(Spedix ES20 Lite)
- - qty:2 BE1806 2300KV BLCD Motors (or equivalent, must be no larger than OutsideDiameter=24mm, able to produce between 350g to 500g static thrust and pitch speed of ~20m/s with 5in prop)
- - qty:1 BE2206 2000KV (or equivalent, may be up to OutsideDiameter=30mm, between 700g to 1000g static thrust)
+ - qty:2 DYS BE1806 2300KV BLDC Motors (or equivalent, must be no larger than OutsideDiameter=24mm, able to produce between 350g to 500g static thrust and pitch speed of ~20m/s with 5in prop)
+ - qty:1 DYS BE2206 2000KV (or equivalent, may be up to OutsideDiameter=30mm, between 700g to 1000g static thrust)
  - qty:1 3s1300 Lipoly (better than 40C)
  - qty:2 HS-65HB Servos (Servo pockets designed for up to 26mm wide, 17.5mm from bottom of mounting tabs to bottom of servo, 32mm from top of output shaft to bottom of servo, 12mm thick. Should fit most "Sub-Micro" Servos)
  - qty:2 HS-65MG Servos (Same pocket dimensions as above, but these are going to be fantastically abused and must be really tough. Or just count on stripping your non-metal-gear servos a lot.)
@@ -32,28 +62,30 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
    
  
 ## Airframe Parts:
- - Fuselage Nose - *MH5_Nose.stl*
- - Empennage Left Half - *MH5_Empennage.stl*
- - Empennage Right Half - *MH5_Empennage.stl Mirrored*
- - Lid Left Half - *MH5_Lid.stl*
- - Lid Right Half - *MH5_Lid.stl Mirrored*
- - Fin (2) - *MH5_FinLeft.stl*
- - Left Wing - *MH5_WingLeft_NoSolar.stl*
- - Right Wing - *MH5_WingLeft_NoSolar.stl Mirrored*
- - Elevon Control Horn (2) - *MH5_ControlHorn.stl*
- - Left Nacelle Left Half - *MH5_NacelleB.stl*
- - Left Nacelle Right Half - *MH5_NacelleA.stl*
- - Left Motor Mount - *MH5_TiltMount.stl*
- - Right Nacelle Left Half - *MH5_NacelleA.stl Mirrored*
- - Right Nacelle Right Half - *MH5_NacelleB.stl Mirrored*
- - Right Motor Mount  - *MH5_TiltMount.stl Mirrored*
- - Flight Controller Tray - *MH5_ControllerTray.stl*
- - Battery Tray - *MH5_BatteryTray.stl* 
+| Part                     | Source File                           |
+|--------------------------|---------------------------------------|
+| Fuselage Nose            | MH5_Nose.stl                          |
+| Empennage Left Half      | MH5_Empennage.stl                     |
+| Empennage Right Half     | MH5_Empennage.stl *Mirrored*          |
+| Lid Left Half            | MH5_Lid.stl                           |
+| Lid Right Half           | MH5_Lid.stl *Mirrored*                |
+| Fin (2)                  | MH5_FinLeft.stl                       |
+| Left Wing                | MH5_WingLeft_NoSolar.stl              |
+| Right Wing               | MH5_WingLeft_NoSolar.stl *Mirrored*   |
+| Elevon Control Horn (2)  | MH5_ControlHorn.stl                   |
+| Left Nacelle Left Half   | MH5_NacelleB.stl                      |
+| Left Nacelle Right Half  | MH5_NacelleA.stl                      |
+| Left Motor Mount         | MH5_TiltMount.stl                     |
+| Right Nacelle Left Half  | MH5_NacelleA.stl *Mirrored*           |
+| Right Nacelle Right Half | MH5_NacelleB.stl *Mirrored*           |
+| Right Motor Mount        | MH5_TiltMount.stl *Mirrored*          |
+| Flight Controller Tray   | MH5_ControllerTray.stl                |
+| Battery Tray             | MH5_BatteryTray.stl                   |
  
 # Build Sequence
 
 ## Part 1 - Airframe Structures and Motor Mount/Tilt Attachment
-1. Clean all 3D-Printed parts, remove all brim/support material. For each wing, carefully carve away any stringing or over-extrusion in the hinge reinforcement wells such that the hinge pin will fit. Carefully cut the elevons free if needed (WARNING! Only cut slots on either end to allow for surface deflection, DO NOT cut the entire elevon out), and gently exercise each surface up and down until the living hinge is established. Bond the Canopy/Hatch-Lid pieces together using Thin/Medium Cyanoacrylate or Epoxy, and set aside to cure.
+1. Clean all 3D-Printed parts, remove all brim/support material. For each wing, carefully carve away any stringing or over-extrusion in the hinge reinforcement wells such that the hinge pin will fit. Carefully cut the elevons free if needed (**WARNING!** Only cut slots on either end to allow for surface deflection, DO NOT cut the entire elevon out), and gently exercise each surface up and down until the living hinge is established. Bond the Canopy/Hatch-Lid pieces together using Thin/Medium Cyanoacrylate or Epoxy, and set aside to cure.
 2. Bond the Empennage Halves together. Thin or Medium Cyanoacrylate, or Epoxy, are acceptable. Set aside to cure.
 3. Bond the Control Horn pieces (2) into each Elevon (Left Wing and Right Wing). Thin or Medium Cyanoacrylate, or Epoxy, are acceptable. The Control Horn should be fairly flush on the Elevon Top Surface, approximately 0.5mm extending above the surface. Fit should be tight; carefully carve away any burrs or over-extrusion from the slot in the elevon if needed.
 4. Glue the Du-Bro Nylon Mini-Hinge pieces (3 per wing, Du-Bro SKU#118) into the recesses along each elevon hinge. Hot-Melt-Adhesive, CA, or Epoxy should work.
@@ -71,32 +103,243 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
 ## Part 2 - Linkages and Component Mounting
 1. Mount the front two motors in their respective Motor Mounts. The motor leads may have heatshrink that may interfere or bind the wires; rework this if needed. Mount the motors using the M2 threaded bolt kit that should be included with each motor. Be careful not to have any mounting bolt over-extend into the motor armature/stator. Verify that each motor turns freely and is well secured. Route the wires through the wing and into the main bay, and test the extension-retraction behavior of the wires as the motor mount pitches between forward and hover tilt positions. For each motor, attach the propeller hub hardware kit that should be included with each, such that it can drive a standard 5-Inch propeller.
 2. The Rear motor should mount to the tail using M3 threaded bolts that were included with the motor. Route the motors wires through either wire duct channel to the main bay as desired. Verify that the motor rotates freely and is well secured. Attach the propeller hub hardware kit that should be included with the motor, such that it can drive a standard 5-Inch propeller.
-3. The Motor Mount Tilt servos should be tested and centered on a standard RC PWM signal, visiting 1000us, 1500us, and 2000us pulse-widths. Attach a servo arm with a 19.3mm (0.76 Inch) hole-to-center spacing. This value is critical, as the linkage behavior of the tilting front motor mounts cannot be easily modified and any length short of this will result in the motor tilt not reaching the needed angle for hover and anti-torque (yaw) control. An arm any longer than this will not fit in the linkage well/slot. With whatever arm fitted as similar to 19.3mm as possible, test fit the servo into the servo well and verify that between 1000us and 2000us pulse widths, the arm comfortably retracts into the well/slot, and fully sweeps about 90 to 95 degrees from that point. Verify the best servo arm spline position and secure the arm with threaded bolt.
+3. The Motor Mount Tilt servos should be tested and centered on a standard RC PWM signal, visiting 1000us, 1500us, and 2000us pulse-widths. Attach a servo arm with a 19.3mm (0.76 Inch) hole-to-center spacing. This value is critical, as the linkage behavior of the tilting front motor mounts cannot be easily modified and any length short of this will result in the motor tilt not reaching the needed angle for hover and anti-torque (yaw) control. An arm any longer than this will not fit in the linkage well/slot. With whatever arm fitted as similar to 19.3mm as possible, test fit the servo into the servo well and verify that between 1000us and 2000us pulse widths, the arm comfortably retracts into the well/slot, and fully sweeps about 90 to 95 degrees from that point. Verify the best servo arm spline position and bolt/secure the arm in place.
 4. For each of the Elevon servos, repeat the same procedure as above, but with a servo arm approximately 9.5mm hole-to-center (3/8 Inch). This length can be a bit longer or shorter, the effect is increasing or decreasing elevon control throw. For servos that have an odd-number spline tooth count (such as the Hitec HS-65HB's B1 spline with 25 teeth), to get the most well-centered and symmetric solution, center the servo on a 1500us pulse width and alternate attaching a 4-arm output horn between each 90-degree position to find the most orthogonal/centered position, and then cut off the 3 unneeded arms.
-5. Verify that the Link Clevises that attach to the servo arms are able to couple and rotate freely. Reaming the servo arm may be necessary, a value of 1.59mm (1/16 Inch, 62mil) is common.
-6. Route the servo wires through the conduit tunnels in the wing to the main bay. Be advised that this is somewhat irreversible, depending on the quality of the 3D print, any glue protrusions in the tunnel, and weaving/tangling of the pigtails after routing. The 3-pin connectors on the pigtail can be carefully removed to allow the wires to pass back out if needed later. Assuming all servos have a 6-inch (~150mm) servo pigtail, the Elevon servos will have some slack, but the Tilt servos will arrive just barely at the main bay. Servo Extensions can be added, or the servo pigtail can be extended with a section of 3-wire servo lead/cable, or the 3-pin servo connectors can be discarded in favor of direct soldering later if desired.
+5. Verify that the Link Clevises that attach to the servo arms are able to couple and rotate freely. Reaming each servo arm may be necessary, a value of 1.59mm (1/16 Inch, 62mil) is common.
+6. Route the servo wires through the conduit tunnels in the wing to the main bay. Be advised that this is somewhat irreversible, depending on the quality of the 3D print, any glue protrusions in the tunnel, and weaving/tangling of the pigtails after routing. The pins in the 3-pin header on the pigtail can be carefully removed to allow the wires to pass back out if needed later. Assuming all servos have a 6-inch (~150mm) pigtail, the Elevon servos will have some slack, but the Tilt servos will arrive just barely at the main bay. Servo Extensions can be added, or the servo pigtail can be extended with a section of 3-wire servo lead/cable, or the 3-pin servo connectors can be discarded in favor of direct soldering later if desired.
 7. With servo harnessing finished in one form or another, bond the servos to the airframe using Hot-Melt-Adhesive. Note that the airframe may exhibit deformation or melting at the bonding locations, depending on print material used. Verify that the servos can produce full torque without becoming detached from the airframe. Also note that alternatives may be explored in servo mounting, such as double-sided adhesive tape, but it is not advised to use cyanoacrylate or epoxy.
 8. Form the elevon control rods by creating an L-bend 45mm from the threaded tip of the pair of 2-56 link rods used. Test fit the retaining Du-Bro E/Z Links 0.72 (2-56) Retainer Clip for each bend, and modify the bend as needed and cut flush. Alternatively, a traditional Z-bend can be formed to dismiss the Retain Clips as a requirement. For each Elevon, attach its control rod to the elevon control horn, and attach the clevis to the corresponding servo arm. Detach, turn the clevis, and reattach as needed until the elevon is flush while the servo is centered on 1500us.
-9. Cut two (2) 60mm long pieces from a fully-threaded 2-56 rod to form the tilt control rod pair. (Do NOT bend these rods.) Soften the cut ends with a grinder or emery wheel such that they will easily thread into the Nylon Ball-Link couplers. Thread on the ball-link couplers and link clevises, and attach each to its respective servo arm or ball-link head. Detach-turn-reattach as needed, such at the servo approaches as close to top-dead-centre (arm retracted into well/slot) as possible, without binding or interference, while the tilting motor mount is firmly forward and pressed against the nacelle. As noted earlier, the clevis should attach to the highest hole in the servo arm, at 19.3mm arm distance. Some allowance can be made for bending this rod slightly to allow for the servo arm to fully retract without the clevis impacting the arm. If the servo is straining excessively when the motor mount is retracted, adjust accordingly.
-10. The above steps assumed that the servos were able to be powered and
- commanded, but for completeness, this step verifies that the servos are able to actuate, and are not being stressed. For each servo, visit 1000us-1500us-2000us and observe deflection on Elevons or Motor Mount and verify that there is not excessive binding or stress. For each motor mount, simulate the load exhibited during forward flight by gently pulling on the motor in the forward direction (about 300 grams force), while the servo is actively commanded to retain the forward condition, and verify that the motor is retained/held in the forward flight position with minimal creepage. Elevons should actuate the full range with light loading on the control surface.
+9. Cut two (2) 60mm long pieces from a fully-threaded 2-56 rod to form the tilt control rod pair. (DO NOT L-bend or Z-bend these rods.) Soften the cut ends with a grinder or emery wheel such that they will easily thread into the Nylon Ball-Link couplers. Thread on the ball-link couplers and link clevises, and attach each to its respective servo arm or ball-link head. Detach-turn-reattach as needed, such at the servo approaches as close to top-dead-centre (arm retracted into well/slot) as possible, without binding or interference, while the tilting motor mount is firmly forward and pressed against the nacelle. As noted earlier, the clevis should attach to the highest hole in the servo arm, at 19.3mm arm distance. It may be required to bend this rod slightly to allow for the servo arm to fully retract without the clevis impacting the arm. If the servo is straining excessively when the motor mount is retracted, adjust accordingly. **WARNING!** If the servo is allowed to strain with the clevis binding against the servo arm, the servo will likely fail via burnt-out H-bridge driver or motor.
+10. The above steps assumed that the servos were powered and commanded during final installation, but for completeness, this step verifies that the servos are able to actuate, and are not being stressed. For each servo, visit 1000us-1500us-2000us and observe deflection on Elevons or Motor Mount and verify that there is no excessive binding or stress. For each motor mount, simulate the load exhibited during forward flight by gently pulling on the motor in the forward direction (about 300 grams force), while the servo is actively commanded to retain the forward condition, and verify that the motor is retained/held in the forward flight position with minimal creepage. Elevons should actuate the full range with light loading on the control surface.
 
 ## Part 3 - Electronics and Final Configuration
-1. Solder the Flight Controller as desired. This usually means soldering pin headers to attach the 3-pin servo connectors from the servos and ESCs. Solder a battery connection lead (XT60 or as desired). Power the Flight Controller and verify that it is booting and communicating correctly. Default (likely multicopter) firmware will be fine for the next few steps.
-> Note for the Matek F722-WING: The following assignments are used for servos and ESCs <STEVE TODO>.
+1. Solder the Flight Controller as desired. This usually means soldering pin headers to attach the 3-pin servo connectors from the servos and ESCs. Solder a battery connection lead (XT60 or as desired). Power the Flight Controller and verify that it is booting and communicating correctly. Default (likely multicopter) firmware will be fine for the next few steps; be advised that servos **SHOULD NOT** be connected to the flight controller until the flight controller outputs are configured.
 2. Bond the Battery and Flight Controller Trays into the main bay. This can be accomplished using M2 or M3 hardware and ample Hot-Melt-Adhesive and some reaming if necessary. The Battery Tray can be permanently mounted, but retain some ability to remove the Flight Controller Tray, as mounting/removing the flight controller requires access to the bottom of that tray. 
-3. Solder the BLDC Motor leads to each respective ESC, or use bullet-connectors or otherwise as desired. Solder the ESC power connections directly to the Flight Controller's Power-Distribution region, or to intermediate connections as desired. Power on the Flight Controller carefully, such as with a "Smoke Stopper" or a current-limited power supply, and verify that the power system is wired correctly. Program the ESCs for proper rotation direction: Port/Left Motor is Clockwise (CW), Starboard/Right Motor is Counterclockwise (CCW). The Rear Motor may technically be either direction, but I **strongly** recommend Counterclockwise (CCW) to allow for most non-multicopter propeller options, and to force a consistent tradition that allows for future sharing of PID profiles and control schemes symmetrically.
+3. Solder the BLDC Motor leads to each respective ESC, or use bullet-connectors or otherwise as desired. Solder the ESC power connections directly to the Flight Controller's Power-Distribution region, or to intermediate connections as desired. Power on the Flight Controller carefully, such as with a "Smoke Stopper" or a current-limited power supply, and verify that the power system is wired correctly. Program the ESCs for proper rotation direction: Port/Left Motor is Clockwise (CW), Starboard/Right Motor is Counterclockwise (CCW). (If using a BLHeli Passthru mode to program ESCs, the ESCs may be connected to any output(s) on the flight controller.) The Rear Motor may technically be either direction, but I **strongly** recommend Counterclockwise (CCW) to allow for most non-multicopter propeller options (most propellers are CCW), and to force a consistent tradition that allows for future sharing of PID profiles and control schemes symmetrically.
  > A brief note on prop rotation directions: The reason for the front motors having the Clockwise and Counterclockwise directions as stated is such that when the vehicle is flying in forward flight, and then immediately commanded to hover, the advancing blade(s) are placed as far abeam (toward the wingtip) as possible, while the retreating blade is closer to the main body. This should allow for better roll control through the transition, and by placing the effective centeres of lift for each rotor slightly wider in this condition, any PID control effort is more likely to remain bounded and slightly attenuated by the slightly longer moment-arm. This also follows the typical configuration for quadrotors, which also have the front advancing blades placed on the outside of the arc.
-4. At this point, flash the Flight Controller with the specific firmware relevant to controlling a Tricopter VTOL Fixed-Wing vehicle, if not already. Attach the servo and ESC headers to their required pins. Install the R/C receiver and connect to the Flight Controller as required. Mount the Flight Controller to its tray, and secure the tray inside the main bay. Power the vehicle and verify Flight Controller orientation is correct, servos are properly commanded, and that control surface efforts are in the correct direction. Reverse and trim servo outputs as necessary in the Flight Controller configurator.
+4. At this point, configure the Flight Controller with any specific firmware or settings relevant to controlling a Tricopter VTOL Fixed-Wing vehicle, if not already. Attach the servo and ESC headers to their required pins. Install the R/C receiver and connect to the Flight Controller as required. Mount the Flight Controller to its tray, and secure the tray inside the main bay. Power the vehicle and verify Flight Controller orientation is correct, servos are properly commanded, and that control surface efforts are in the correct direction. Reverse and trim servo outputs as necessary in the Flight Controller configurator.
+> Note for the Matek F722-WING: Configuration and assignments are documented in *Betaflight Settings* below.
 5. (Optional) WS2812 LEDs may be mounted in each wingtip, provided each is a SMD5050 or smaller package, with wires directly soldered to the package pads, and then mounted in the light well on each tip.
-6. Stow the ESCs to the side-walls of the main bay using tape or double-sided adhesive pads. Stow any excess wires, and generally clean up the inside of the main bay. Secure the battery using Velcro, Tape, or other measures.
+6. Stow the ESCs to the side-walls of the main bay using tape or double-sided adhesive pads. Stow any excess wires, and generally clean up the inside of the main bay. Secure the battery using Velcro straps, Tape, or other measures.
 7. Mount the propellers to their respective motors. For initial flight testing, it is recommended to use the same propeller for all three motors, a 5030 to 5040 three-blade prop is recommended. Later on, the rear propeller may be swapped with a 5535 or 6030 three-blade, and the front two may be swapped with a 5050 or similar.
 8. The Center-of-Mass for the aircraft is intended to be at 165mm back from the tip of the nose, or 40mm back from the leading edge of the wing. This is exactly along the middle pair of mounting holes for the Battery Tray. This is an initial value, and the Center-of-Mass may be shifted back by around 8mm to 15mm from this point at some risk to stability. As this vehicle is both a fixed-wing and multicopter, the Center-of-Mass stated here is for the fixed-wing condition, and any measurement of Center-of-Mass should be performed with the motors tilted into the forward-flight condition, propellers attached, and the lid secured. Shift the battery fore or aft to achieve proper balance, or add ballast if merited.
-9. Perform any other measures necessary to get the vehicle ready for flight. Decals, paint, or heat-activated covering are possiblilties. Vehicle mass should come to an All-Up-Weight around 700 grams to 800 grams, with the 3D-printed airframe alone measuring around 300 grams.
+9. Perform any other measures necessary to get the vehicle ready for flight. Decals, paint, or heat-activated covering are possibilities. Vehicle mass should come to an All-Up-Weight around 700 grams to 800 grams, with the 3D-printed airframe alone measuring around 300 grams.
 
 # Part 4 - Flight Testing (In Progress)
 1. Discovering PIDs; test-stand setup and axis-isolation. Gain Scheduling for hover-to-forward-flight and reverse transitions.
 2. Free hovering hops, progressing to static hovering, tuning hovering PIDs.
 3. Forward-flight transitions with direct R/C control (no PIDs altering control surfaces)
 4. PIDs for Forward flight pitch and roll. 
+> The vehicle is designed to hover with a nose-high attitude (positive Angle-of-Attack). The reason for this is so that as the nose is dropped to level, the thrust vector brings the vehicle to an initial forward drift. Having established a forward trajectory, the motors are tilted to the 50/50 intermediate point and the vehicle is allowed to accelerate. The motors are then dropped to full forward-flight position.
+
+# 3D Printing Guidelines
+Unlike other 3D-printed R/C aircraft, the MiniHawk does not have any internal structures explicitly specified, such as ribs or stringers; only the outer-mold-line of the aircraft and the bays, wiring conduits, and mounting points are defined. The internal structure is yielded to whatever infill pattern is selected in the slicing software used to convert the volume definition for 3D-Printing. The internal structures may be explicitly defined in a future revision, but otherwise it is up to the builder to define the infill pattern used. The following sections provide recommended settings for each airframe part set (matching the settings in the 3MF files).
+
+| Parameter                 | MH5_WingLeft and MH5_WingRight | MH5_Nose                | MH5_EmpennageSet        | MH5_LidPair             | MH5_NacelleSet            | MH5_TiltMountPair         |
+|---------------------------|--------------------------------|-------------------------|-------------------------|-------------------------|---------------------------|---------------------------|
+| LayerHeight               | 0.2mm                          | 0.2mm                   | 0.2mm                   | 0.2mm                   | 0.2mm                     | 0.2mm                     |
+| WallThickness             | 0.4mm                          | 0.4mm                   | 0.4mm                   | 0.4mm                   | 0.8mm                     | 0.8mm                     |
+| TopThickness              | 0.2mm                          | 0.2mm                   | 0.2mm                   | 0.2mm                   | 0.6mm                     | 0.6mm                     |
+| BottomThickness           | 0.2mm                          | 0.2mm                   | 0.2mm                   | 0.2mm                   | 0.6mm                     | 0.6mm                     |
+| TopBottomMainPattern      | Lines                          | Concentric              | Lines                   | Lines                   | Lines                     | Lines                     |
+| InitialBottomLayerPattern | Concentric                     | Concentric              | Concentric              | Concentric              | Lines                     | Lines                     |
+| FillGapsBetweenWalls      | Nowhere                        | Nowhere                 | Nowhere                 | Nowhere                 | Everywhere                | Everywhere                |
+| Z-SeamAlignment           | UserSpecified (Note 1)         | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,ExposeSeam | SharpestCorner,ExposeSeam |
+| InfillDensity             | 5.00%                          | 10.00%                  | 10.00%                  | 10.00%                  | 20.00%                    | 30.00%                    |
+| InfillPattern             | Cubic                          | Cubic                   | Cubic                   | Cubic                   | Cubic                     | Cubic                     |
+| InfillLineDirections      | 90deg                          | 0deg                    | 0deg (Note 2)           | 90deg                   | 0deg                      | 0deg                      |
+| GenerateSupport           | Nowhere                        | Nowhere                 | Nowhere                 | Nowhere                 | Yes                       | Nowhere                   |
+| SupportPlacement          |                                |                         |                         |                         | TouchingBuildPlate        |                           |
+| SupportOverhangAngle      |                                |                         |                         |                         | 70deg                     |                           |
+> Note 1: Forced to occur on trailing edge of wing.  
+> Note 2: Is slightly offset in X-direction for best structure.  
+
+For the MH5_ControlHornSet and MH5_TraySet, print 100% Solid. These pieces may be laser-cut if possible.
+
+
+# Betaflight Settings (For Matek F722-Wing)
+
+## R/C Controller Configuration (Mode 2 Controller)
+| R/C Channel | Description         | 1000us         | 1500us     | 2000us                  | Notes                                                          |
+|-------------|---------------------|----------------|------------|-------------------------|----------------------------------------------------------------|
+| CH 1        | Roll                | Roll Left      | Centered   | Roll Right              |                                                                |
+| CH 2        | Pitch               | Nose Up        | Neutral    | Nose Down               |                                                                |
+| CH 3        | Throttle/Collective | Idle           | 50% Thrust | 100% Thrust             | Using Stick Arming, Low+Right to ARM                           |
+| CH 4        | Rudder              | Yaw Left       | Neutral    | Yaw Right               |                                                                |
+| CH 5        | VTOL Condition      | Forward-Flight | 50/50      | Hover (endpoint@1833us) | 3-Position Switch, use Slow-Up/Slow-Dn to slow sweep-rate      |
+| CH 6        | Self-Level          | Disabled       | ---        | ACTIVE                  | HORIZON Mode in Betaflight                                     |
+| CH 7        | Elevon PID          | Disabled       | ---        | ACTIVE                  | Elevons participate in stabilization, direct control otherwise |
+| CH 8        | Forward-Flight Trim | Nose-Up Trim   | Neutral    | Nose-Down Trim          | Analog Potentiometer Knob                                      |
+
+The analog potentiometer used for Forward-Flight Trim is necessary, as the trim setting for hover on the R/C controller may not coincide with the most comfortable forward-flight pitch trim condition. Use the trim switches/sliders on the R/C controller pitch-axis to trim when hovering, and use the knob when in forward-flight.
+
+## Flight Controller Connections
+| Pin # | Control Endpoint    |
+|-------|---------------------|
+| S1    | Left Elevon Servo   |
+| S2    | Right Elevon Servo  |
+| S3    | Right Tilt Servo    |
+| S4    | Left Tilt Servo     |
+| S5    | Rear/Tail Motor ESC |
+| S6    | NO CONNECTION       |
+| S7    | Left Motor ESC      |
+| S8    | Right Motor ESC     |
+
+## Betaflight CLI
+The following CLI listing must be run on the flight controller prior to powering up with any motors or servos attached. **WARNING!** Modern ESC protocols (such as OneShot or DShot) do not play well with servos if accidentally connected. As best, the servo will filter out the packet, but in some cases the servo will burn out.
+
+```bash
+# diff all
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.2.0 Jun 14 2020 / 03:05:26 (8f2d21460) MSP API: 1.43
+# config: manufacturer_id: MTKS, board_name: MATEKF722SE, version: f173f9bc, date: 2019-10-02T14:43:13Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name MATEKF722SE
+manufacturer_id MTKS
+mcu_id 001700353238510e36353235
+signature 
+
+# resources
+resource MOTOR 1 B06
+resource MOTOR 2 B07
+resource MOTOR 3 A15
+resource MOTOR 4 B03
+resource MOTOR 5 NONE
+resource MOTOR 6 NONE
+resource MOTOR 7 NONE
+resource MOTOR 8 NONE
+resource SERVO 1 B04
+resource SERVO 2 B05
+resource SERVO 3 B00
+resource SERVO 4 B01
+
+# mixer
+mixer CUSTOMAIRPLANE
+mmix 0  1.000  1.000 -0.667  0.000
+mmix 1  1.000 -1.000 -0.667  0.000
+mmix 2  1.000  0.000  1.333  0.000
+
+# servo mixer
+smix 0 4 2 -50 0 0 100 2
+smix 1 5 2 -50 0 0 100 2
+smix 2 4 8 100 1 0 100 0
+smix 3 5 8 -100 1 0 100 0
+smix 4 2 4 50 0 0 100 0
+smix 5 2 5 50 0 0 100 0
+smix 6 3 4 50 0 0 100 0
+smix 7 3 5 -50 0 0 100 0
+smix 8 2 0 100 0 0 100 1
+smix 9 3 0 100 0 0 100 1
+smix 10 2 1 100 0 0 100 1
+smix 11 3 1 -100 0 0 100 1
+smix 12 2 11 50 0 0 100 0
+smix 13 3 11 -50 0 0 100 0
+
+# feature
+## feature -RX_SERIAL
+## feature RX_PPM
+
+# aux
+aux 0 2 1 1600 2100 0 0
+aux 1 19 2 1600 2100 0 0
+aux 2 23 2 1600 2100 0 0
+aux 3 24 0 1350 2100 0 0
+aux 4 41 2 1600 2100 0 0
+
+# master
+## set acc_calibration = 400,69,311,1
+set blackbox_p_ratio = 64
+set debug_mode = GYRO_SCALED
+set enable_stick_arming = ON
+set gyro_1_align_pitch = 1800
+set gyro_1_align_yaw = 1800
+set gyro_2_align_yaw = 900
+
+profile 0
+
+# profile 0
+set p_pitch = 40
+set i_pitch = 30
+set d_pitch = 20
+set f_pitch = 0
+set p_roll = 120
+set i_roll = 60
+set d_roll = 10
+set f_roll = 0
+set p_yaw = 60
+set i_yaw = 40
+set f_yaw = 0
+set d_min_roll = 0
+set d_min_pitch = 0
+
+profile 1
+
+# profile 1
+set p_pitch = 40
+set i_pitch = 30
+set d_pitch = 20
+set f_pitch = 0
+set p_roll = 120
+set i_roll = 60
+set d_roll = 20
+set f_roll = 0
+set p_yaw = 60
+set i_yaw = 40
+set f_yaw = 0
+set d_min_roll = 0
+set d_min_pitch = 0
+
+profile 2
+
+# profile 2
+set p_pitch = 40
+set i_pitch = 30
+set d_pitch = 20
+set f_pitch = 0
+set p_roll = 120
+set i_roll = 60
+set d_roll = 30
+set f_roll = 0
+set p_yaw = 60
+set i_yaw = 40
+set f_yaw = 0
+set d_min_roll = 0
+set d_min_pitch = 0
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 
+```
+
+### Remarks:  
+Betaflight's smix is fairly atrocious. The Betaflight Mixer [notes](https://github.com/betaflight/betaflight/blob/master/docs/Mixer.md) uses "slots" to assign servo outputs, and since slots 0 and 1 are allocated for gimbal, the actual starting index is slot 2. Hence, the usage of slots 2, 3, 4 and 5 for the elevon and tilt servos. As of this writing, the `<speed>` term seems to be inoperative, but otherwise the attempt to slow the nacelles is made, as given by the `1` in `smix 2 4 8 100 1 0 100 0`. Slowed nacelle tilt is implemented in the R/C Controller for the time being.  
+
+The Resource allocation in the F722-Wing has been shifted here to allow for the three (3) motors and four (4) servos to reside in separated timer domains. Typing `timer show` in the Betaflight CLI should show the servos all grouped into the `TIM3` domain, the front motor pair in `TIM4`, and the rear/tail motor in `TIM2`. By rearranging the resource listing like this, the firmware will later automatically sort/map the outputs such that the servos are on pins S1 through S4, and the Motors on S5, S7 and S9. S6 cannot be used as a servo output as it is captured in the `TIM2` domain. (This limitation may be able to be overcome if the motor protocol is set to a non-digital one such as OneShot125, which would allow servo and ESC PWM generation to exist on the same timer domain, but this is at the mercy of the specifics of Betaflight and flight controller hardware.)  
+
+The PIDs listed above have proven to be stable in hover testing. I've doubled-hashed (commented out) lines that may not be relevant, such as accelerometer calibration and RX_PPM. The `set gyro_1_align_pitch = 1800` lines seem to be the Betaflight recommended tweaks from first boot. Blackbox debugging is set to `2kHz` and `GYRO_SCALED` in the GUI, which seems to result in the `set blackbox_p_ratio = 64` line. This debug mode is useful for finding vibration noise in the sensory path, I've been using [Plasmatree](https://github.com/Plasmatree/PID-Analyzer) for tuning.  
 
