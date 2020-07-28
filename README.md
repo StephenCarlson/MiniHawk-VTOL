@@ -1,6 +1,10 @@
 # MiniHawk-artwork
 Mechanical artwork for the MiniHawk VTOL, a tricopter/fixed-wing hybrid aircraft, and successor to the OrangeHawk VTOL.  
 
+Betaflight VTOL firmware build: [vtol-motor-mix](https://github.com/StephenCarlson/betaflight/tree/vtol-motor-mix)  
+
+Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)  
+
 ## Description
 The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in mind, and is intended to provide the community with a common and accessable VTOL testbed for experimentation and tinkering. The vehicle uses three (3) brushless DC motors for propulsion, with the forward pair tilting for forward flight and yaw control, and the rear motor fixed for hover only. Four (4) servos are used to tilt the forward motors and to control the elevon control surfaces of the wing. The airframe is a "plank"-style wing with a center body containing avionics and battery, and internal conduits routing to the nacelles and servos. Twin vertical stabilizer fins provide mild directional stability.  
 
@@ -10,8 +14,6 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 - The aerodynamics and stability of the vehicle are still under analysis and subject to revision. The CFD poses/cases used for aerodynamics analysis are included for independent study.  
 - This design is referenced and prefixed with "MH5", as this is the 5th internal revision of the design of the MiniHawk VTOL. The "MH" prefix is incidental and not to be confused with the MH airfoil series, of which the MH45 is used for this vehicle.
 - This vehicle was designed completely in Autodesk Inventor Professional 2019. The Solid Models and Assembly files for this vehicle are withheld at the time of this writing, contact me for inquires on obtaining a copy.  
-
-Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)  
 
 ## Metrics
 | Description              | Value                     |
@@ -365,8 +367,12 @@ save
 # 
 ```
 
-### Remarks:
-Betaflight's smix is fairly complex. The Betaflight Mixer [notes](https://github.com/betaflight/betaflight/blob/master/docs/Mixer.md) uses "slots" to assign servo outputs, and since slots 0 and 1 are allocated for gimbal, the actual starting index is slot 2. Hence, the usage of slots 2, 3, 4 and 5 for the elevon and tilt servos. As of this writing, the `<speed>` term seems to be inoperative, but otherwise the attempt to slow the nacelles is made, as given by the `1` in `smix 2 4 8 100 1 0 100 0`. Slowed nacelle tilt is implemented in the R/C Controller for the time being.  
+## Remarks:
+Betaflight is used in this project is for its ability to adjust resource mapping, such that motors and servos are aligned into separate timer domains. The sister-project to Betaflight, iNavFlight, does not offer the equivalent mechanism to redefining motor and servo outputs, such that, for the Matek F722-WING as an example, it is impossible to have three (3) motor outputs and four (4) servo outputs active; the iNavFlight defaults only allow for up to two motor outputs with servos. So while iNavFlight offers the same smix and mmix functionality as Betaflight, it is not immediately targeted. Otherwise, iNavFlight would be selected as the flight control firmware for this vehicle, as it is focused on fixed-wing vehicles and automony.
+ 
+Despite Betaflight having critical mechanisms for this vehicle, it still requires modification. The version of Betaflight at the time of this writing, [4.2.0](https://github.com/betaflight/betaflight/releases/tag/4.2.0), does not have PID Gain Scheduling or any means to switch between PID profiles in-flight, though it has been requested such as in [#2452](https://github.com/betaflight/betaflight/issues/2452) and [#8507](https://github.com/betaflight/betaflight/issues/8507). (Note that iNavFlight also has many VTOL-related requests such as [#5920](https://github.com/iNavFlight/inav/issues/5920), [#3087](https://github.com/iNavFlight/inav/issues/3087), [#5607](https://github.com/iNavFlight/inav/issues/5607), and [#5050](https://github.com/iNavFlight/inav/issues/5050).) Therefore, my own fork of the Betaflight firmware under the branch [vtol-motor-mix](https://github.com/StephenCarlson/betaflight/tree/vtol-motor-mix) is developed toward implementing the necessary adjustemnts for VTOL flight. This is the origin of the `vmix` configuration parameters in the above CLI listing.
+
+Betaflight's smix is fairly complex. The [Betaflight Mixer](https://github.com/betaflight/betaflight/blob/master/docs/Mixer.md) uses "slots" to assign servo outputs, and since slots 0 and 1 are allocated for gimbal, the actual starting index is slot 2. Hence, the usage of slots 2, 3, 4 and 5 for the elevon and tilt servos. As of this writing, the `<speed>` term seems to be inoperative, but otherwise the attempt to slow the nacelles is made, as given by the `1` in `smix 2 4 8 100 1 0 100 0`. Slowed nacelle tilt is implemented in the R/C Controller for the time being.  
 
 The Resource allocation in the F722-Wing has been shifted here to allow for the three (3) motors and four (4) servos to reside in separated timer domains. Typing `timer show` in the Betaflight CLI should show the servos all grouped into the `TIM3` domain, the front motor pair in `TIM4`, and the rear/tail motor in `TIM2`. By rearranging the resource listing like this, the firmware will later automatically sort/map the outputs such that the servos are on pins S1 through S4, and the Motors on S5, S7 and S9. S6 cannot be used as a servo output as it is captured in the `TIM2` domain. (This limitation may be able to be overcome if the motor protocol is set to a non-digital one such as OneShot125, which would allow servo and ESC PWM generation to exist on the same timer domain, but this is at the mercy of the specifics of Betaflight and flight controller hardware.)  
 
