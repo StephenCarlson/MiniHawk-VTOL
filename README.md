@@ -4,14 +4,12 @@ Mechanical artwork for the MiniHawk VTOL, a tricopter/fixed-wing hybrid aircraft
 ## Description
 The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in mind, and is intended to provide the community with a common and accessable VTOL testbed for experimentation and tinkering. The vehicle uses three (3) brushless DC motors for propulsion, with the forward pair tilting for forward flight and yaw control, and the rear motor fixed for hover only. Four (4) servos are used to tilt the forward motors and to control the elevon control surfaces of the wing. The airframe is a "plank"-style wing with a center body containing avionics and battery, and internal conduits routing to the nacelles and servos. Twin vertical stabilizer fins provide mild directional stability.  
 
-## Remarks
-As this is a totally 3D-printed airframe, the fully-finished vehicle is moderately heavy, which is a handicap, especially in the hovering mode of flight. As such, be gentle and cautious in adding any additional weight. For the recommended print settings with a 0.4mm nozzle, the airframe alone weights a bit over 300g, and the all-up-weight of the finished vehicle is between 700g and 800g.  
-
-The parts used in this project are commonly available in the drone racing and R/C plane market(s). The only known limiting component is the DYS BE1806 motor, which is an older (~2015 era) motor with a diameter of 23mm and around 80W power. A standard 22xx- or 23xx-sized motor can be used on the tail, but the nacelle design was modeled specifically for the DYS BE1806-2300KV. A future revision may increase the nacelle size to be able to mount 22xx-sized motors. Another potentially limiting component is the GreatPlanes GPMQ3843 Threaded Ball-Link set.  
-
-The aerodynamics and stability of the vehicle are still under analysis and subject to revision. The CFD poses/cases used for aerodynamics analysis are included for independent study.  
-
-This design is referenced and prefixed with "MH5", as this is the 5th internal revision of the design of the MiniHawk VTOL.  
+## Remarks / FAQs
+- As this is a totally 3D-printed airframe, the fully-finished vehicle is moderately heavy, which is a handicap, especially in the hovering mode of flight. As such, be gentle and cautious in adding any additional weight. For the recommended print settings with a 0.4mm nozzle, the airframe alone weights a bit over 300g, and the all-up-weight of the finished vehicle is between 700g and 800g.  
+- The parts used in this project are commonly available in the drone racing and R/C plane market(s). The only known limiting component is the DYS BE1806 motor, which is an older (~2015 era) motor with a diameter of 23mm and around 80W power. A standard 22xx- or 23xx-sized motor can be used on the tail, but the nacelle design was modeled specifically for the DYS BE1806-2300KV. A future revision may increase the nacelle size to be able to mount 22xx-sized motors. Another potentially limiting component is the GreatPlanes GPMQ3843 Threaded Ball-Link set.  
+- The aerodynamics and stability of the vehicle are still under analysis and subject to revision. The CFD poses/cases used for aerodynamics analysis are included for independent study.  
+- This design is referenced and prefixed with "MH5", as this is the 5th internal revision of the design of the MiniHawk VTOL. The "MH" prefix is incidental and not to be confused with the MH airfoil series, of which the MH45 is used for this vehicle.
+- This vehicle was designed completely in Autodesk Inventor Professional 2019. The Solid Models and Assembly files for this vehicle are withheld at the time of this writing, contact me for inquires on obtaining a copy.  
 
 Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)  
 
@@ -21,7 +19,7 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
 | Wing Span                | 800mm                     |
 | Wing Area                | 15.6dm^2                  |
 | Aspect Ratio             | 4.1                       |
-| Airfoil (Root and Tip)   | MH45 [ref][1]             |
+| Airfoil (Root and Tip)   | [MH45][1]                 |
 | Length                   | 396mm                     |
 | Rotor Spacing            | 315mm Circle              |
 | Lipoly Battery           | 3s to 4s, 1300mAh         |
@@ -145,7 +143,7 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
 8. The Center-of-Mass for the aircraft is intended to be at 165mm back from the tip of the nose, or 40mm back from the leading edge of the wing. This is exactly along the middle pair of mounting holes for the Battery Tray. This is an initial value, and the Center-of-Mass may be shifted back by around 8mm to 15mm from this point at some risk to stability. As this vehicle is both a fixed-wing and multicopter, the Center-of-Mass stated here is for the fixed-wing condition, and any measurement of Center-of-Mass should be performed with the motors tilted into the forward-flight condition, propellers attached, and the lid secured. Shift the battery fore or aft to achieve proper balance, or add ballast if merited.
 9. Perform any other measures necessary to get the vehicle ready for flight. Decals, paint, or heat-activated covering are possibilities. Vehicle mass should come to an All-Up-Weight around 700 grams to 800 grams, with the 3D-printed airframe alone measuring around 300 grams.
 
-# Part 4 - Flight Testing (In Progress)
+# Flight Testing (In Progress)
 1. Discovering PIDs; test-stand setup and axis-isolation. Gain Scheduling for hover-to-forward-flight and reverse transitions.
 2. Free hovering hops, progressing to static hovering, tuning hovering PIDs.
 3. Forward-flight transitions with direct R/C control (no PIDs altering control surfaces)
@@ -174,7 +172,7 @@ Unlike other 3D-printed R/C aircraft, the MiniHawk does not have any internal st
 > Note 1: Forced to occur on trailing edge of wing.  
 > Note 2: Is slightly offset in X-direction for best structure.  
 
-For the MH5_ControlHornSet and MH5_TraySet, print 100% Solid. These pieces may be laser-cut if possible.
+For the MH5_ControlHornSet and MH5_TraySet, print 100% Solid or as desired. These pieces may be laser-cut if possible.
 
 
 # Betaflight Settings (For Matek F722-Wing)
@@ -262,25 +260,36 @@ smix 11 3 1 -100 0 0 100 1
 smix 12 2 11 50 0 0 100 0
 smix 13 3 11 -50 0 0 100 0
 
+# vmix
+vmix 0 4  1.000  0.000  0.390  0.720  0.940  1.000
+vmix 1 4  1.000  0.000  0.390  0.720  0.940  1.000
+vmix 2 4  0.000  0.000  0.390  0.720  0.940  1.000
+vmix 3 0  0.000  0.000  0.000  0.000  0.000  0.000
+vmix 4 0  0.000  0.000  0.000  0.000  0.000  0.000
+vmix 5 0  0.000  0.000  0.000  0.000  0.000  0.000
+vmix 6 0  0.000  0.000  0.000  0.000  0.000  0.000
+vmix 7 0  0.000  0.000  0.000  0.000  0.000  0.000
+
 # feature
 ## feature -RX_SERIAL
 ## feature RX_PPM
+feature MOTOR_STOP
 
 # aux
 aux 0 2 1 1600 2100 0 0
 aux 1 19 2 1600 2100 0 0
 aux 2 23 2 1600 2100 0 0
-aux 3 24 0 1350 2100 0 0
+aux 3 24 0 1400 2100 0 0
 aux 4 41 2 1600 2100 0 0
 
 # master
-## set acc_calibration = 400,69,311,1
-set blackbox_p_ratio = 64
+## set acc_calibration = 355,27,285,1
+## set mag_hardware = NONE
+set min_throttle = 1000
+## set motor_pwm_protocol = DSHOT600
+## set motor_pwm_rate = 16000
 set debug_mode = GYRO_SCALED
 set enable_stick_arming = ON
-set gyro_1_align_pitch = 1800
-set gyro_1_align_yaw = 1800
-set gyro_2_align_yaw = 900
 
 profile 0
 
@@ -356,10 +365,10 @@ save
 # 
 ```
 
-### Remarks:  
-Betaflight's smix is fairly atrocious. The Betaflight Mixer [notes](https://github.com/betaflight/betaflight/blob/master/docs/Mixer.md) uses "slots" to assign servo outputs, and since slots 0 and 1 are allocated for gimbal, the actual starting index is slot 2. Hence, the usage of slots 2, 3, 4 and 5 for the elevon and tilt servos. As of this writing, the `<speed>` term seems to be inoperative, but otherwise the attempt to slow the nacelles is made, as given by the `1` in `smix 2 4 8 100 1 0 100 0`. Slowed nacelle tilt is implemented in the R/C Controller for the time being.  
+### Remarks:
+Betaflight's smix is fairly complex. The Betaflight Mixer [notes](https://github.com/betaflight/betaflight/blob/master/docs/Mixer.md) uses "slots" to assign servo outputs, and since slots 0 and 1 are allocated for gimbal, the actual starting index is slot 2. Hence, the usage of slots 2, 3, 4 and 5 for the elevon and tilt servos. As of this writing, the `<speed>` term seems to be inoperative, but otherwise the attempt to slow the nacelles is made, as given by the `1` in `smix 2 4 8 100 1 0 100 0`. Slowed nacelle tilt is implemented in the R/C Controller for the time being.  
 
 The Resource allocation in the F722-Wing has been shifted here to allow for the three (3) motors and four (4) servos to reside in separated timer domains. Typing `timer show` in the Betaflight CLI should show the servos all grouped into the `TIM3` domain, the front motor pair in `TIM4`, and the rear/tail motor in `TIM2`. By rearranging the resource listing like this, the firmware will later automatically sort/map the outputs such that the servos are on pins S1 through S4, and the Motors on S5, S7 and S9. S6 cannot be used as a servo output as it is captured in the `TIM2` domain. (This limitation may be able to be overcome if the motor protocol is set to a non-digital one such as OneShot125, which would allow servo and ESC PWM generation to exist on the same timer domain, but this is at the mercy of the specifics of Betaflight and flight controller hardware.)  
 
-The PIDs listed above have proven to be stable in hover testing. I've doubled-hashed (commented out) lines that may not be relevant, such as accelerometer calibration and RX_PPM. The `set gyro_1_align_pitch = 1800` lines seem to be the Betaflight recommended tweaks from first boot. Blackbox debugging is set to `2kHz` and `GYRO_SCALED` in the GUI, which seems to result in the `set blackbox_p_ratio = 64` line. This debug mode is useful for finding vibration noise in the sensory path, I've been using [Plasmatree](https://github.com/Plasmatree/PID-Analyzer) for tuning.  
+The PIDs listed above have proven to be stable in hover testing. I've doubled-hashed (commented out) lines that may not be relevant, such as accelerometer calibration and RX_PPM. Blackbox debugging is set to `2kHz` and `GYRO_SCALED` in the GUI, which may emmit entries under *master*. I've been using [Plasmatree](https://github.com/Plasmatree/PID-Analyzer) for tuning and finding vibration noise in the sensory path.  
 
