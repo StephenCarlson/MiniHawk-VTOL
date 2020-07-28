@@ -1,5 +1,5 @@
 # MiniHawk-artwork
-Mechanical artwork for the MiniHawk VTOL, the successor to the OrangeHawk VTOL.  
+Mechanical artwork for the MiniHawk VTOL, a tricopter/fixed-wing hybrid aircraft, and successor to the OrangeHawk VTOL.  
 
 ## Description
 The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in mind, and is intended to provide the community with a common and accessable VTOL testbed for experimentation and tinkering. The vehicle uses three (3) brushless DC motors for propulsion, with the forward pair tilting for forward flight and yaw control, and the rear motor fixed for hover only. Four (4) servos are used to tilt the forward motors and to control the elevon control surfaces of the wing. The airframe is a "plank"-style wing with a center body containing avionics and battery, and internal conduits routing to the nacelles and servos. Twin vertical stabilizer fins provide mild directional stability.  
@@ -7,7 +7,7 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 ## Remarks
 As this is a totally 3D-printed airframe, the fully-finished vehicle is moderately heavy, which is a handicap, especially in the hovering mode of flight. As such, be gentle and cautious in adding any additional weight. For the recommended print settings with a 0.4mm nozzle, the airframe alone weights a bit over 300g, and the all-up-weight of the finished vehicle is between 700g and 800g.  
 
-The parts used in this project are commonly available in the drone racing and R/C plane market(s). The only known limiting component is the DYS BE1806 motor, which is an older (~2015) motor with a diameter of 23mm and around 80W power. A standard 22xx- or 23xx-sized motor can be used on the tail, but the nacelle design was modeled specifically for the DYS BE1806-2300KV. A future revision may increase the nacelle size to be able to mount 22xx-sized motors. Another potentially limiting component is the GreatPlanes GPMQ3843 Threaded Ball-Link set.  
+The parts used in this project are commonly available in the drone racing and R/C plane market(s). The only known limiting component is the DYS BE1806 motor, which is an older (~2015 era) motor with a diameter of 23mm and around 80W power. A standard 22xx- or 23xx-sized motor can be used on the tail, but the nacelle design was modeled specifically for the DYS BE1806-2300KV. A future revision may increase the nacelle size to be able to mount 22xx-sized motors. Another potentially limiting component is the GreatPlanes GPMQ3843 Threaded Ball-Link set.  
 
 The aerodynamics and stability of the vehicle are still under analysis and subject to revision. The CFD poses/cases used for aerodynamics analysis are included for independent study.  
 
@@ -21,7 +21,7 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
 | Wing Span                | 800mm                     |
 | Wing Area                | 15.6dm^2                  |
 | Aspect Ratio             | 4.1                       |
-| Airfoil (Root and Tip)   | MH45                      |
+| Airfoil (Root and Tip)   | MH45 [ref][1]             |
 | Length                   | 396mm                     |
 | Rotor Spacing            | 315mm Circle              |
 | Lipoly Battery           | 3s to 4s, 1300mAh         |
@@ -32,6 +32,7 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
 | Propellers (front)       | 5050 to ~5249             |
 | Propeller (rear)         | 6030 to ~5249             |
 
+[1]: <https://www.mh-aerotools.de/airfoils/mh45koo.htm> "MH45 Airfoil by Martin Hepperle"
 
 # MiniHawk Build Parts List and Tools:
 ## Recommended Tools and Equipment
@@ -39,28 +40,47 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
  - Soldering Station and associated tools and materials
  - Handcrafting Tools
  - Adhesives: Cyanoacrylate Glue, Epoxy, Hot-Melt Adhesive Gun, Tape
-   
+
 ## Components and Electronics:
- - qty:1 Flight Controller (3 Motor, 4 Servo Outputs)(Matek Systems F722-WING)
- - qty:3 ESCs (3s, 20A or better)(Spedix ES20 Lite)
- - qty:2 DYS BE1806 2300KV BLDC Motors (or equivalent, must be no larger than OutsideDiameter=24mm, able to produce between 350g to 500g static thrust and pitch speed of ~20m/s with 5in prop)
- - qty:1 DYS BE2206 2000KV (or equivalent, may be up to OutsideDiameter=30mm, between 700g to 1000g static thrust)
- - qty:1 3s1300 Lipoly (better than 40C)
- - qty:2 HS-65HB Servos (Servo pockets designed for up to 26mm wide, 17.5mm from bottom of mounting tabs to bottom of servo, 32mm from top of output shaft to bottom of servo, 12mm thick. Should fit most "Sub-Micro" Servos)
- - qty:2 HS-65MG Servos (Same pocket dimensions as above, but these are going to be fantastically abused and must be really tough. Or just count on stripping your non-metal-gear servos a lot.)
- - qty:6 Du-Bro Small Nylon Hinges (Can be omitted but 3D-printed living-hinge on elevons will eventually fail, mend appropriately)
- - Either M2 or M3 Nylon Standoff and Spacer hardware for mounting Flight Controller.
- - qty:4 6-Inch Servo Extension Cables. Alternatively, cut the servo cables and solder in-line extensions for the cables to reach to the flight controller, plus some slack.
- - qty:4 Du-Bro Kwik Link Clevis for 0.72-inch (2-56) threaded rod/wire. Two of these for the Elevon Servos, two for the motor tilt servos.
- - qty:2 2-56 Threaded Linkage Rods with L-bend at 45mm from threaded tip. These connect from the Elevon Servos to the Elevon Control Horns. 
- > (Note that the above clevises and rods can be purchased as a set, such as Du-Bro Item #185, which is a set of 5 rods with clevises already attached)
- - qty:2 Du-Bro E/Z Links 0.72 (2-56) Retainer Clips. These secure the L-Bend at the Elevon Control Horns.
- - qty:2 1/16 2-56 Threaded Ball Link, such as GreatPlanes GPMQ3843. **CRITICAL!!! The Ball Link thread must be "116", 1/16-inch, 62.5mil, or 1.59mm.** The more popular variant is the 2-56 thread size ball, which is too big for the nacelle motor tilt attachment. Note that this is the ball-link thread size; the coupler that captures the ball is 2-56 threaded. This ball-link set attaches from the motor tilt servo linkage to the motor tilt mount, which holds the front left/right motor.
- - qty:2 2-56 Fully-Threaded Rods, straight, 60mm long. One end threads to Du-Bro Kwik Link 2-56 Clevis, other end threads to a 2-56 Ball Link coupler.
- - qty:2 Length=24mm, Diameter=[1.83mm to 1.87mm] Steel Rod (Formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle)
- - (optional) qty:2 WS2812 or equivalent Addressable LED, 5050 SMD or smaller raw device. These are soldered with magnet wire and mounted in the wingtips.
-   
- 
+| Qty | Item Description                                     | Notes                                              |
+|-----|------------------------------------------------------|----------------------------------------------------|
+| 1   | Flight Controller (3 Motor, 4 Servo Outputs)         | Recommend: Matek Systems F722-WING                 |
+| 1   | R/C Receiver, 8+ Channel, SBUS or PPM Output         |                                                    |
+| 3   | ESC (3s, 20A or better)                              |                                                    |
+| 2   | **DYS BE1806 2300KV BLDC Motor**                     | [^note1]                                           |
+| 1   | 22xx 2000KV BLDC Motor                               | [^note2]                                           |
+| 1   | 3s1300 Lipoly (40C or better)                        |                                                    |
+| 1   | XT60 Pigtail or equiv.                               |                                                    |
+| 2   | HS-65HB Servo (or equiv.)                            | Elevon Servos, see [^note3].                       |
+| 2   | HS-65MG Servo (or equiv.)                            | Motor Tilt Servos, see [^note4].                   |
+| 6   | (opt) Du-Bro SKU#118 Small Nylon Hinge               | Elevon Reinforcement, see [^note5].                |
+| -   | M2 or M3 Mounting Hardware (Nuts, Bolts, Standoffs)  | For mounting Flight Controller, trays.             |
+| 4   | 6-Inch Servo Extension Cable                         | [^note6]                                           |
+| 1   | Male-to-Male Servo Extension Cable                   | Flight Controller to Receiver PPM/SBUS connection. |
+| 4   | 2-56 Link Clevis [^note7]                            | Four (4) servo arm connections.                    |
+| 2   | 2-56 Threaded Linkage Rod, Length>=52mm              | Elevon pushrods, L-bend at 45mm from threaded tip. |
+| 2   | (opt) Du-Bro SKU#855 E/Z Links 0.72 (2-56) Clip      | For securing L-Bends, can replace with Z-bend.     |
+| 2   | 1/16-inch 2-56 Ball Link and Coupler Pair            | **GreatPlanes GPMQ3843**, see [^note8].            |
+| 2   | 2-56 Fully-Threaded Rod, Length=60mm                 | End1=(Link 2-56 Clevis), End2=(2-56 Ball Coupler)  |
+| 2   | 2-56 Smooth Rod, Length=24mm                         | [^note9]                                           |
+| 2   | (opt) WS2812 5050 SMD (or equiv. Addressable LED)    | Soldered with magnet wire, mounted in wingtips.    |
+| -   | M4 and M5 Prop Nuts                                  | Replace default prop nuts if needed                |
+| 1   | 50xx Propeller, Clockwise Rotation                   | Left/Port-side Propeller, 5-inch                   |
+| 1   | 50xx Propeller, Counterclockwise Rotation            | Right/Starboard-side Propeller, 5-inch             |
+| 1   | 50xx or 60xx Propeller, Counterclockwise Rotation    | Tail Propeller, 5- or 6-inch                       |
+| 1   | Velcro Battery Strap                                 |                                                    |
+| 1   | (opt) Battery Voltage Monitor / Alarm Buzzer         | For Flight Controller if not included.             |
+
+[^note1]: Front motors must be no larger than OutsideDiameter=23mm, able to produce between 350g to 500g static thrust (@full-throttle), and pitch speed of ~20m/s (@half-throttle) with 5-inch prop.  
+[^note2]: Tail motor may be up to OutsideDiameter=30mm, able to produce between 700g to 1000g static thrust (@full-throttle) with up to a 6-inch prop.  
+[^note3]: Servo bays are designed for up to 26mm wide servos, 17.5mm from bottom of mounting tabs to bottom of servo, 32mm from top of output shaft to bottom of servo, 12mm thick. Should fit most "Sub-Micro" Servos.  
+[^note4]: Same pocket dimensions as above, but these are going to be fantastically abused and must be fairly tough. Or just count on stripping your non-metal-gear servos a lot.  
+[^note5]: Can be omitted, but 3D-printed living-hinge on elevons will eventually fail, mend appropriately. SKU#118 is 6 per package, SKU#119 for 15/pkg.  
+[^note6]: Alternatively, cut the servo cables and solder in-line extensions for the cables to reach to the flight controller, plus some slack.  
+[^note7]: The clevises and rods can be purchased as a set, such as Du-Bro SKU#185, which is a set of 5 rods with clevises already attached.  
+[^note8]: **CRITICAL!!!** The Ball Link thread must be "116", 1/16-inch, 62.5mil, or 1.59mm. The more popular variant of this type of part has a 2-56 thread size ball, which is too big for the nacelle motor tilt attachment. Note that this is the ball-link thread size; the coupler that captures the ball is 2-56 threaded. This ball-link set attaches from the motor tilt servo linkage to the motor tilt mount, which holds the front left/right motor.  
+[^note9]: Diameter=[1.83mm to 1.87mm], formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle.  
+
 ## Airframe Parts:
 | Part                     | Source File                           |
 |--------------------------|---------------------------------------|
@@ -81,7 +101,7 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
 | Right Motor Mount        | MH5_TiltMount.stl *Mirrored*          |
 | Flight Controller Tray   | MH5_ControllerTray.stl                |
 | Battery Tray             | MH5_BatteryTray.stl                   |
- 
+
 # Build Sequence
 
 ## Part 1 - Airframe Structures and Motor Mount/Tilt Attachment
