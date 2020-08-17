@@ -47,22 +47,22 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | 1   | Flight Controller (3 Motor, 4 Servo Outputs)         | Recommend: Matek Systems F722-WING                 |
 | 1   | R/C Receiver, 8+ Channel, SBUS or PPM Output         |                                                    |
 | 3   | ESC (3s, 20A or better)                              |                                                    |
-| 2   | **DYS BE1806 2300KV BLDC Motor**                     | [^note1]                                           |
-| 1   | 22xx 2000KV BLDC Motor                               | [^note2]                                           |
+| 2   | **DYS BE1806 2300KV BLDC Motor**                     | (Note 1)                                           |
+| 1   | 22xx 2000KV BLDC Motor                               | (Note 2)                                          |
 | 1   | 3s1300 Lipoly (40C or better)                        |                                                    |
 | 1   | XT60 Pigtail or equiv.                               |                                                    |
-| 2   | HS-65HB Servo (or equiv.)                            | Elevon Servos, see [^note3].                       |
-| 2   | HS-65MG Servo (or equiv.)                            | Motor Tilt Servos, see [^note4].                   |
-| 6   | (opt) Du-Bro SKU#118 Small Nylon Hinge               | Elevon Reinforcement, see [^note5].                |
+| 2   | HS-65HB Servo (or equiv.)                            | Elevon Servos, see (Note 3).                       |
+| 2   | HS-65MG Servo (or equiv.)                            | Motor Tilt Servos, see (Note 4).                   |
+| 6   | (opt) Du-Bro SKU#118 Small Nylon Hinge               | Elevon Reinforcement, see (Note 5).                |
 | -   | M2 or M3 Mounting Hardware (Nuts, Bolts, Standoffs)  | For mounting Flight Controller, trays.             |
-| 4   | 6-Inch Servo Extension Cable                         | [^note6]                                           |
+| 4   | 6-Inch Servo Extension Cable                         | (Note 6)                                           |
 | 1   | Male-to-Male Servo Extension Cable                   | Flight Controller to Receiver PPM/SBUS connection. |
-| 4   | 2-56 Link Clevis [^note7]                            | Four (4) servo arm connections.                    |
+| 4   | 2-56 Link Clevis (Note 7)                            | Four (4) servo arm connections.                    |
 | 2   | 2-56 Threaded Linkage Rod, Length>=52mm              | Elevon pushrods, L-bend at 45mm from threaded tip. |
 | 2   | (opt) Du-Bro SKU#855 E/Z Links 0.72 (2-56) Clip      | For securing L-Bends, can replace with Z-bend.     |
-| 2   | 1/16-inch 2-56 Ball Link and Coupler Pair            | **GreatPlanes GPMQ3843**, see [^note8].            |
+| 2   | 1/16-inch 2-56 Ball Link and Coupler Pair            | **GreatPlanes GPMQ3843**, see (Note 8).            |
 | 2   | 2-56 Fully-Threaded Rod, Length=60mm                 | End1=(Link 2-56 Clevis), End2=(2-56 Ball Coupler)  |
-| 2   | 2-56 Smooth Rod, Length=24mm                         | [^note9]                                           |
+| 2   | 2-56 Smooth Rod, Length=24mm                         | (Note 9)                                           |
 | 2   | (opt) WS2812 5050 SMD (or equiv. Addressable LED)    | Soldered with magnet wire, mounted in wingtips.    |
 | -   | M4 and M5 Prop Nuts                                  | Replace default prop nuts if needed                |
 | 1   | 50xx Propeller, Clockwise Rotation                   | Left/Port-side Propeller, 5-inch                   |
@@ -71,15 +71,15 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | 1   | Velcro Battery Strap                                 |                                                    |
 | 1   | (opt) Battery Voltage Monitor / Alarm Buzzer         | For Flight Controller if not included.             |
 
-> [^note1]: Front motors must be no larger than OutsideDiameter=23mm, able to produce between 350g to 500g static thrust (@full-throttle), and pitch speed of ~20m/s (@half-throttle) with 5-inch prop.  
-> [^note2]: Tail motor may be up to OutsideDiameter=30mm, able to produce between 700g to 1000g static thrust (@full-throttle) with up to a 6-inch prop.  
-> [^note3]: Servo bays are designed for up to 26mm wide servos, 17.5mm from bottom of mounting tabs to bottom of servo, 32mm from top of output shaft to bottom of servo, 12mm thick. Should fit most "Sub-Micro" Servos.  
-> [^note4]: Same pocket dimensions as above, but these are going to be fantastically abused and must be fairly tough. Or just count on stripping your non-metal-gear servos a lot.  
-> [^note5]: Can be omitted, but 3D-printed living-hinge on elevons will eventually fail, mend appropriately. SKU#118 is 6 per package, SKU#119 for 15/pkg.  
-> [^note6]: Alternatively, cut the servo cables and solder in-line extensions for the cables to reach to the flight controller, plus some slack.  
-> [^note7]: The clevises and rods can be purchased as a set, such as Du-Bro SKU#185, which is a set of 5 rods with clevises already attached.  
-> [^note8]: **CRITICAL!!!** The Ball Link thread must be "116", 1/16-inch, 62.5mil, or 1.59mm. The more popular variant of this type of part has a 2-56 thread size ball, which is too big for the nacelle motor tilt attachment. Note that this is the ball-link thread size; the coupler that captures the ball is 2-56 threaded. This ball-link set attaches from the motor tilt servo linkage to the motor tilt mount, which holds the front left/right motor.  
-> [^note9]: Diameter=[1.83mm to 1.87mm], formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle.  
+> Note 1: Front motors must be no larger than OutsideDiameter=23mm, able to produce between 350g to 500g static thrust (@full-throttle), and pitch speed of ~20m/s (@half-throttle) with 5-inch prop.  
+> Note 2: Tail motor may be up to OutsideDiameter=30mm, able to produce between 700g to 1000g static thrust (@full-throttle) with up to a 6-inch prop.  
+> Note 3: Servo bays are designed for up to 26mm wide servos, 17.5mm from bottom of mounting tabs to bottom of servo, 32mm from top of output shaft to bottom of servo, 12mm thick. Should fit most "Sub-Micro" Servos.  
+> Note 4: Same pocket dimensions as above, but these are going to be fantastically abused and must be fairly tough. Or just count on stripping your non-metal-gear servos a lot.  
+> Note 5: Can be omitted, but 3D-printed living-hinge on elevons will eventually fail, mend appropriately. SKU#118 is 6 per package, SKU#119 for 15/pkg.  
+> Note 6: Alternatively, cut the servo cables and solder in-line extensions for the cables to reach to the flight controller, plus some slack.  
+> Note 7: The clevises and rods can be purchased as a set, such as Du-Bro SKU#185, which is a set of 5 rods with clevises already attached.  
+> Note 8: **CRITICAL!!!** The Ball Link thread must be "116", 1/16-inch, 62.5mil, or 1.59mm. The more popular variant of this type of part has a 2-56 thread size ball, which is too big for the nacelle motor tilt attachment. Note that this is the ball-link thread size; the coupler that captures the ball is 2-56 threaded. This ball-link set attaches from the motor tilt servo linkage to the motor tilt mount, which holds the front left/right motor.  
+> Note 9: Diameter=[1.83mm to 1.87mm], formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle.  
 
 ## Airframe Parts:
 | Part                     | Source File                                                                        |
@@ -165,15 +165,15 @@ Unlike other 3D-printed R/C aircraft, the MiniHawk does not have any internal st
 | TopBottomMainPattern      | Lines                          | Concentric              | Lines                   | Lines                   | Lines                     | Lines                     |
 | InitialBottomLayerPattern | Concentric                     | Concentric              | Concentric              | Concentric              | Lines                     | Lines                     |
 | FillGapsBetweenWalls      | Nowhere                        | Nowhere                 | Nowhere                 | Nowhere                 | Everywhere                | Everywhere                |
-| Z-SeamAlignment           | UserSpecified [^note1]         | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,ExposeSeam | SharpestCorner,ExposeSeam |
+| Z-SeamAlignment           | UserSpecified (Note 1)         | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,ExposeSeam | SharpestCorner,ExposeSeam |
 | InfillDensity             | 5.00%                          | 10.00%                  | 10.00%                  | 10.00%                  | 20.00%                    | 30.00%                    |
 | InfillPattern             | Cubic                          | Cubic                   | Cubic                   | Cubic                   | Cubic                     | Cubic                     |
-| InfillLineDirections      | 90deg                          | 0deg                    | 0deg [^note2]           | 90deg                   | 0deg                      | 0deg                      |
+| InfillLineDirections      | 90deg                          | 0deg                    | 0deg (Note 2)           | 90deg                   | 0deg                      | 0deg                      |
 | GenerateSupport           | Nowhere                        | Nowhere                 | Nowhere                 | Nowhere                 | Yes                       | Nowhere                   |
 | SupportPlacement          |                                |                         |                         |                         | TouchingBuildPlate        |                           |
 | SupportOverhangAngle      |                                |                         |                         |                         | 70deg                     |                           |
-> [^note1]: Forced to occur on trailing edge of wing.  
-> [^note2]: Is slightly offset in X-direction for best structure.  
+> Note 1: Forced to occur on trailing edge of wing.  
+> Note 2: Is slightly offset in X-direction for best structure.  
 
 For the MH5_ControlHornSet and MH5_TraySet, print 100% Solid or as desired. These pieces may be laser-cut if possible.
 
@@ -304,4 +304,6 @@ Betaflight's `smix` is fairly complex. The [Betaflight Mixer](https://github.com
 The Resource allocation in the F722-Wing has been shifted here to allow for the three (3) motors and four (4) servos to reside in separated timer domains. Typing `timer show` in the Betaflight CLI should show the servos all grouped into the `TIM3` domain, the front motor pair in `TIM4`, and the rear/tail motor in `TIM2`. By rearranging the resource listing like this, the firmware will later automatically sort/map the outputs such that the servos are on pins S1 through S4, and the Motors on S5, S7 and S9. S6 cannot be used as a servo output as it is captured in the `TIM2` domain. (This limitation may be able to be overcome if the motor protocol is set to a non-digital one such as OneShot125, which would allow servo and ESC PWM generation to exist on the same timer domain, but this is at the mercy of the specifics of Betaflight and flight controller hardware.)  
 
 The PIDs listed above have proven to be stable in hover testing. In the CLI Configuration file(s), I've commented-out lines that may not be relevant, such as accelerometer calibration and RX_PPM, make your own adjustments as needed. Blackbox debugging is set to `2kHz` and `GYRO_SCALED` in the GUI, which may emmit entries under *master*. I've been using [Plasmatree](https://github.com/Plasmatree/PID-Analyzer) for tuning and finding vibration noise in the sensory path.  
+
+The Rear Strakes are recent additions to the design to compensate for poor directional stability. The aircraft does not weathervane into the relative wind well without them, and may yet require even larger vertical stabilization surfaces, not unlike the early days of the F-117 stealth aircraft. Another late addition to the design is the Lid FPV Variant, which supports the Foxeer -Nano camera formfactor (15mm width) and has a 30.5mm grid for a video transmitter, such as the AKK Infinite DVR.
 
