@@ -71,15 +71,15 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | 1   | Velcro Battery Strap                                 |                                                    |
 | 1   | (opt) Battery Voltage Monitor / Alarm Buzzer         | For Flight Controller if not included.             |
 
-[^note1]: Front motors must be no larger than OutsideDiameter=23mm, able to produce between 350g to 500g static thrust (@full-throttle), and pitch speed of ~20m/s (@half-throttle) with 5-inch prop.  
-[^note2]: Tail motor may be up to OutsideDiameter=30mm, able to produce between 700g to 1000g static thrust (@full-throttle) with up to a 6-inch prop.  
-[^note3]: Servo bays are designed for up to 26mm wide servos, 17.5mm from bottom of mounting tabs to bottom of servo, 32mm from top of output shaft to bottom of servo, 12mm thick. Should fit most "Sub-Micro" Servos.  
-[^note4]: Same pocket dimensions as above, but these are going to be fantastically abused and must be fairly tough. Or just count on stripping your non-metal-gear servos a lot.  
-[^note5]: Can be omitted, but 3D-printed living-hinge on elevons will eventually fail, mend appropriately. SKU#118 is 6 per package, SKU#119 for 15/pkg.  
-[^note6]: Alternatively, cut the servo cables and solder in-line extensions for the cables to reach to the flight controller, plus some slack.  
-[^note7]: The clevises and rods can be purchased as a set, such as Du-Bro SKU#185, which is a set of 5 rods with clevises already attached.  
-[^note8]: **CRITICAL!!!** The Ball Link thread must be "116", 1/16-inch, 62.5mil, or 1.59mm. The more popular variant of this type of part has a 2-56 thread size ball, which is too big for the nacelle motor tilt attachment. Note that this is the ball-link thread size; the coupler that captures the ball is 2-56 threaded. This ball-link set attaches from the motor tilt servo linkage to the motor tilt mount, which holds the front left/right motor.  
-[^note9]: Diameter=[1.83mm to 1.87mm], formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle.  
+> [^note1]: Front motors must be no larger than OutsideDiameter=23mm, able to produce between 350g to 500g static thrust (@full-throttle), and pitch speed of ~20m/s (@half-throttle) with 5-inch prop.  
+> [^note2]: Tail motor may be up to OutsideDiameter=30mm, able to produce between 700g to 1000g static thrust (@full-throttle) with up to a 6-inch prop.  
+> [^note3]: Servo bays are designed for up to 26mm wide servos, 17.5mm from bottom of mounting tabs to bottom of servo, 32mm from top of output shaft to bottom of servo, 12mm thick. Should fit most "Sub-Micro" Servos.  
+> [^note4]: Same pocket dimensions as above, but these are going to be fantastically abused and must be fairly tough. Or just count on stripping your non-metal-gear servos a lot.  
+> [^note5]: Can be omitted, but 3D-printed living-hinge on elevons will eventually fail, mend appropriately. SKU#118 is 6 per package, SKU#119 for 15/pkg.  
+> [^note6]: Alternatively, cut the servo cables and solder in-line extensions for the cables to reach to the flight controller, plus some slack.  
+> [^note7]: The clevises and rods can be purchased as a set, such as Du-Bro SKU#185, which is a set of 5 rods with clevises already attached.  
+> [^note8]: **CRITICAL!!!** The Ball Link thread must be "116", 1/16-inch, 62.5mil, or 1.59mm. The more popular variant of this type of part has a 2-56 thread size ball, which is too big for the nacelle motor tilt attachment. Note that this is the ball-link thread size; the coupler that captures the ball is 2-56 threaded. This ball-link set attaches from the motor tilt servo linkage to the motor tilt mount, which holds the front left/right motor.  
+> [^note9]: Diameter=[1.83mm to 1.87mm], formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle.  
 
 ## Airframe Parts:
 | Part                     | Source File                                                                        |
@@ -165,15 +165,15 @@ Unlike other 3D-printed R/C aircraft, the MiniHawk does not have any internal st
 | TopBottomMainPattern      | Lines                          | Concentric              | Lines                   | Lines                   | Lines                     | Lines                     |
 | InitialBottomLayerPattern | Concentric                     | Concentric              | Concentric              | Concentric              | Lines                     | Lines                     |
 | FillGapsBetweenWalls      | Nowhere                        | Nowhere                 | Nowhere                 | Nowhere                 | Everywhere                | Everywhere                |
-| Z-SeamAlignment           | UserSpecified (Note 1)         | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,ExposeSeam | SharpestCorner,ExposeSeam |
+| Z-SeamAlignment           | UserSpecified [^note1]         | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,HideSeam | SharpestCorner,ExposeSeam | SharpestCorner,ExposeSeam |
 | InfillDensity             | 5.00%                          | 10.00%                  | 10.00%                  | 10.00%                  | 20.00%                    | 30.00%                    |
 | InfillPattern             | Cubic                          | Cubic                   | Cubic                   | Cubic                   | Cubic                     | Cubic                     |
-| InfillLineDirections      | 90deg                          | 0deg                    | 0deg (Note 2)           | 90deg                   | 0deg                      | 0deg                      |
+| InfillLineDirections      | 90deg                          | 0deg                    | 0deg [^note2]           | 90deg                   | 0deg                      | 0deg                      |
 | GenerateSupport           | Nowhere                        | Nowhere                 | Nowhere                 | Nowhere                 | Yes                       | Nowhere                   |
 | SupportPlacement          |                                |                         |                         |                         | TouchingBuildPlate        |                           |
 | SupportOverhangAngle      |                                |                         |                         |                         | 70deg                     |                           |
-> Note 1: Forced to occur on trailing edge of wing.  
-> Note 2: Is slightly offset in X-direction for best structure.  
+> [^note1]: Forced to occur on trailing edge of wing.  
+> [^note2]: Is slightly offset in X-direction for best structure.  
 
 For the MH5_ControlHornSet and MH5_TraySet, print 100% Solid or as desired. These pieces may be laser-cut if possible.
 
