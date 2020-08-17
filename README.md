@@ -1,5 +1,5 @@
 # MiniHawk-artwork
-Mechanical artwork for the MiniHawk VTOL, a tricopter/fixed-wing hybrid aircraft, and successor to the OrangeHawk VTOL.  
+Mechanical artwork for the MiniHawk VTOL, a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, and successor to the OrangeHawk VTOL.  
 
 Betaflight VTOL firmware build: [vtol-motor-mix](https://github.com/StephenCarlson/betaflight/tree/vtol-motor-mix)  
 
@@ -82,25 +82,25 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 [^note9]: Diameter=[1.83mm to 1.87mm], formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle.  
 
 ## Airframe Parts:
-| Part                     | Source File                           |
-|--------------------------|---------------------------------------|
-| Fuselage Nose            | MH5_Nose.stl                          |
-| Empennage Left Half      | MH5_Empennage.stl                     |
-| Empennage Right Half     | MH5_Empennage.stl *Mirrored*          |
-| Lid Left Half            | MH5_Lid.stl                           |
-| Lid Right Half           | MH5_Lid.stl *Mirrored*                |
-| Fin (2)                  | MH5_FinLeft.stl                       |
-| Left Wing                | MH5_WingLeft_NoSolar.stl              |
-| Right Wing               | MH5_WingLeft_NoSolar.stl *Mirrored*   |
-| Elevon Control Horn (2)  | MH5_ControlHorn.stl                   |
-| Left Nacelle Left Half   | MH5_NacelleB.stl                      |
-| Left Nacelle Right Half  | MH5_NacelleA.stl                      |
-| Left Motor Mount         | MH5_TiltMount.stl                     |
-| Right Nacelle Left Half  | MH5_NacelleA.stl *Mirrored*           |
-| Right Nacelle Right Half | MH5_NacelleB.stl *Mirrored*           |
-| Right Motor Mount        | MH5_TiltMount.stl *Mirrored*          |
-| Flight Controller Tray   | MH5_ControllerTray.stl                |
-| Battery Tray             | MH5_BatteryTray.stl                   |
+| Part                     | Source File                                                                        |
+|--------------------------|------------------------------------------------------------------------------------|
+| Fuselage Nose            | [MH5_Nose.stl](/stl-SourceFiles/MH5_Nose.stl)                                      |
+| Empennage Left Half      | [MH5_Empennage.stl](/stl-SourceFiles/MH5_Empennage.stl)                            |
+| Empennage Right Half     | [MH5_Empennage.stl](/stl-SourceFiles/MH5_Empennage.stl) *Mirrored*                 |
+| Lid Left Half            | [MH5_Lid.stl](/stl-SourceFiles/MH5_Lid.stl)                                        |
+| Lid Right Half           | [MH5_Lid.stl](/stl-SourceFiles/MH5_Lid.stl) *Mirrored*                             |
+| Fin (2)                  | [MH5_FinLeft.stl](/stl-SourceFiles/MH5_FinLeft.stl)                                |
+| Left Wing                | [MH5_WingLeft.stl](/stl-SourceFiles/MH5_WingLeft.stl)                              |
+| Right Wing               | [MH5_WingLeft.stl](/stl-SourceFiles/MH5_WingLeft.stl) *Mirrored*                   |
+| Elevon Control Horn (2)  | [MH5_ControlHorn.stl](/stl-SourceFiles/MH5_ControlHorn.stl)                        |
+| Left Nacelle Left Half   | [MH5_NacelleB.stl](/stl-SourceFiles/MH5_NacelleB.stl)                              |
+| Left Nacelle Right Half  | [MH5_NacelleA.stl](/stl-SourceFiles/MH5_NacelleA.stl)                              |
+| Left Motor Mount         | [MH5_TiltMount.stl](/stl-SourceFiles/MH5_TiltMount.stl)                            |
+| Right Nacelle Left Half  | [MH5_NacelleA.stl](/stl-SourceFiles/MH5_NacelleA.stl) *Mirrored*                   |
+| Right Nacelle Right Half | [MH5_NacelleB.stl](/stl-SourceFiles/MH5_NacelleB.stl) *Mirrored*                   |
+| Right Motor Mount        | [MH5_TiltMount.stl](/stl-SourceFiles/MH5_TiltMount.stl) *Mirrored*                 |
+| Flight Controller Tray   | [MH5_ControllerTray.stl](/stl-SourceFiles/MH5_ControllerTray.stl)                  |
+| Battery Tray             | [MH5_BatteryTray.stl](/stl-SourceFiles/MH5_BatteryTray.stl)                        |
 
 # Build Sequence
 
@@ -186,8 +186,8 @@ For the MH5_ControlHornSet and MH5_TraySet, print 100% Solid or as desired. Thes
 | CH 2        | Pitch               | Nose Up        | Neutral    | Nose Down               |                                                                |
 | CH 3        | Throttle/Collective | Idle           | 50% Thrust | 100% Thrust             | Using Stick Arming, Low+Right to ARM                           |
 | CH 4        | Rudder              | Yaw Left       | Neutral    | Yaw Right               |                                                                |
-| CH 5        | VTOL Condition      | Forward-Flight | 50/50      | Hover (endpoint@1833us) | 3-Position Switch, use Slow-Up/Slow-Dn to slow sweep-rate      |
-| CH 6        | Self-Level          | Disabled       | ---        | ACTIVE                  | HORIZON Mode in Betaflight                                     |
+| CH 5        | VTOL Condition      | Forward-Flight | 50/50      | Hover                   | 3-Position Switch, use Slow-Up/Slow-Dn to slow sweep-rate      |
+| CH 6        | Self-Level, F/S     | Disabled       | LEVEL Mode | LEVEL Mode, FAILSAFE    | LEVEL Mode @ 1500us, Receiver lost-link failsafe set to 2000us |
 | CH 7        | Elevon PID          | Disabled       | ---        | ACTIVE                  | Elevons participate in stabilization, direct control otherwise |
 | CH 8        | Forward-Flight Trim | Nose-Up Trim   | Neutral    | Nose-Down Trim          | Analog Potentiometer Knob                                      |
 
@@ -206,39 +206,14 @@ The analog potentiometer used for Forward-Flight Trim is necessary, as the trim 
 | S8    | Right Motor ESC     |
 
 ## Betaflight CLI
-The following CLI listing must be run on the flight controller prior to powering up with any motors or servos attached. **WARNING!** Modern ESC protocols (such as OneShot or DShot) do not play well with servos if accidentally connected. As best, the servo will filter out the packet, but in some cases the servo will burn out.
+Select the appropiate CLI listing in `/cfg-Config` to run on the flight controller prior to powering up with any motors or servos attached. **WARNING!** Modern ESC protocols (such as OneShot or DShot) do not play well with servos if accidentally connected. As best, the servo will filter out the packet, but in some cases the servo will burn out.
 
+MATEK F722-WING: [BTFL_cli_MiniHawk_MatekF722WING.txt](/cfg-Config/BTFL_cli_MiniHawk_MatekF722WING.txt)
+
+Some selected lines that should be fairly consistent across all hardware:
 ```bash
-# diff all
-
-# version
-# Betaflight / STM32F7X2 (S7X2) 4.2.0 Jun 14 2020 / 03:05:26 (8f2d21460) MSP API: 1.43
-# config: manufacturer_id: MTKS, board_name: MATEKF722SE, version: f173f9bc, date: 2019-10-02T14:43:13Z
-
-# start the command batch
-batch start
-
-# reset configuration to default settings
-defaults nosave
-
-board_name MATEKF722SE
-manufacturer_id MTKS
-mcu_id 001700353238510e36353235
-signature 
-
-# resources
-resource MOTOR 1 B06
-resource MOTOR 2 B07
-resource MOTOR 3 A15
-resource MOTOR 4 B03
-resource MOTOR 5 NONE
-resource MOTOR 6 NONE
-resource MOTOR 7 NONE
-resource MOTOR 8 NONE
-resource SERVO 1 B04
-resource SERVO 2 B05
-resource SERVO 3 B00
-resource SERVO 4 B01
+# feature
+feature MOTOR_STOP
 
 # mixer
 mixer CUSTOMAIRPLANE
@@ -247,55 +222,59 @@ mmix 1  1.000 -1.000 -0.667  0.000
 mmix 2  1.000  0.000  1.333  0.000
 
 # servo mixer
-smix 0 4 2 -50 0 0 100 2
-smix 1 5 2 -50 0 0 100 2
-smix 2 4 8 100 1 0 100 0
-smix 3 5 8 -100 1 0 100 0
-smix 4 2 4 50 0 0 100 0
-smix 5 2 5 50 0 0 100 0
-smix 6 3 4 50 0 0 100 0
-smix 7 3 5 -50 0 0 100 0
-smix 8 2 0 100 0 0 100 1
-smix 9 3 0 100 0 0 100 1
-smix 10 2 1 100 0 0 100 1
-smix 11 3 1 -100 0 0 100 1
-smix 12 2 11 50 0 0 100 0
-smix 13 3 11 -50 0 0 100 0
+smix 0 4 2 -10 0 0 100 2
+smix 1 5 2 -10 0 0 100 2
+smix 2 4 2 -50 0 0 100 3
+smix 3 5 2 -50 0 0 100 3
+smix 4 4 8 100 1 0 83 0
+smix 5 5 8 -100 1 17 100 0
+smix 6 2 4 50 0 0 100 0
+smix 7 3 4 50 0 0 100 0
+smix 8 2 5 50 0 0 100 0
+smix 9 3 5 -50 0 0 100 0
+smix 10 2 0 20 0 0 100 1
+smix 11 3 0 20 0 0 100 1
+smix 12 2 1 20 0 0 100 1
+smix 13 3 1 -20 0 0 100 1
+smix 14 2 11 50 0 0 100 0
+smix 15 3 11 -50 0 0 100 0
 
 # vmix
 vmix 0 4  1.000  0.000  0.390  0.720  0.940  1.000
 vmix 1 4  1.000  0.000  0.390  0.720  0.940  1.000
 vmix 2 4  0.000  0.000  0.390  0.720  0.940  1.000
-vmix 3 0  0.000  0.000  0.000  0.000  0.000  0.000
-vmix 4 0  0.000  0.000  0.000  0.000  0.000  0.000
-vmix 5 0  0.000  0.000  0.000  0.000  0.000  0.000
-vmix 6 0  0.000  0.000  0.000  0.000  0.000  0.000
-vmix 7 0  0.000  0.000  0.000  0.000  0.000  0.000
-
-# feature
-## feature -RX_SERIAL
-## feature RX_PPM
-feature MOTOR_STOP
 
 # aux
-aux 0 2 1 1600 2100 0 0
-aux 1 19 2 1600 2100 0 0
-aux 2 23 2 1600 2100 0 0
-aux 3 24 0 1400 2100 0 0
-aux 4 41 2 1600 2100 0 0
+aux 0 1 1 1400 2100 0 0
+aux 1 27 1 1800 2100 0 0
+aux 2 13 1 1800 2100 0 0
+aux 3 23 2 1600 2100 0 0
+aux 4 24 0 1325 1675 0 0
+aux 5 25 0 1675 2100 0 0
+aux 6 28 2 1600 2100 0 0
+
+# rxfail
+rxfail 4 s 2000
+rxfail 5 h
+rxfail 6 s 2000
 
 # master
-## set acc_calibration = 355,27,285,1
-## set mag_hardware = NONE
 set min_throttle = 1000
-## set motor_pwm_protocol = DSHOT600
-## set motor_pwm_rate = 16000
+set dshot_idle_value = 0
+set motor_pwm_protocol = DSHOT600
+set motor_pwm_rate = 16000
+set failsafe_off_delay = 100
+set failsafe_throttle = 1300
+set failsafe_procedure = AUTO-LAND
+set beeper_dshot_beacon_tone = 3
 set debug_mode = GYRO_SCALED
 set enable_stick_arming = ON
+set name = MiniHawk
 
 profile 0
 
 # profile 0
+set pid_at_min_throttle = OFF
 set p_pitch = 40
 set i_pitch = 30
 set d_pitch = 20
@@ -305,66 +284,13 @@ set i_roll = 60
 set d_roll = 10
 set f_roll = 0
 set p_yaw = 60
-set i_yaw = 40
+set i_yaw = 5
 set f_yaw = 0
+set angle_level_strength = 30
+set horizon_level_strength = 30
 set d_min_roll = 0
 set d_min_pitch = 0
 
-profile 1
-
-# profile 1
-set p_pitch = 40
-set i_pitch = 30
-set d_pitch = 20
-set f_pitch = 0
-set p_roll = 120
-set i_roll = 60
-set d_roll = 20
-set f_roll = 0
-set p_yaw = 60
-set i_yaw = 40
-set f_yaw = 0
-set d_min_roll = 0
-set d_min_pitch = 0
-
-profile 2
-
-# profile 2
-set p_pitch = 40
-set i_pitch = 30
-set d_pitch = 20
-set f_pitch = 0
-set p_roll = 120
-set i_roll = 60
-set d_roll = 30
-set f_roll = 0
-set p_yaw = 60
-set i_yaw = 40
-set f_yaw = 0
-set d_min_roll = 0
-set d_min_pitch = 0
-
-# restore original profile selection
-profile 0
-
-rateprofile 0
-
-rateprofile 1
-
-rateprofile 2
-
-rateprofile 3
-
-rateprofile 4
-
-rateprofile 5
-
-# restore original rateprofile selection
-rateprofile 0
-
-# save configuration
-save
-# 
 ```
 
 ## Remarks:
