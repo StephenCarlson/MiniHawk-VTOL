@@ -1,0 +1,237 @@
+# diff all
+
+# version
+# Betaflight / MATEKF722SE (MF7S) 4.3.0 Jul 27 2020 / 16:52:58 (norevision) MSP API: 1.44
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name MATEKF722SE
+manufacturer_id MTKS
+mcu_id 001700353238510e36353235
+signature 
+
+# name: MiniHawk
+
+# resources
+resource MOTOR 1 B06
+resource MOTOR 2 B07
+resource MOTOR 3 A15
+resource MOTOR 4 B03
+resource MOTOR 5 NONE
+resource MOTOR 6 NONE
+resource MOTOR 7 NONE
+resource MOTOR 8 NONE
+resource SERVO 1 B04
+resource SERVO 2 B05
+resource SERVO 3 B00
+resource SERVO 4 B01
+
+# feature
+# Uncomment both lines below for PPM Receiver, or as required
+#feature -RX_SERIAL
+#feature RX_PPM
+feature MOTOR_STOP
+
+# serial
+serial 3 2048 115200 57600 0 115200
+
+# mixer
+mixer CUSTOMAIRPLANE
+mmix 0  1.000  1.000 -0.667  0.000
+mmix 1  1.000 -1.000 -0.667  0.000
+mmix 2  1.000  0.000  1.333  0.000
+
+# servo mixer
+smix 0 4 2 -10 0 0 100 2
+smix 1 5 2 -10 0 0 100 2
+smix 2 4 2 -50 0 0 100 3
+smix 3 5 2 -50 0 0 100 3
+smix 4 4 8 100 1 0 83 0
+smix 5 5 8 -100 1 17 100 0
+smix 6 2 4 50 0 0 100 0
+smix 7 3 4 50 0 0 100 0
+smix 8 2 5 50 0 0 100 0
+smix 9 3 5 -50 0 0 100 0
+smix 10 2 0 20 0 0 100 1
+smix 11 3 0 20 0 0 100 1
+smix 12 2 1 20 0 0 100 1
+smix 13 3 1 -20 0 0 100 1
+smix 14 2 11 50 0 0 100 0
+smix 15 3 11 -50 0 0 100 0
+
+# vmix
+vmix 0 4  1.000  0.000  0.390  0.720  0.940  1.000
+vmix 1 4  1.000  0.000  0.390  0.720  0.940  1.000
+vmix 2 4  0.000  0.000  0.390  0.720  0.940  1.000
+vmix 3 0  0.000  0.000  0.000  0.000  0.000  0.000
+vmix 4 0  0.000  0.000  0.000  0.000  0.000  0.000
+vmix 5 0  0.000  0.000  0.000  0.000  0.000  0.000
+vmix 6 0  0.000  0.000  0.000  0.000  0.000  0.000
+vmix 7 0  0.000  0.000  0.000  0.000  0.000  0.000
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# aux
+aux 0 1 1 1400 2100 0 0
+aux 1 27 1 1800 2100 0 0
+aux 2 13 1 1800 2100 0 0
+aux 3 23 2 1600 2100 0 0
+aux 4 24 0 1325 1675 0 0
+aux 5 25 0 1675 2100 0 0
+aux 6 28 2 1600 2100 0 0
+
+# vtxtable
+# Configured for the AKK Infinite DVR VTx
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665    0 5885 5905    0    0
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 4
+vtxtable powervalues 0 1 2 3
+vtxtable powerlabels 25 200 600 1K
+
+# rxfail
+rxfail 4 s 2000
+rxfail 5 h
+rxfail 6 s 2000
+
+# master
+# Accelerometer calibration provided for reference below, do not reuse.
+# set acc_calibration = 271,79,291,1
+set mag_hardware = NONE
+set min_throttle = 1000
+set dshot_idle_value = 0
+set motor_pwm_protocol = DSHOT600
+set motor_pwm_rate = 16000
+set failsafe_off_delay = 100
+set failsafe_throttle = 1300
+set failsafe_procedure = AUTO-LAND
+set bat_capacity = 1200
+set ibata_scale = 250
+set beeper_dshot_beacon_tone = 3
+set osd_warn_batt_not_full = OFF
+set osd_warn_over_cap = ON
+set osd_cap_alarm = 1100
+set osd_alt_alarm = 999
+set osd_tim1 = 0
+set osd_tim2 = 1
+set osd_vbat_pos = 2369
+set osd_tim_1_pos = 407
+set osd_tim_2_pos = 2455
+set osd_flymode_pos = 2177
+set osd_g_force_pos = 2265
+set osd_throttle_pos = 2393
+set osd_crosshairs_pos = 2254
+set osd_ah_pos = 2127
+set osd_current_pos = 2401
+set osd_mah_drawn_pos = 2433
+set osd_motor_diag_pos = 2425
+set osd_craft_name_pos = 2443
+set osd_altitude_pos = 2102
+set osd_warnings_pos = 14442
+set osd_nvario_pos = 2134
+set osd_core_temp_pos = 2241
+set osd_log_status_pos = 2273
+set osd_stat_max_spd = OFF
+set osd_stat_min_rssi = OFF
+set osd_stat_max_g_force = ON
+set osd_stat_total_time = ON
+set debug_mode = GYRO_SCALED
+set enable_stick_arming = ON
+set vtx_band = 4
+set vtx_channel = 1
+set vtx_power = 1
+set vtx_freq = 5740
+set name = MiniHawk
+
+profile 0
+
+# profile 0
+set pid_at_min_throttle = OFF
+set p_pitch = 40
+set i_pitch = 30
+set d_pitch = 20
+set f_pitch = 0
+set p_roll = 120
+set i_roll = 60
+set d_roll = 10
+set f_roll = 0
+set p_yaw = 60
+set i_yaw = 5
+set f_yaw = 0
+set angle_level_strength = 30
+set horizon_level_strength = 30
+set d_min_roll = 0
+set d_min_pitch = 0
+
+profile 1
+
+# profile 1
+set pid_at_min_throttle = OFF
+set p_pitch = 40
+set i_pitch = 30
+set d_pitch = 20
+set f_pitch = 0
+set p_roll = 120
+set i_roll = 60
+set d_roll = 10
+set f_roll = 0
+set p_yaw = 60
+set i_yaw = 40
+set f_yaw = 0
+set angle_level_strength = 30
+set horizon_level_strength = 30
+set d_min_roll = 0
+set d_min_pitch = 0
+
+profile 2
+
+# profile 2
+set pid_at_min_throttle = OFF
+set p_pitch = 40
+set i_pitch = 30
+set d_pitch = 20
+set f_pitch = 0
+set p_roll = 120
+set i_roll = 60
+set d_roll = 10
+set f_roll = 0
+set p_yaw = 80
+set i_yaw = 10
+set d_yaw = 20
+set f_yaw = 0
+set angle_level_strength = 30
+set horizon_level_strength = 30
+set d_min_roll = 0
+set d_min_pitch = 0
+
+# restore original profile selection
+profile 1
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 
