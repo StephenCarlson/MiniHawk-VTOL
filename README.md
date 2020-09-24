@@ -13,8 +13,9 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
   1.2 [Remarks / FAQs](#head-faqs)  
   1.3 [Metrics](#head-metrics)  
 2. [Build Information](#build-brief)  
-  2.1 [Electronics and Components](#build-components)  
-  2.2 [Airframe Parts Listing](#build-airframeparts)  
+  2.1 [Recommended Tools](#build-tools)
+  2.2 [Components and Electronics](#build-components)  
+  2.3 [Airframe Parts Listing](#build-airframeparts)  
 3. [Build Steps](#buildseq-brief)  
   3.1 [Part 1 - Airframe Structures](#buildseq-part1)  
   3.2 [Part 2 - Linkages and Servos](#buildseq-part2)  
@@ -23,9 +24,9 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
 5. [3D Printing Guidelines](#3dprinting-brief)  
 6. [Betaflight](#betaflight-brief)  
   6.1 [R/C Controls Configuration](#betaflight-controlsconfig)  
-  6.1 [Flight Controller Connections](#betaflight-connections)  
-  6.1 [CLI Parameters](#betaflight-cli)  
-  6.1 [Remarks](#betaflight-remarks)  
+  6.2 [Flight Controller Connections](#betaflight-connections)  
+  6.3 [CLI Parameters](#betaflight-cli)  
+  6.4 [Remarks](#betaflight-remarks)  
 
 ## Description <a name="head-description"></a>
 The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in mind, and is intended to provide the community with a common and accessable VTOL testbed for experimentation and tinkering. The vehicle uses three (3) brushless DC motors for propulsion, with the forward pair tilting for forward flight and yaw control, and the rear motor fixed for hover only. Four (4) servos are used to tilt the forward motors and to control the elevon control surfaces of the wing. The airframe is a "plank"-style wing with a center body containing avionics and battery, and internal conduits routing to the nacelles and servos. Twin vertical stabilizer fins provide mild directional stability.  
@@ -71,7 +72,7 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | 1   | R/C Receiver, 8+ Channel, SBUS or PPM Output         |                                                    |
 | 3   | ESC (3s, 20A or better)                              |                                                    |
 | 2   | **DYS BE1806 2300KV BLDC Motor**                     | (Note 1)                                           |
-| 1   | 22xx 2000KV BLDC Motor                               | (Note 2)                                          |
+| 1   | 22xx 2000KV BLDC Motor                               | (Note 2)                                           |
 | 1   | 3s1300 Lipoly (40C or better)                        |                                                    |
 | 1   | XT60 Pigtail or equiv.                               |                                                    |
 | 2   | HS-65HB Servo (or equiv.)                            | Elevon Servos, see (Note 3).                       |
