@@ -13,7 +13,7 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
   1.2 [Remarks / FAQs](#head-faqs)  
   1.3 [Metrics](#head-metrics)  
 2. [Build Information](#build-brief)  
-  2.1 [Recommended Tools](#build-tools)
+  2.1 [Recommended Tools](#build-tools)  
   2.2 [Components and Electronics](#build-components)  
   2.3 [Airframe Parts Listing](#build-airframeparts)  
 3. [Build Steps](#buildseq-brief)  
