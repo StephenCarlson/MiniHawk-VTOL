@@ -1,3 +1,5 @@
+<img src="MiniHawkIso.png" width="400">
+
 # MiniHawk-VTOL
 Mechanical artwork for the MiniHawk VTOL, a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, and successor to the [OrangeHawk VTOL](https://diydrones.com/profiles/blogs/the-orange-hawk-tricopter-flying-wing-vtol-uav).  
 
