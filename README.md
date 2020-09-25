@@ -1,9 +1,14 @@
 <img src="MiniHawkIso.png" width="400">
 
 # MiniHawk-VTOL <a name="head-brief"></a>
-Mechanical artwork for the MiniHawk VTOL, a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, and successor to the [OrangeHawk VTOL](https://diydrones.com/profiles/blogs/the-orange-hawk-tricopter-flying-wing-vtol-uav).  
+The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable of Vertical Take-off and Landing. As with it's predecessor, the [OrangeHawk VTOL](https://diydrones.com/profiles/blogs/the-orange-hawk-tricopter-flying-wing-vtol-uav), the MiniHawk is intended for R/C, FPV and UAV experimentation.  Mechanical artwork, build instructions, and configuration settings are provided in this repository.  
 
-Betaflight VTOL firmware build: [vtol-motor-mix](https://github.com/StephenCarlson/betaflight/tree/vtol-motor-mix)  
+**Milestones**
+| Date | Event |
+|------|-------|
+| 25 Sept | Pre-release |
+
+Betaflight VTOL Firmware Build: [vtol-motor-mix](https://github.com/StephenCarlson/betaflight/tree/vtol-motor-mix)  
 
 Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)  
 
@@ -27,6 +32,7 @@ Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/play
   6.2 [Flight Controller Connections](#betaflight-connections)  
   6.3 [CLI Parameters](#betaflight-cli)  
   6.4 [Remarks](#betaflight-remarks)  
+7. [License](#license-brief)  
 
 ## Description <a name="head-description"></a>
 The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in mind, and is intended to provide the community with a common and accessable VTOL testbed for experimentation and tinkering. The vehicle uses three (3) brushless DC motors for propulsion, with the forward pair tilting for forward flight and yaw control, and the rear motor fixed for hover only. Four (4) servos are used to tilt the forward motors and to control the elevon control surfaces of the wing. The airframe is a "plank"-style wing with a center body containing avionics and battery, and internal conduits routing to the nacelles and servos. Twin vertical stabilizer fins provide mild directional stability.  
@@ -35,8 +41,8 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 - As this is a totally 3D-printed airframe, the fully-finished vehicle is moderately heavy, which is a handicap, especially in the hovering mode of flight. As such, be gentle and cautious in adding any additional weight. For the recommended print settings with a 0.4mm nozzle, the airframe alone weights a bit over 300g, and the all-up-weight of the finished vehicle is between 700g and 800g.  
 - The parts used in this project are commonly available in the drone racing and R/C plane market(s). The only known limiting component is the DYS BE1806 motor, which is an older (~2015 era) motor with a diameter of 23mm and around 80W power. A standard 22xx- or 23xx-sized motor can be used on the tail, but the nacelle design was modeled specifically for the DYS BE1806-2300KV. A future revision may increase the nacelle size to be able to mount 22xx-sized motors. Another potentially limiting component is the GreatPlanes GPMQ3843 Threaded Ball-Link set.  
 - The aerodynamics and stability of the vehicle are still under analysis and subject to revision. The CFD poses/cases used for aerodynamics analysis are included for independent study.  
-- Most project files are prefixed with "MH5", as this is the 5th internal revision of the design of the MiniHawk VTOL. The "MH#" prefix is incidental and not to be confused with the MH airfoil series, of which the MH45 is used for this vehicle. Generally, "MiniHawk" is the correct name for this design and any revisions to be released.
-- This vehicle was designed in Autodesk Inventor Professional 2019. The Solid Models and Assembly files for this vehicle are withheld at the time of this writing, contact me for inquires on obtaining a copy or further development.  
+- Most project files are prefixed with "MH5", as this is the 5th internal revision of the design of the MiniHawk VTOL. The "MH#" prefix is incidental and not to be confused with the MH airfoil series, of which the MH45 is used for this vehicle. Generally, "MiniHawk VTOL" is the correct name for this design and any revisions to be released.
+- This vehicle was designed in Autodesk Inventor Professional 2019. While compiled STLs are provided, the Solid Model and Assembly files for this vehicle are withheld at the time of this writing; contact me for inquires on obtaining a copy or further development.  
 - The Rear Strakes are recent additions to the design to compensate for poor directional stability. The aircraft does not weathervane into the relative wind well without them, and may yet require even larger vertical stabilization surfaces, not unlike the early days of the F-117 stealth aircraft. Another late addition to the design is the Lid FPV Variant, which supports the Foxeer -Nano camera formfactor (15mm width) and has a 30.5mm grid for a video transmitter, such as the AKK Infinite DVR.  
 
 ## Metrics <a name="head-metrics"></a>
@@ -338,3 +344,7 @@ The Resource allocation in the F722-Wing has been shifted here to allow for the 
 
 The PIDs listed above have proven to be stable in hover testing. In the CLI Configuration file(s), I've commented-out lines that may not be relevant, such as accelerometer calibration and RX_PPM, make your own adjustments as needed. Blackbox debugging is set to `2kHz` and `GYRO_SCALED` in the GUI, which may emmit entries under *master*. I've been using [Plasmatree](https://github.com/Plasmatree/PID-Analyzer) for tuning and finding vibration noise in the sensory path.  
 
+# License <a name="license-brief"></a>
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.  
+
+The software configuration text files provided here likely fall under the same license as Betaflight, GPL-3.0 at the time of this writing.  
