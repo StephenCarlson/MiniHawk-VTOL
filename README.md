@@ -1,4 +1,4 @@
-<img src="MiniHawkIso.png" width="400">
+<img src="MiniHawkIso.png" width="400" />
 
 # MiniHawk-VTOL <a name="head-brief"></a>
 The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable of Vertical Take-off and Landing. As with its predecessor, the [OrangeHawk VTOL](https://diydrones.com/profiles/blogs/the-orange-hawk-tricopter-flying-wing-vtol-uav), the MiniHawk is intended for R/C, FPV and UAV experimentation.  Mechanical artwork, build instructions, and configuration settings are provided in this repository.  
@@ -136,7 +136,7 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 # Build Sequence <a name="buildseq-brief"></a>
 The following instructions assume that a full set of airframe parts have been printed, as enumerated above.
 
-[Figure-1]: </doc-Documentation/Figure-1.png> "Figure 1 - Hinge Pin Clearance"
+[Figure-1]: </doc-Documentation/Figure-1.png> "Figure 1 - Hinge Pin Clearance" 
 [Figure-2]: </doc-Documentation/Figure-2.png> "Figure 2 - Elevon Movement Cuts"
 [Figure-3]: </doc-Documentation/Figure-3.png> "Figure 3 - Hatch/Lid Bonding"
 [Figure-4]: </doc-Documentation/Figure-4.png> "Figure 4 - Empennage Halves Bonding"
@@ -366,3 +366,6 @@ The PIDs listed above have proven to be stable in hover testing. In the CLI Conf
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.  
 
 The software configuration text files provided here likely fall under the same license as Betaflight, GPL-3.0 at the time of this writing.  
+
+MiniHawk VTOL - Design, Documentation, Images and all other Artwork; by Steve Carlson  
+[https://github.com/StephenCarlson/MiniHawk-VTOL](https://github.com/StephenCarlson/MiniHawk-VTOL)
