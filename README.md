@@ -12,6 +12,8 @@ Betaflight VTOL Firmware Build: [vtol-motor-mix](https://github.com/StephenCarls
 
 Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)  
 
+Project Page at Hackaday: [HACKADAY.IO Page](https://hackaday.io/project/175286-minihawk-vtol)
+
 # Table of Contents
 1. [Introduction](#head-brief)  
   1.1 [Description](#head-description)  
