@@ -6,7 +6,8 @@ The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable 
 **Milestones**
 | Date | Event |
 |------|-------|
-| 15 Oct 2020  | Initial Release (Rev-0) |
+| 15 Oct 2020  | Initial Release (v1.0) |
+| prerelease | Version 2 (v2.0, MH7_ prefix) |
 
 Betaflight VTOL Firmware Build: [vtol-motor-mix](https://github.com/StephenCarlson/betaflight/tree/vtol-motor-mix)  
 
@@ -41,11 +42,11 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 
 ## Remarks / FAQs <a name="head-faqs"></a>
 - As this is a totally 3D-printed airframe, the fully-finished vehicle is moderately heavy, which is a handicap, especially in the hovering mode of flight. As such, be gentle and cautious in adding any additional weight. For the recommended print settings with a 0.4mm nozzle, the airframe alone weights a bit over 300g, and the all-up-weight of the finished vehicle is between 700g and 800g.  
-- The parts used in this project are commonly available in the drone racing and R/C plane market(s). The only known limiting component is the DYS BE1806 motor, which is an older (~2015 era) motor with a diameter of 23mm and around 80W power. A standard 22xx- or 23xx-sized motor can be used on the tail, but the nacelle design was modeled specifically for the DYS BE1806-2300KV. A future revision may increase the nacelle size to be able to mount 22xx-sized motors. Another potentially limiting component is the GreatPlanes GPMQ3843 Threaded Ball-Link set.  
+- The parts used in this project are commonly available in the drone racing and R/C plane market(s). ~~The only known limiting component is the DYS BE1806 motor, which is an older (~2015 era) motor with a diameter of 23mm and around 80W power. A standard 22xx- or 23xx-sized motor can be used on the tail, but the nacelle design was modeled specifically for the DYS BE1806-2300KV. A future revision may increase the nacelle size to be able to mount 22xx-sized motors. Another potentially limiting component is the GreatPlanes GPMQ3843 Threaded Ball-Link set.~~ Limitations solved in the v2.0 prerelease. Dubro #181 and Dubro #190 are acceptable substitutions to the GPMQ3843, which is apperently discontinued in 2021.
 - The aerodynamics and stability of the vehicle are still under analysis and subject to revision. The CFD poses/cases used for aerodynamics analysis are included for independent study.  
-- Most project files are prefixed with "MH5", as this is the 5th internal revision of the design of the MiniHawk VTOL. The "MH#" prefix is incidental and not to be confused with the MH airfoil series, of which the MH45 is used for this vehicle. Generally, "MiniHawk VTOL" is the correct name for this design and any revisions to be released.
-- This vehicle was designed in Autodesk Inventor Professional 2019. While compiled STLs are provided, the Solid Model and Assembly files for this vehicle are withheld at the time of this writing; contact me for inquires on obtaining a copy or further development.  
-- The Rear Strakes are recent additions to the design to compensate for poor directional stability. The aircraft does not weathervane into the relative wind well without them, and may yet require even larger vertical stabilization surfaces, not unlike the early days of the F-117 stealth aircraft. Another late addition to the design is the Lid FPV Variant, which supports the Foxeer -Nano camera formfactor (15mm width) and has a 30.5mm grid for a video transmitter, such as the AKK Infinite DVR.  
+- Most project files are prefixed with "MH5", as this is the 5th internal revision of the design of the MiniHawk VTOL. __(UPDATE: Version 2 is "MH7", the old MH5 parts are retained in the repo for now.)__ The "MH#" prefix is incidental and not to be confused with the MH airfoil series, of which the MH45 is used for this vehicle. Generally, "MiniHawk VTOL" is the correct name for this design and any revisions to be released.
+- This vehicle was designed in Autodesk Inventor Professional 2019. While compiled STLs are provided, the Solid Model and Assembly files for this vehicle are withheld at the time of this writing; contact me for inquires on obtaining a copy or further development. __(UPDATE: A STEP/STP of the Hatch/Lid is included for community derivations. Otherwise, source files are retained but STLs are open-access as usual.)__
+- ~~The Rear Strakes are recent additions to the design to compensate for poor directional stability. The aircraft does not weathervane into the relative wind well without them, and may yet require even larger vertical stabilization surfaces, not unlike the early days of the F-117 stealth aircraft.~~ Another late addition to the design is the Lid FPV Variant, which supports the Foxeer -Nano camera formfactor (15mm width) and has a 30.5mm grid for a video transmitter, such as the AKK Infinite DVR. __(UPDATE: Version 2 / MH7 has a Hatch/Lid for up to a 16mm FPV camera, and the 30.5mm grid for the VTX)__
 
 ## Metrics <a name="head-metrics"></a>
 | Description              | Value                     |
@@ -54,10 +55,10 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | Wing Area                | 15.6dm^2                  |
 | Aspect Ratio             | 4.1                       |
 | Airfoil (Root and Tip)   | [MH45][1]                 |
-| Length                   | 396mm                     |
+| Length                   | ~~396mm~~                 |
 | Rotor Spacing            | 315mm Circle              |
-| Lipoly Battery           | 3s to 4s, 1300mAh         |
-| Motors (front)           | DYS BE1806 2300kV or eqv. |
+| Lipoly Battery           | 4s, 1300-1500mAh (~160g)  |
+| Motors (front)           | 22xx or 23xx 2300-2600kV  |
 | Motor (rear)             | 22xx or 23xx ~2000kV      |
 | Servos                   | HS-65HB/MG or eqv.        |
 | Flight Controller (size) | 30.50mm to 16.0mm Grid    |
@@ -79,9 +80,9 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | 1   | Flight Controller (3 Motor, 4 Servo Outputs)         | Recommend: Matek Systems F722-WING                 |
 | 1   | R/C Receiver, 8+ Channel, SBUS or PPM Output         |                                                    |
 | 3   | ESC (3s, 20A or better)                              |                                                    |
-| 2   | **DYS BE1806 2300KV BLDC Motor**                     | (Note 1)                                           |
+| 2   | 22xx or 23xx BLDC Motor (Outside Diameter < 29mm)    | ~~(Note 1)~~                                       |
 | 1   | 22xx 2000KV BLDC Motor                               | (Note 2)                                           |
-| 1   | 3s1300 Lipoly (40C or better)                        |                                                    |
+| 1   | 4s1300 Lipoly (40C or better)    94061                    |                                                    |
 | 1   | XT60 Pigtail or equiv.                               |                                                    |
 | 2   | HS-65HB Servo (or equiv.)                            | Elevon Servos, see (Note 3).                       |
 | 2   | HS-65MG Servo (or equiv.)                            | Motor Tilt Servos, see (Note 4).                   |
