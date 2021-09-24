@@ -93,7 +93,7 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | 4   | 2-56 Link Clevis (Note 7)                            | Four (4) servo arm connections.                    |
 | 2   | 2-56 Threaded Linkage Rod, Length>=52mm              | Elevon pushrods, L-bend at 45mm from threaded tip. |
 | 2   | (opt) Du-Bro SKU#855 E/Z Links 0.72 (2-56) Clip      | For securing L-Bends, can replace with Z-bend.     |
-| 2   | 1/16-inch 2-56 Ball Link and Coupler Pair            | **GreatPlanes GPMQ3843**, see (Note 8).            |
+| 2   | 1/16-inch 2-56 Ball Link and Coupler Pair            | Dubro #181 or Dubro #190, see (Note 8).            |
 | 2   | 2-56 Fully-Threaded Rod, Length=60mm                 | End1=(Link 2-56 Clevis), End2=(2-56 Ball Coupler)  |
 | 2   | 2-56 Smooth Rod, Length=24mm                         | (Note 9)                                           |
 | 2   | (opt) WS2812 5050 SMD (or equiv. Addressable LED)    | Soldered with magnet wire, mounted in wingtips.    |
@@ -111,7 +111,7 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 > Note 5: Can be omitted, but 3D-printed living-hinge on elevons will eventually fail, mend appropriately. SKU#118 is 6 per package, SKU#119 for 15/pkg.  
 > Note 6: Alternatively, cut the servo cables and solder in-line extensions for the cables to reach to the flight controller, plus some slack.  
 > Note 7: The clevises and rods can be purchased as a set, such as Du-Bro SKU#185, which is a set of 5 rods with clevises already attached.  
-> Note 8: **CRITICAL!!!** The Ball Link thread must be "116", 1/16-inch, 62.5mil, or 1.59mm. The more popular variant of this type of part has a 2-56 thread size ball, which is too big for the nacelle motor tilt attachment. Note that this is the ball-link thread size; the coupler that captures the ball is 2-56 threaded. This ball-link set attaches from the motor tilt servo linkage to the motor tilt mount, which holds the front left/right motor.  
+> Note 8: **CRITICAL!!!** The Ball Link thread must be "116", 1/16-inch, 62.5mil, or 1.59mm. The more popular variant of this type of part has a 2-56 thread size ball, which is too big for the nacelle motor tilt attachment. Note that this is the ball-link thread size; the coupler that captures the ball is 2-56 threaded. This ball-link set attaches from the motor tilt servo linkage to the motor tilt mount, which holds the front left/right motor. The previous suggestion for this part was GreatPlanes GPMQ3843, but it has been discontinued.
 > Note 9: Diameter=[1.83mm to 1.87mm], formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle.  
 
 ## Airframe Parts: <a name="build-airframeparts"></a>
