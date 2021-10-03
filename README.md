@@ -30,12 +30,12 @@ Project Page at Hackaday: [HACKADAY.IO Page](https://hackaday.io/project/175286-
   3.3 [Part 3 - Electronics and Finishing](#buildseq-part3)  
 4. [Flight Testing](#flight-brief)  
 5. [3D Printing Guidelines](#3dprinting-brief)  
-6. [Betaflight](#betaflight-brief)  
-  6.1 [R/C Controls Configuration](#betaflight-controlsconfig)  
-  6.2 [Flight Controller Connections](#betaflight-connections)  
-  6.3 [CLI Parameters](#betaflight-cli)  
-  6.4 [Remarks](#betaflight-remarks)  
-7. [License](#license-brief)  
+6. [ArduPlane](#arduplane-brief)  
+  6.1 [R/C Controls Configuration](#arduplane-controlsconfig)  
+  6.2 [Flight Controller Connections](#arduplane-connections)  
+  6.3 [Parameters](#arduplane-parameters)  
+  6.4 [Remarks](#arduplane-remarks)  
+8. [License](#license-brief)  
 
 ## Description <a name="head-description"></a>
 The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in mind, and is intended to provide the community with a common and accessible VTOL testbed for experimentation and tinkering. The vehicle uses three (3) brushless DC motors for propulsion, with the forward pair tilting for forward flight and yaw control, and the rear motor fixed for hover only. Four (4) servos are used to tilt the forward motors and to control the elevon control surfaces of the wing. The airframe is a "plank"-style wing with a center body containing avionics and battery, and internal conduits routing to the nacelles and servos. Twin vertical stabilizer fins provide mild directional stability.  
@@ -55,7 +55,7 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | Wing Area                | 15.6dm^2                  |
 | Aspect Ratio             | 4.1                       |
 | Airfoil (Root and Tip)   | [MH45][1]                 |
-| Length                   | ~~396mm~~                 |
+| Length                   | 520mm                     |
 | Rotor Spacing            | 315mm Circle              |
 | Lipoly Battery           | 4s, 1300-1500mAh (~160g)  |
 | Motors (front)           | 22xx or 23xx 2300-2600kV  |
@@ -208,7 +208,7 @@ The following instructions assume that a full set of airframe parts have been pr
 # 3D Printing Guidelines <a name="3dprinting-brief"></a>
 Unlike other 3D-printed R/C aircraft, the MiniHawk does not have any internal structures explicitly specified, such as ribs or stringers; only the outer-mold-line of the aircraft and the bays, wiring conduits, and mounting points are defined. The internal structure is yielded to whatever infill pattern is selected in the slicing software used to convert the volume definition for 3D-Printing. The internal structures may be explicitly defined in a future revision, but otherwise it is up to the builder to define the infill pattern used. The following sections provide recommended settings for each airframe part set (matching the settings in the 3MF files).
 
-| Parameter                 | MH5_WingLeft and MH5_WingRight | MH5_Nose                | MH5_EmpennageSet        | MH5_LidPair             | MH5_NacelleSet            | MH5_TiltMountPair         |
+| Parameter                 | Left and Right Wings           | Nose                    | Empennage               | Hatch/Lid               | Nacelles                  | Motor Tilt Mounts         |
 |---------------------------|--------------------------------|-------------------------|-------------------------|-------------------------|---------------------------|---------------------------|
 | LayerHeight               | 0.2mm                          | 0.2mm                   | 0.2mm                   | 0.2mm                   | 0.2mm                     | 0.2mm                     |
 | WallThickness             | 0.4mm                          | 0.4mm                   | 0.4mm                   | 0.4mm                   | 0.8mm                     | 0.8mm                     |
@@ -227,132 +227,197 @@ Unlike other 3D-printed R/C aircraft, the MiniHawk does not have any internal st
 > Note 1: Forced to occur on trailing edge of wing.  
 > Note 2: Is slightly offset in X-direction for best structure.  
 
-For the MH5_ControlHornSet and MH5_TraySet, print 100% Solid or as desired. These pieces may be laser-cut if possible.
+For the MH7_ControlHornSet and MH7_TraySet, print 100% Solid or as desired. These pieces may be laser-cut if possible.
 
 
-# Betaflight Settings (For Matek F722-Wing) <a name="betaflight-brief"></a>
+# ArduPlane Settings <a name="arduplane-brief"></a>
+While the MiniHawk-VTOL initially was developed using the BetaFlight avionics ecosystem, ArduPilot is the reccomended ecosystem for the current design. This text section replaces the original Betaflight setup instructions which existed in this section prior to v2.0.0. The old Betaflight setup instructions can be found in the README.md file revision history.
 
-## R/C Controller Configuration (Mode 2 Controller) <a name="betaflight-controlsconfig"></a>
+## R/C Controller Configuration (Mode 2 Controller) <a name="arduplane-controlsconfig"></a>
 | R/C Channel | Description         | 1000us         | 1500us     | 2000us                  | Notes                                                          |
 |-------------|---------------------|----------------|------------|-------------------------|----------------------------------------------------------------|
 | CH 1        | Roll                | Roll Left      | Centered   | Roll Right              |                                                                |
 | CH 2        | Pitch               | Nose Up        | Neutral    | Nose Down               |                                                                |
-| CH 3        | Throttle/Collective | Idle           | 50% Thrust | 100% Thrust             | Using Stick Arming, Low+Right to ARM                           |
+| CH 3        | Throttle/Collective | Idle           | 50% Thrust | 100% Thrust             | Be careful switching between QSTABILIZE and QLOITER/QHOVER     |
 | CH 4        | Rudder              | Yaw Left       | Neutral    | Yaw Right               |                                                                |
-| CH 5        | VTOL Condition      | Forward-Flight | 50/50      | Hover                   | 3-Position Switch, use Slow-Up/Slow-Dn to slow sweep-rate      |
-| CH 6        | Self-Level, F/S     | Disabled       | LEVEL Mode | LEVEL Mode, FAILSAFE    | LEVEL Mode @ 1500us, Receiver lost-link failsafe set to 2000us |
-| CH 7        | Elevon PID          | Disabled       | ---        | ACTIVE                  | Elevons participate in stabilization, direct control otherwise |
-| CH 8        | Forward-Flight Trim | Nose-Up Trim   | Neutral    | Nose-Down Trim          | Analog Potentiometer Knob                                      |
+| CH 5        | Flight Mode Select  | FBWA           | QSTABILIZE | AUTO/RTL/AUTOTUNE       | 3-Position Switch, 2000us is formed by mixing a 2nd R/C switch |
+| CH 6        | MANUAL Override     | Disabled       | ---        | MANUAL Mode ACTIVE!     | RC6_OPTION=51, useful for hand-launching into forward-flight   |
+| CH 7        | Arming Switch       | Disabled       | ---        | ARMED!                  | RC7_OPTION=41, ArduPilot Arming/Disarming Switch               |
+| CH 8        | Momentary Switch    | Disabled       | ---        | OSD, Inverted Mode, etc | OSD Screen Cycling, Inverted (RC8_OPTION=43), other misc uses  |
 
-The analog potentiometer used for Forward-Flight Trim is necessary, as the trim setting for hover on the R/C controller may not coincide with the most comfortable forward-flight pitch trim condition. Use the trim switches/sliders on the R/C controller pitch-axis to trim when hovering, and use the knob when in forward-flight.
+Note that MANUAL Mode is a real handful, and should only be used rarely. It is included above as a kind of "cheat" to force the ArduPlane VTOL state-machine to stay in Forward-Flight when Arming, such as when you want to hand-launch the aircraft to skip the VTOL hover and forward transition. First set the aircraft to FBWA using the CH 5 Flight Mode Select Switch, and then turn on the MANUAL Override switch only for a moment and then back to disabled (Flight mode returns to FBWA as set by the Flight Mode switch). Otherwise, if you only select FBWA and then arm, the aircraft immediately reverts to the ArduPlane VTOL forward transition behavior with all three motors spinning in the hover condition.
 
-## Flight Controller Connections <a name="betaflight-connections"></a>
+## Flight Controller Connections <a name="arduplane-connections"></a>
+The following table works on the mRobotics PixRacer Pro. This should be adapted to whatever ArduPlane-compatible flight controller is otherwise used.
+
 | Pin # | Control Endpoint    |
 |-------|---------------------|
-| S1    | Left Elevon Servo   |
-| S2    | Right Elevon Servo  |
-| S3    | Right Tilt Servo    |
-| S4    | Left Tilt Servo     |
-| S5    | Rear/Tail Motor ESC |
-| S6    | NO CONNECTION       |
-| S7    | Left Motor ESC      |
-| S8    | Right Motor ESC     |
+| S1    | Right Motor ESC     |
+| S2    | Left Motor ESC      |
+| S3    | NO CONNECTION (BEC) |
+| S4    | Rear/Tail Motor ESC |
+| S5    | Left Tilt Servo     |
+| S6    | Right Tilt Servo    |
+| S7    | Left Elevon Servo   |
+| S8    | Right Elevon Servo  |
 
-## Betaflight CLI <a name="betaflight-cli"></a>
-Select the appropiate CLI listing in `/cfg-Config/` to run on the flight controller prior to powering up with any motors or servos attached. **WARNING!** Modern ESC protocols (such as OneShot or DShot) do not play well with servos if accidentally connected. At best, the servo will filter out the packet, but in some cases the servo will burn out.
+## ArduPlane Parameters <a name="arduplane-parameters"></a>
+The parameters file below represents the settings used on a typical MiniHawk-VTOL utilizing a mRo PixRacer Pro flight controller. The essential settings should be applicable to whatever ArduPlane-compatible flight controller is used, such as the Matek F405-WING or similar, but some adaptation will be required. **WARNING!** Modern ESC protocols (such as OneShot or DShot) do not play well with servos if accidentally connected. At best, the servo will filter out the packet, but in some cases the servo will burn out. Don't plug servos into the ESC outputs!
 
-MATEK F722-WING: [BTFL_cli_MiniHawk_MatekF722WING.txt](/cfg-Config/BTFL_cli_MiniHawk_MatekF722WING.txt)
+mRo PixRacer Pro: [ArduPlane_MiniHawk_mRo_PixRacerPro.param](/cfg-Config/ArduPlane_MiniHawk_mRo_PixRacerPro.param)
 
-Some selected lines that should be fairly consistent across all hardware:
-```bash
-# feature
-feature MOTOR_STOP
+While the parameters file above has over 1100 parameters, some essential parameters are examined below:
+| Parameter,Value        | Notes                                                      |
+| ---------------------- | ---------------------------------------------------------- |
+| ARSPD_FBW_MAX,32       | Full-Throttle produces around 32 to 34 m/s sprint velocity |
+| ARSPD_FBW_MIN,17       | Stall is near 15 m/s for a typical MiniHawk-VTOL           |
+| ARSPD_RATIO,1.9936     | Make sure this is calibrated for your aircraft             |
+| ARSPD_TUBE_ORDER,0     | While this can be automatic (3), manually set is better    |
+| ARSPD_TYPE,1           | MS4525D0 Pressure Sensor, adjust as needed                 |
+| ARSPD_USE,1            | Force the aircraft to use the pitot probe, no synthetic    |
+| AUTOTUNE_LEVEL,7       | 7 or 8 works best for the MiniHawk-VTOL                    |
+| EK2_ENABLE,0           | EKF2 is Disabled, in favor of EKF3                         |
+| EK3_ENABLE,1           | EKF3 was used for most flight testing of the design        |
+| FLTMODE_CH,5           | Flight Mode Channel                                        |
+| FLTMODE1,5             | FBWA, 3-position switch "Down" detent                      |
+| FLTMODE2,19            | QLOITER, 3-position switch "Middle" detent                 |
+| FLTMODE3,17            | QSTABILIZE, 3-position switch "Up" detent                  |
+| FLTMODE4,17            |                                                            |
+| FLTMODE5,17            |                                                            |
+| FLTMODE6,10            | AUTO, 2nd R/C switch that overrides the 3-position switch  |
+| FS_LONG_ACTN,1         | Failsafe Settings used in development                      |
+| FS_LONG_TIMEOUT,3      |                                                            |
+| FS_SHORT_ACTN,1        |                                                            |
+| FS_SHORT_TIMEOUT,1     |                                                            |
+| KFF_RDDRMIX,0          | Remove any possible rudder mixing                          |
+| LIM_PITCH_MAX,2000     | Pitch and Roll Angle Limits                                |
+| LIM_PITCH_MIN,-2500    |                                                            |
+| LIM_ROLL_CD,5500       |                                                            |
+| MIXING_GAIN,0.5        | Elevon Stick Mixing, value here should be default          |
+| NAVL1_PERIOD,11        | More aggressive navigation is possible, 11 to 14 tested    |
+| PTCH_RATE_D,0          | Pitch PIDs, these values are mild, AUTOTUNE will increase  |
+| PTCH_RATE_FF,0.345     |                                                            |
+| PTCH_RATE_FLTD,4       |                                                            |
+| PTCH_RATE_FLTE,7       |                                                            |
+| PTCH_RATE_FLTT,1.5     |                                                            |
+| PTCH_RATE_I,0.15       |                                                            |
+| PTCH_RATE_IMAX,0.666   |                                                            |
+| PTCH_RATE_P,0.04       |                                                            |
+| PTCH_RATE_SMAX,150     |                                                            |
+| PTCH2SRV_RLL,1         |                                                            |
+| PTCH2SRV_RMAX_DN,90    |                                                            |
+| PTCH2SRV_RMAX_UP,90    |                                                            |
+| PTCH2SRV_TCONST,0.4    |                                                            |
+| Q_A_ACCEL_P_MAX,110000 | VTOL R/P/Y Angular accelerations used in development       |
+| Q_A_ACCEL_R_MAX,110000 |                                                            |
+| Q_A_ACCEL_Y_MAX,27000  |                                                            |
+| Q_A_RAT_PIT_D,0.0005   | VTOL Pitch PIDs                                            |
+| Q_A_RAT_PIT_FF,0       |                                                            |
+| Q_A_RAT_PIT_FLTD,15    |                                                            |
+| Q_A_RAT_PIT_FLTE,0     |                                                            |
+| Q_A_RAT_PIT_FLTT,20    |                                                            |
+| Q_A_RAT_PIT_I,0.15     |                                                            |
+| Q_A_RAT_PIT_IMAX,0.5   |                                                            |
+| Q_A_RAT_PIT_P,0.15     |                                                            |
+| Q_A_RAT_PIT_SMAX,0     |                                                            |
+| Q_A_RAT_RLL_D,0.003    | VTOL Roll PIDs                                             |
+| Q_A_RAT_RLL_FF,0       |                                                            |
+| Q_A_RAT_RLL_FLTD,15    |                                                            |
+| Q_A_RAT_RLL_FLTE,0     |                                                            |
+| Q_A_RAT_RLL_FLTT,20    |                                                            |
+| Q_A_RAT_RLL_I,0.25     |                                                            |
+| Q_A_RAT_RLL_IMAX,0.5   |                                                            |
+| Q_A_RAT_RLL_P,0.45     |                                                            |
+| Q_A_RAT_RLL_SMAX,0     |                                                            |
+| Q_A_RAT_YAW_D,0.02     | VTOL Yaw PIDs                                              |
+| Q_A_RAT_YAW_FF,0.1     |                                                            |
+| Q_A_RAT_YAW_FLTD,0     |                                                            |
+| Q_A_RAT_YAW_FLTE,10    |                                                            |
+| Q_A_RAT_YAW_FLTT,20    |                                                            |
+| Q_A_RAT_YAW_I,0.1      |                                                            |
+| Q_A_RAT_YAW_IMAX,0.5   |                                                            |
+| Q_A_RAT_YAW_P,0.6      |                                                            |
+| Q_A_RAT_YAW_SMAX,0     |                                                            |
+| Q_ANGLE_MAX,3000       | VTOL Pitch and Roll Angle Limits                           |
+| Q_ASSIST_ALT,0         | Disable VTOL Assist where possible                         |
+| Q_ASSIST_ANGLE,0       |                                                            |
+| Q_ASSIST_DELAY,0.5     |                                                            |
+| Q_ASSIST_SPEED,0       |                                                            |
+| Q_AUTOTUNE_AGGR,0.1    | VTOL Autotune settings used in development                 |
+| Q_AUTOTUNE_AXES,2      |                                                            |
+| Q_AUTOTUNE_MIN_D,0.001 |                                                            |
+| Q_ENABLE,1             | VTOL obviously is enabled for the MiniHawk-VTOL            |
+| Q_FRAME_CLASS,7        | Tricopter Configuration                                    |
+| Q_FW_LND_APR_RAD,85    | 85 meters for Fixed-wing to VTOL threshold                 |
+| Q_M_HOVER_LEARN,2      | Hover throttle setpoint learning                           |
+| Q_M_PWM_TYPE,4         | DShot 150 is sufficient and noise-resistant                |
+| Q_M_SPIN_ARM,0.05      | 5% Throttle when armed                                     |
+| Q_M_SPIN_MAX,1         | 100% Throttle max ESC RPM command                          |
+| Q_M_SPIN_MIN,0.1       | 10% Throttle for lowest ESC RPM                            |
+| Q_M_SPOOL_TIME,0.5     | 500ms spool time                                           |
+| Q_M_THST_EXPO,0.25     | Throttle Expo                                              |
+| Q_M_YAW_HEADROOM,50    | 50us Yaw Headroom                                          |
+| Q_M_YAW_SV_ANGLE,12    | "12" Degrees for Yaw lean angle                            |
+| Q_OPTIONS,1056         | Allow yaw actuation when disarmed, QRTL behavior           |
+| Q_RC_SPEED,490         | 490 Hz Motor Updates                                       |
+| Q_RTL_ALT,40           | RTL Behaviors in VTOL                                      |
+| Q_RTL_MODE,1           |                                                            |
+| Q_TILT_MASK,3          | Which motors are being tilted                              |
+| Q_TILT_MAX,55          | Transition angle while AirspeedWait is active              |
+| Q_TILT_RATE_DN,15      | Tilt Up/Down rates                                         |
+| Q_TILT_RATE_UP,75      |                                                            |
+| Q_TILT_TYPE,2          | Vectored Yaw Tilt Type                                     |
+| Q_TILT_YAW_ANGLE,14    | "14" degrees VTOL hover position                           |
+| Q_TRANS_FAIL,0         | Transition Timeout is disabled, stupid parameter           |
+| Q_TRANSITION_MS,1000   | Post-transition wait period, another odd parameter         |
+| Q_TRIM_PITCH,9         | Pitch offset between forward-flight and hover stance       |
+| Q_WVANE_GAIN,0.4       | 0.4 is a good value for this design                        |
+| RC7_OPTION,41          | Arming Switch, will disable motors if in flight/hover!     |
+| RCMAP_PITCH,2          | Roll/Pitch/Throttle/Yaw (AETR) controls ordering           |
+| RCMAP_ROLL,1           |                                                            |
+| RCMAP_THROTTLE,3       |                                                            |
+| RCMAP_YAW,4            |                                                            |
+| RLL_RATE_D,0           | Roll PIDs, these values are mild, AUTOTUNE will increase   |
+| RLL_RATE_FF,0.345      |                                                            |
+| RLL_RATE_FLTD,4        |                                                            |
+| RLL_RATE_FLTE,7        |                                                            |
+| RLL_RATE_FLTT,3        |                                                            |
+| RLL_RATE_I,0.15        |                                                            |
+| RLL_RATE_IMAX,0.666    |                                                            |
+| RLL_RATE_P,0.08        |                                                            |
+| RLL_RATE_SMAX,150      |                                                            |
+| RLL2SRV_RMAX,90        |                                                            |
+| RLL2SRV_TCONST,0.4     |                                                            |
+| RTL_AUTOLAND,2         | Fixed-wing to VTOL landing behavior in RTL                 |
+| RUDD_DT_GAIN,3         | Very mild differential thrust mixing on forward motors     |
+| SCALING_SPEED,15       | 15 m/s should be default                                   |
+| SCHED_LOOP_RATE,300    | 300 Hz was used in development                             |
+| SERVO1_FUNCTION,33     | Right BLDC Motor                                           |
+| SERVO2_FUNCTION,34     | Left BLCD Motor                                            |
+| SERVO3_FUNCTION,0      | No Connection, 5V BEC connected here for mRo PixRacer Pro  |
+| SERVO4_FUNCTION,36     | Rear BLCD Motor                                            |
+| SERVO5_FUNCTION,75     | Left Tilt Servo                                            |
+| SERVO5_MAX,1800        | MAX and MIN values are hand calibrated, close to 1920/1080 |
+| SERVO5_MIN,1200        | Values of 1200/1800 here to prevent damage on new builds   |
+| SERVO5_REVERSED,0      | Left Tilt is normal rotation direction                     |
+| SERVO6_FUNCTION,76     | Right Tilt Servo                                           |
+| SERVO6_MAX,1800        |                                                            |
+| SERVO6_MIN,1200        |                                                            |
+| SERVO6_REVERSED,1      | Right Tilt is reversed rotation direction                  |
+| SERVO7_FUNCTION,77     | Left Elevon Servo                                          |
+| SERVO7_REVERSED,1      | Left Elevon is reverse rotation direction                  |
+| SERVO8_FUNCTION,78     | Right Elevon Servo                                         |
+| SERVO8_REVERSED,0      | Right Elevon is normal rotation direction                  |
+| STAB_PITCH_DOWN,2      | 2 should be default, pitch behavior on zero-throttle       |
+| STALL_PREVENTION,0     | May be enabled, was disabled for development               |
+| STICK_MIXING,1         | How pilot inputs are fused in autonomous modes             |
+| TECS_PTCH_FF_V0,19     | 19 m/s cruise                                              |
+| TRIM_ARSPD_CM,1900     | 19 m/s cruise                                              |
+| TRIM_PITCH_CD,350      | Offset between level-flight pitch angle and tray angle     |
+| TRIM_THROTTLE,55       | Typical 19 m/s cruise throttle                             |
+| WP_LOITER_RAD,60       | 60 meter radius for loiter typical                         |
+| WP_RADIUS,40           | 40 meter waypoint radius typical                           |
 
-# mixer
-mixer CUSTOMAIRPLANE
-mmix 0  1.000  1.000 -0.667  0.000
-mmix 1  1.000 -1.000 -0.667  0.000
-mmix 2  1.000  0.000  1.333  0.000
-
-# servo mixer
-smix 0 4 2 -10 0 0 100 2
-smix 1 5 2 -10 0 0 100 2
-smix 2 4 2 -50 0 0 100 3
-smix 3 5 2 -50 0 0 100 3
-smix 4 4 8 100 1 0 83 0
-smix 5 5 8 -100 1 17 100 0
-smix 6 2 4 50 0 0 100 0
-smix 7 3 4 50 0 0 100 0
-smix 8 2 5 50 0 0 100 0
-smix 9 3 5 -50 0 0 100 0
-smix 10 2 0 20 0 0 100 1
-smix 11 3 0 20 0 0 100 1
-smix 12 2 1 20 0 0 100 1
-smix 13 3 1 -20 0 0 100 1
-smix 14 2 11 50 0 0 100 0
-smix 15 3 11 -50 0 0 100 0
-
-# vmix
-vmix 0 4  1.000  0.000  0.390  0.720  0.940  1.000
-vmix 1 4  1.000  0.000  0.390  0.720  0.940  1.000
-vmix 2 4  0.000  0.000  0.390  0.720  0.940  1.000
-
-# aux
-aux 0 1 1 1400 2100 0 0
-aux 1 27 1 1800 2100 0 0
-aux 2 13 1 1800 2100 0 0
-aux 3 23 2 1600 2100 0 0
-aux 4 24 0 1325 1675 0 0
-aux 5 25 0 1675 2100 0 0
-aux 6 28 2 1600 2100 0 0
-
-# rxfail
-rxfail 4 s 2000
-rxfail 5 h
-rxfail 6 s 2000
-
-# master
-set min_throttle = 1000
-set dshot_idle_value = 0
-set motor_pwm_protocol = DSHOT600
-set motor_pwm_rate = 16000
-set failsafe_off_delay = 100
-set failsafe_throttle = 1300
-set failsafe_procedure = AUTO-LAND
-set beeper_dshot_beacon_tone = 3
-set debug_mode = GYRO_SCALED
-set enable_stick_arming = ON
-set name = MiniHawk
-
-profile 0
-
-# profile 0
-set pid_at_min_throttle = OFF
-set p_pitch = 40
-set i_pitch = 30
-set d_pitch = 20
-set f_pitch = 0
-set p_roll = 120
-set i_roll = 60
-set d_roll = 10
-set f_roll = 0
-set p_yaw = 60
-set i_yaw = 5
-set f_yaw = 0
-set angle_level_strength = 30
-set horizon_level_strength = 30
-set d_min_roll = 0
-set d_min_pitch = 0
-
-```
-
-Some Details and Explanations for the above lines: 
-- `smix` lines 0 through 3 define the yaw effort contributed to the Motor Tilt Servos, which are on servo slot indexes 4 and 5. The mode flags `SERVO2` and `SERVO3`, which are defined in the `aux` section, form three conditions, such that yaw effort is 50% weight at hover, 10% weight at the 50/50 condition, and no yaw effort at forward-flight. This is honestly a hack until a more preformant/complete VTOL mixer is implemented with servos included; for now only the motors are attenuated by the `vmix`5-point scheduling function.
-- `smix` lines 4 and 5 are the contribution from the VTOL condition channel; this sets the tilt angle of the motors between hover, 50/50, and forward-flight. The endpoints are tweaked such that the motors only tilt to 83% or 17% of the driving condition channel when in hover, allowing for some slack for yaw differential tilt, and setting the front rotors to "level" with the rear rotor forward cant angle.
-- `smix` lines 6 through 9 are the elevon mixing function; servo slots 2 and 3 are mixed with the R/C Roll and Pitch inputs (indexed as 4 and 5 in the murky depths of Betaflight).
-- `smix` lines 10 through 13 are the contributions of the PID control loop to the elevons. This is switched on and off by the `SERVO1` mode flag. Note that the elevons ought to have their own PID controller with dedicated coefficients, but for now, the same PIDs used for hovering are reused here, but with enough attenuation (20% weight in this case) that the control effort should be very underdamped and bounded.
-- `smix` lines 14 and 15 are the forward-flight pitch trim input, as a way to separate the hover trim state from the flying-wing pitch trim.
-- `vmix` subject to change, but for the moment is `vmix <motor_index> <rc_channel_index> <throttle_passthru> <pt1> <pt2> <pt3> <pt4> <pt5>`. `rc_channel_index` is 4, corresponding to the VTOL condition channel, and the front motors (0 and 1) inherit the untampered raw R/C Throttle value after attenuation by the VTOL Mixer, but the rear motor (2) is purely attenuated such that it is idling in the forward-flight condition. Points 1 through 5 are the attenuation curve, where `pt1` is the attenuation coefficient at the minimum input from the controlling channel, and `pt5` is the highest. The values {0.000, 0.390, 0.720, 0.940, 1.000} approximate the sine function.  
 
 
 ## Remarks: <a name="betaflight-remarks"></a>
