@@ -4,16 +4,16 @@
 The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable of Vertical Take-off and Landing. As with its predecessor, the [OrangeHawk VTOL](https://diydrones.com/profiles/blogs/the-orange-hawk-tricopter-flying-wing-vtol-uav), the MiniHawk is intended for R/C, FPV and UAV experimentation.  Mechanical artwork, build instructions, and configuration settings are provided in this repository.  
 
 **Milestones**
-| Date | Event |
-|------|-------|
-| 15 Oct 2020  | Initial Release (v1.0) |
-| prerelease | Version 2 (v2.0, MH7_ prefix) |
+| Date         | Event                         |
+|--------------|-------------------------------|
+| 15 Oct 2020  | Initial Release (v1.0)        |
+| 2 Oct 2021   | Version 2 (v2.0, MH7_ prefix) |
 
-Betaflight VTOL Firmware Build: [vtol-motor-mix](https://github.com/StephenCarlson/betaflight/tree/vtol-motor-mix)  
+Project Page at Hackaday: [HACKADAY.IO Page](https://hackaday.io/project/175286-minihawk-vtol)  
 
 Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)  
 
-Project Page at Hackaday: [HACKADAY.IO Page](https://hackaday.io/project/175286-minihawk-vtol)
+Betaflight VTOL Firmware Build: [vtol-motor-mix](https://github.com/StephenCarlson/betaflight/tree/vtol-motor-mix)  
 
 # Table of Contents
 1. [Introduction](#head-brief)  
