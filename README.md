@@ -80,6 +80,7 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | Qty | Item Description                                     | Notes                                              |
 |-----|------------------------------------------------------|----------------------------------------------------|
 | 1   | Flight Controller (3 Motor, 4 Servo Outputs)         | mRo PixRacer Pro, Matek F4xx-WING or F7xx-WING     |
+| -   | Pitot Probe, GPS, Telem. Radios, FPV Cam+VTx, etc    | Additional Essential Avionics                      |
 | 1   | UBEC for servo power if not built into Flight Ctrlr. | Castle Creations 10 Amp Adjustable BEC             |
 | 1   | R/C Receiver, 8+ Channel, SBUS or PPM Output         |                                                    |
 | 3   | ESC (4s, 40A or better)                              | EMAX Formula Series 32Bit 45A ESC                  |
