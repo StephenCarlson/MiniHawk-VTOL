@@ -8,6 +8,7 @@ The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable 
 |--------------|-------------------------------|
 | 15 Oct 2020  | Initial Release (v1.0)        |
 | 2 Oct 2021   | Version 2 (v2.0, MH7_ prefix) |
+| prerelease   | Version 2.1                   |
 
 Project Page at Hackaday: [HACKADAY.IO Page](https://hackaday.io/project/175286-minihawk-vtol)  
 
