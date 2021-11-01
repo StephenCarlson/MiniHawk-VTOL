@@ -105,7 +105,7 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 | -   | M4 and M5 Prop Nuts                                  | Replace default prop nuts if needed                |
 | 1   | 50xx Propeller, Clockwise Rotation                   | Left/Port-side Propeller, 5-inch                   |
 | 1   | 50xx Propeller, Counterclockwise Rotation            | Right/Starboard-side Propeller, 5-inch             |
-| 1   | 50xx or 60xx Propeller, Counterclockwise Rotation    | Tail Propeller, 5- or 6-inch                       |
+| 1   | 50xx or 60xx Propeller, Counterclockwise Rotation    | Tail Propeller, Dalprop Foldable F6 6048 Tri-blade |
 | 1   | Velcro Battery Strap                                 |                                                    |
 | 1   | (opt) Battery Voltage Monitor / Alarm Buzzer         | For Flight Controller if not included.             |
 
