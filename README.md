@@ -442,7 +442,7 @@ Transitions from Fixed-Wing flight to hover are typically smooth when being huma
 # License <a name="license-brief"></a>
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.  
 
-The software configuration text files provided here likely fall under the same license as Betaflight, GPL-3.0 at the time of this writing.  
+The Ardupilot and Betaflight software configuration text files provided here likely fall under GPL-3.0; both projects are licensed under GPL-3.0 at the time of this writing.  
 
 MiniHawk VTOL - Design, Documentation, Images and all other Artwork; by Steve Carlson  
 [https://github.com/StephenCarlson/MiniHawk-VTOL](https://github.com/StephenCarlson/MiniHawk-VTOL)
