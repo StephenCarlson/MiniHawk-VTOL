@@ -12,7 +12,9 @@ The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable 
 
 Project Page at Hackaday: [HACKADAY.IO Page](https://hackaday.io/project/175286-minihawk-vtol)  
 
-RCGroups VTOLs Thread: [RCGroups VTOLs Forum](https://www.rcgroups.com/forums/showthread.php?3986653-MiniHawk-VTOL-A-3D-Printed-Tricopter-Tilt-Rotor-Fixed-Wing-Plank)  
+RCGroups VTOLs Thread (MiniHawk Design Details and Features Discussed here): [RCGroups VTOLs Forum](https://www.rcgroups.com/forums/showthread.php?3986653-MiniHawk-VTOL-A-3D-Printed-Tricopter-Tilt-Rotor-Fixed-Wing-Plank)  
+
+RCGroups 3D-Printed Planes Thread (Real Builds by Community Members Celebrated here): [RCGroups 3D-Printed Forum](https://www.rcgroups.com/forums/showthread.php?3750791-KatanaGuy-s-MiniHawk-VTOL)
 
 Accompanying Build Video Series: [YouTube Playlist](https://www.youtube.com/playlist?list=PLEMjH2uELUcYI_DS1zthgjE4Su79LeA_G)  
 
