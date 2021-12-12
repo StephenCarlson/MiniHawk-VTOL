@@ -168,7 +168,7 @@ While I have described the hosting environment, it isn't necessary for you to ma
 ```
 MiniHawk-VTOL Version 2.1 Aircraft
 |-- Fuselage/Body  
-|   |-- Empennage  
+|   |-- Empennage/Tail
 |   |   |-- Variant: Full Part - No Split
 |   |   |   |-- MH7_Empennage-Full.stl
 |   |   |
@@ -179,20 +179,54 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |   |       |-- Variant: Plain Part
 |   |           |-- MH7_Empennage.stl
 |   |
-|   |-- Nose  
-|       |-- Variant: Full Nose - No Split
-|       |   |-- MH7_Nose-NacaDucts.stl
-|       |
-|       |-- Variant: Nose in Two Pieces
-|           |-- MH7_Nose_A-NacaDucts.stl
-|           |-- MH7_Nose_B.stl
+|   |-- Nose
+|   |   |-- Variant: Full Nose - No Split
+|   |   |   |-- MH7_Nose-NacaDucts.stl
+|   |   |
+|   |   |-- Variant: Nose in Two Pieces
+|   |       |-- MH7_Nose_A-NacaDucts.stl
+|   |       |-- MH7_Nose_B.stl
+|   |
+|   |-- Avionics (Flight Controller) Tray
+|   |   |-- Variant: Solid, No Vibration Dampening
+|   |   |   |-- MH7_ControllerTray.stl
+|   |   |
+|   |   |-- Variant: Leaf-Spring Compliant Vibration-Dampening Version
+|   |       |-- MH7_ControllerTray2.stl
+|   |
+|   |-- Battery Tray
+|       |-- MH7_BatteryTray.stl
+|
+|-- Hatch/Lid
+|   |-- Variant: FPV 16mm-sized Camera and VTx Support
+|   |   |-- Variant: Long-axis Symmetric Half
+|   |   |   |-- MH7_Hatch-FPV-16mm.stl
+|   |   |
+|   |   |-- Variant: Split for nicer print
+|   |       |-- MH7_Hatch-FPV-16mm_a.stl
+|   |       |-- MH7_Hatch-FPV-16mm_b.stl
+|   |
+|   |-- Variant: Vented with NACA Duct
+|   |   |-- Variant: Entire thing, split it yourself
+|   |   |   |-- MH7_Hatch-Vented.stl
+|   |   |
+|   |   |-- Variant: Split for nicer print
+|   |       |-- MH7_Hatch-Vented_a.stl
+|   |       |-- MH7_Hatch-Vented_b.stl
+|   |
+|   |-- Locking Latch Mechanism
+|       |-- MH7_Hatch_LockingLatch.stl
+|       |-- 1.85mm Steel Pin, Length=30mm
 |
 |-- Left Wing  
 |   |-- Variant: Plain Wing
 |   |   |-- MH7_WingLeft.stl
 |   |
 |   |-- Variant: Solar Wing
-|       |-- MH7_WingLeft-Solar.stl
+|   |   |-- MH7_WingLeft-Solar.stl
+|   |
+|   |-- Elevon Control Horn
+|       |-- MH7_ControlHorn.stl
 |
 |-- Left Fin  
 |   |-- MH7_FinLeft_Lower.stl  
@@ -208,24 +242,40 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |   |   |-- [MH7_Nacelle_B-NoBearing.stl](/stl-SourceFiles/MH7_Nacelle_B-NoBearing.stl)
 |   |
 |   |-- Motor Tilt-Mount
-|   |   |-- Variant: Ball Bearing Version
-|   |   |   |-- MH7_TiltMount_A-Bearing.stl
-|   |   |
-|   |   |-- Variant: Non-Ball Bearing Version
-|   |   |   |-- MH7_TiltMount_A-NoBearing.stl
-|   |   |
-|   |   |-- MH7_TiltMount_B.stl
-|   |
-|   |-- Left Winglet
-|       |-- Variant: Plain Winglet
-|       |   |-- MH7_WingletLeft.stl
+|       |-- Variant: Ball Bearing Version
+|       |   |-- MH7_TiltMount_A-Bearing.stl
+|       |   |-- 3mm Shaft or Threaded Bolt, Length=44mm
 |       |
-|       |-- Variant: GPS Pocket
-|           |-- MH7_WingletLeft-GPS.stl
+|       |-- Variant: Non-Ball Bearing Version
+|       |   |-- MH7_TiltMount_A-NoBearing.stl
+|       |   |-- 1.85mm Steel Pin, Length=40mm
+|       |
+|       |-- MH7_TiltMount_B.stl
+|       |-- BLDC Motor
+|    
+|-- Left Winglet
+|   |-- Variant: Plain Winglet
+|   |   |-- MH7_WingletLeft.stl
+|   |
+|   |-- Variant: GPS Pocket
+|       |-- MH7_WingletLeft-GPS.stl
 |
 |-- Right Wing  
 |   |-- Just mirror everyting from the Left above.
 To Be Continued
+
+Supporting Devices and Parts
+|-- Weight & Balance Jackpoint Stand
+|   |-- Nacelle-Support Beam
+|   |   |-- MH7_WeightBalanceStand_Beam.stl
+|   |   |-- MH7_WeightBalanceStand_Support.stl
+|   |
+|   |-- Empennage-Support Jack
+|       |-- MH7_WeightBalanceStand_Foot.stl
+|       |-- MH7_WeightBalanceStand_Support.stl (Bent to form a triangle stance)
+|
+|-- STEP/STP Version of the Hatch/Lid for Community Mods
+    |-- MH7_Hatch_RELEASED.stp
 ```
 
 
