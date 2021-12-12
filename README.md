@@ -4,6 +4,9 @@
 The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable of Vertical Take-off and Landing. As with its predecessor, the [OrangeHawk VTOL](https://diydrones.com/profiles/blogs/the-orange-hawk-tricopter-flying-wing-vtol-uav), the MiniHawk is intended for R/C, FPV and UAV experimentation.  Mechanical artwork, build instructions, and configuration settings are provided in this repository.  
 
 
+> **⚠️WARNING⚠️ PLEASE BE ADVISED - 12 DECEMBER 2021: With the prerelease of Version 2.1 in the works, some parts of this README are being rewritten, such as the build instructions and the _New_ Parts Tree Diagram, and an Exploded Assembly Diagram is being made. The images for the build process are over a year old and need to be updated with new images, but the essence they convey is still the same. A `development` branch really is in order at this point, to hide the mess of creation and retrofitting, but I figure that anything added is only helpful in this situation; one day when the README is truly stable, I'll make a development branch to hide future messes. Just be aware that some of this content needs to be mended or fixed.**
+
+
 **Milestones**
 | Date         | Event                         |
 |--------------|-------------------------------|
@@ -93,12 +96,12 @@ While I have described the hosting environment, it isn't necessary for you to ma
  - FDM/FFF 3D Printer with build volume greater than 23.1x210.7x150mm (A build height of 330mm or greater will allow for printing the nose and wings as single parts rather than split.)
  - Soldering Station and associated tools and materials for electronics crafting
  - Handcrafting Tools: Pliers, Side-Cut Diagonal Cutters, Sandpaper, Hobby Knife/Scalpel, Hand Drill, etc
- - Adhesives: Cyanoacrylate Glue, Epoxy, Hot-Melt Adhesive Gun, Tape
+ - Adhesives and Consumables: Cyanoacrylate Glue, Hot-Melt Adhesive Gun, Tape
 
 ## Components and Electronics <a name="build-components"></a>
 | Qty | Item Description                                     | Notes                                              |
 |-----|------------------------------------------------------|----------------------------------------------------|
-| 1   | Flight Controller (3 Motor, 4 Servo Outputs)         | mRo PixRacer Pro, Matek F4xx-WING or F7xx-WING     |
+| 1   | Flight Controller (3 Motor, 4 Servo Outputs)         | mRo PixRacer Pro, Matek F405-WING or F765-WING     |
 | -   | Pitot Probe, GPS, Telem. Radios, FPV Cam+VTx, etc    | Additional Essential Avionics                      |
 | 1   | UBEC for servo power if not built into Flight Ctrlr. | Castle Creations 10 Amp Adjustable BEC             |
 | 1   | R/C Receiver, 8+ Channel, SBUS or PPM Output         |                                                    |
@@ -109,7 +112,7 @@ While I have described the hosting environment, it isn't necessary for you to ma
 | 1   | XT60 Pigtail or equiv.                               |                                                    |
 | 2   | HS-65HB Servo (or equiv.)                            | Elevon Servos, see (Note 3).                       |
 | 2   | HS-5065MG Servo (or equiv.)                          | Motor Tilt Servos, see (Note 4).                   |
-| 1   | Carbon Fiber Spar, Length<=640mm, OutsideDia<=6.5mm  | Used to strengthen the wings. Round or Square      |
+| 1   | Carbon Fiber Spar, Length<640mm, Out.Dia.<=6.5mm     | Used to strengthen the wings. Round or Square      |
 | 6   | (opt) Du-Bro SKU#118 Small Nylon Hinge               | Elevon Reinforcement, see (Note 5).                |
 | -   | M2 or M3 Mounting Hardware (Nuts, Bolts, Standoffs)  | For mounting Flight Controller, trays.             |
 | 4   | 6-Inch Servo Extension Cable                         | (Note 6)                                           |
@@ -119,8 +122,8 @@ While I have described the hosting environment, it isn't necessary for you to ma
 | 2   | (opt) Du-Bro SKU#855 E/Z Links 0.72 (2-56) Clip      | For securing L-Bends, can replace with Z-bend.     |
 | 2   | 1/16-inch 2-56 Ball Link and Coupler Pair            | Dubro #181 or Dubro #190, see (Note 8).            |
 | 2   | 2-56 Fully-Threaded Rod, Length=70mm                 | End1=(Link 2-56 Clevis), End2=(2-56 Ball Coupler)  |
-| 2   | 2-56 Smooth Rod, Length=44mm                         | (Note 9)                                           |
-| 4   | (opt) 3mm Bolt or Shaft, Length=40mm                 | If you want to use ball bearings to the tilt arms. |
+| 2   | 2-56 Smooth Rod, Length=40mm                         | (Note 9)                                           |
+| 4   | (opt) 3mm Bolt or Shaft, Length=44mm                 | If you want to use ball bearings to the tilt arms. |
 | 4   | (opt) 3x6x2.5mm Ball Bearing                         | Commonly known as MR63ZZ, for tilt arm supports.   |
 | 2   | (opt) WS2812 5050 SMD (or equiv. Addressable LED)    | Soldered with magnet wire, mounted in wingtips.    |
 | -   | M4 or M5 Prop Nuts                                   | Replace default prop nuts if needed                |
@@ -162,6 +165,70 @@ While I have described the hosting environment, it isn't necessary for you to ma
 | Flight Controller Tray   | [MH7_ControllerTray.stl](/stl-SourceFiles/MH7_ControllerTray2.stl)                 |
 | Battery Tray             | [MH7_BatteryTray.stl](/stl-SourceFiles/MH7_BatteryTray.stl)                        |
 
+```
+MiniHawk-VTOL Version 2.1 Aircraft
+|-- Fuselage/Body  
+|   |-- Empennage  
+|   |   |-- Variant: Full Part - No Split
+|   |   |   |-- MH7_Empennage-Full.stl
+|   |   |
+|   |   |-- Variant: Split with Print Layers Aligned for Strength
+|   |       |-- Variant: Explicit Print Supports
+|   |       |   |-- MH7_Empennage-PrintSupports.stl
+|   |       |
+|   |       |-- Variant: Plain Part
+|   |           |-- MH7_Empennage.stl
+|   |
+|   |-- Nose  
+|       |-- Variant: Full Nose - No Split
+|       |   |-- MH7_Nose-NacaDucts.stl
+|       |
+|       |-- Variant: Nose in Two Pieces
+|           |-- MH7_Nose_A-NacaDucts.stl
+|           |-- MH7_Nose_B.stl
+|
+|-- Left Wing  
+|   |-- Variant: Plain Wing
+|   |   |-- MH7_WingLeft.stl
+|   |
+|   |-- Variant: Solar Wing
+|       |-- MH7_WingLeft-Solar.stl
+|
+|-- Left Fin  
+|   |-- MH7_FinLeft_Lower.stl  
+|   |-- MH7_FinLeft_Upper.stl  
+|
+|-- Left Nacelle
+|   |-- Variant: Ball Bearing Version
+|   |   |-- [MH7_Nacelle_A-Bearing.stl](/stl-SourceFiles/MH7_Nacelle_A-Bearing.stl)
+|   |   |-- [MH7_Nacelle_B-Bearing.stl](/stl-SourceFiles/MH7_Nacelle_B-Bearing.stl)
+|   |
+|   |-- Variant: Non-Ball Bearing Version
+|   |   |-- [MH7_Nacelle_A-NoBearing.stl](/stl-SourceFiles/MH7_Nacelle_A-NoBearing.stl)
+|   |   |-- [MH7_Nacelle_B-NoBearing.stl](/stl-SourceFiles/MH7_Nacelle_B-NoBearing.stl)
+|   |
+|   |-- Motor Tilt-Mount
+|   |   |-- Variant: Ball Bearing Version
+|   |   |   |-- MH7_TiltMount_A-Bearing.stl
+|   |   |
+|   |   |-- Variant: Non-Ball Bearing Version
+|   |   |   |-- MH7_TiltMount_A-NoBearing.stl
+|   |   |
+|   |   |-- MH7_TiltMount_B.stl
+|   |
+|   |-- Left Winglet
+|       |-- Variant: Plain Winglet
+|       |   |-- MH7_WingletLeft.stl
+|       |
+|       |-- Variant: GPS Pocket
+|           |-- MH7_WingletLeft-GPS.stl
+|
+|-- Right Wing  
+|   |-- Just mirror everyting from the Left above.
+To Be Continued
+```
+
+
 # Build Sequence <a name="buildseq-brief"></a>
 The following instructions assume that a full set of airframe parts have been printed, as enumerated above.
 
@@ -201,7 +268,7 @@ The following instructions assume that a full set of airframe parts have been pr
 </table> 
 
 4. Bond the Empennage Halves together using Cyanoacrylate. (Skip this step if you printed the -Full one-piece version.) Set aside to cure. [Figure-4]
-4. Bond the Control Horn pieces (2) into each Elevon (Left Wing and Right Wing) using Cyanoacrylate. The Control Horn should be fairly flush on the Elevon Top Surface, with approximately 0.5mm extending above the surface. Fit should be tight; carefully carve away any burrs or over-extrusion from the slot in the elevon if needed. [Figure-5]
+5. Bond the Control Horn pieces (2) into each Elevon (Left Wing and Right Wing) using Cyanoacrylate. The Control Horn should be fairly flush on the Elevon Top Surface, with approximately 0.5mm extending above the surface. Fit should be tight; carefully carve away any burrs or over-extrusion from the slot in the elevon if needed. [Figure-5]
 
 <table style="width:100%">
   <tr>
@@ -217,18 +284,18 @@ The following instructions assume that a full set of airframe parts have been pr
   </tr>
 </table> 
 
-5. Glue the Du-Bro Nylon Mini-Hinge pieces (3 per wing, Du-Bro SKU#118) into the recesses along each elevon hinge. Hot-Melt-Adhesive or Cyanoacrylate should work. 3M™ Transpore™ Surgical Tape is also a viable hinge reenforcement solution, and this may be applied now or later in the build.
-6. Lightly sand the bonded empennage/tail interface surface until smooth and planar/flush. Test-fit to the Fuselage/Nose to confirm a proper flush joint, and then bond to the Fuselage/Nose using Cyanoacrylate. Set aside to cure. [Figure-6]
-7. Bond the Nacelle Pair Halves together; **Be careful here!** Each nacelle is composed of an `_A` and `_B` piece. There should be four nacelle pieces total, and each of them is unique: An `_A` and `_B` that are non-mirrored, and a `_A` and `_B` that are mirrored. The `_A` has no cutout for the stud-arm, while the `_B` does. The `_A` pieces are always nearest the center body of the aircraft, and the `_B` pieces are always on the outside aligned with the servos. Glue the pieces together as carefully and precisely as possible, using Cyanoacrylate. Set aside to cure. [Figure-7]
-8. Lightly sand both wing root interface surfaces on the completed fuselage/body until flush and smooth. Test-fit the carbon-fiber spar and verify that it isn't being halted by any blemishes in the spar shaft in either wing. If the spar does not completely fill the spar shaft (7mm inside diameter), such as if the carbon spar is a 5mm round tube, then improvise a shim or other filler to make the fit snug, such as wrapping the spar with tape at the ends and near the center where it will exit into the central body cavity. With the spar present to provide alignment, test-fit both wings to each respective surface to confirm a proper flush joint. Center the spar such that it extends into the left and right wings an equal amount. (640mm is the longest spar length supported. A shorter spar is fine provided it is centered.) Remove the wings. At this point, the spar may be bonded to the body, if desired. (The spar can be installed without any adhesive if you plan on reusing it later, such as if the aircraft is totaled but the spar survives.) Bond either the left or right wing to the fuselage (not recommended to attach both at once) using Cyanoacrylate. Set aside to cure. When the first wing is cured, bond the second wing and set aside to cure. [Figure-8]
-9. Test-fit each Motor Mount (Tilt Mount/Pod) with its respective completed nacelle. Sand or trim as needed such that the Motor Mount is able to tilt fully flush forward, and able to tilt up past 90 degrees of rotation. [Figure-9]
-10a. (Non-Ball-Bearing Version) For each Nacelle with its respective Motor Mount aligned and present, Ream (Drill to size) using a 1.58mm (1/16 Inch, 62.5mil) drill bit. (Should be 85% to 90% of the diameter of hinge rod to be fitted. Hinge Rod diameter is 1.84mm or 72mil for this case.) Keep the Motor Mount and Nacelle together. Adapt a section of hinge rod to be used as a final precision reaming tool by sharpening the tip using a grinder or emery wheel. Use this improvised reaming tool to ream the hole in each nacelle-mount pair to the final diameter of 1.84mm (72mil). Finally, use a 2.00mm (5/64 Inch, 78mil) drill bit to ream the motor tilt mount only. This allows for the outside aircraft-mounted nacelle to have a friction fit retention of the metal shaft, with the motor mount able to rotate, plastic-on-metal. [Figure-10]
-10b. (Ball-Bearing Version) Refer to the above steps for the non-ball-bearing nacelle design, but use a 3.00mm (7/64 Inch, 118mil) drill bit to ream the shaft. The mechanical relationship is inverted, with the motor tilt-mount having a strong friction fit with the insert shaft, and the ball bearings providing the smooth rotation interface. Press-fit the ball bearings into the pockets, using mild heat if necessary. Improvise a shaft retention solution that also captures the bearing and prevents either bearing from dislodging. Avoid improvising a solution that conducts compression on the nacelle "forks", as this would cause binding
-11. Remove each Motor Mount from its respective Nacelle and ream only the Motor Mount hole to the next higher drill bit size, not to exceed 107% of diameter of the the hinge rod. Too large will allow for excessive play and possible rattling; too small will result in binding. 1.95mm (77mil, 5/64 Inch) is acceptable for hinge rod diameter of 1.84mm.
-12. Cut the hinge rod pieces, not to exceed 24mm length. Roughen/knurl one or both ends if desired. Press-fit each hinge rod to each Nacelle through the respective Motor Mount. Verify that each Motor Mount can rotate freely and with minimal play in the hinge.
-13. For each Motor Mount, ream the Motor Mount linkage mount hole to 1.19mm (3/64 Inch, 47mil). This should be about 80% of the major diameter of the threaded ball link to be mounted. (Great Planes Threaded Ball Link Set 1/16", GPMQ3843; ball-link is 1.50mm major diameter.) Mount the threaded ball-link to the linkage mount hole. The Motor Mount can sustain up to 3.3mm threaded bolt depth, verify that the bolt does not extend too far into the well, such that it will not make contact with the motor.
-14. Bond each Nacelle to its respective wing; note that the ball-link should align with the respective servo linkage slot/well. Epoxy is recommended, as this is a significant load-bearing structure. Verify alignment and tweak/tune while the glue cures. [Figure-11]
-15. Bond both vertical fins to the wing(s). [Figure-12] Medium Cyanoacrylate should be sufficient. Bond the Rear Strakes to the bottom of the wing(s) and bottom edge of the vertical fins. [Figure-13]
+6. Glue the Du-Bro Nylon Mini-Hinge pieces (3 per wing, Du-Bro SKU#118) into the recesses along each elevon hinge. Hot-Melt-Adhesive or Cyanoacrylate should work. 3M™ Transpore™ Surgical Tape is also a viable hinge reenforcement solution, and this may be applied now or later in the build.
+7. Lightly sand the bonded empennage/tail interface surface until smooth and planar/flush. Test-fit to the Fuselage/Nose to confirm a proper flush joint, and then bond to the Fuselage/Nose using Cyanoacrylate. Set aside to cure. [Figure-6]
+8. Bond the Nacelle Pair Halves together; **Be careful here!** Each nacelle is composed of an `_A` and `_B` piece. There should be four nacelle pieces total, and each of them is unique: An `_A` and `_B` that are non-mirrored, and a `_A` and `_B` that are mirrored. The `_A` has no cutout for the stud-arm, while the `_B` does. The `_A` pieces are always nearest the center body of the aircraft, and the `_B` pieces are always on the outside aligned with the servos. Glue the pieces together as carefully and precisely as possible, using Cyanoacrylate. Set aside to cure. [Figure-7]
+9. Lightly sand both wing root interface surfaces on the completed fuselage/body until flush and smooth. Test-fit the carbon-fiber spar and verify that it isn't being halted by any blemishes in the spar shaft in either wing. If the spar does not completely fill the spar shaft (7mm inside diameter), such as if the carbon spar is a 5mm round tube, then improvise a shim or other filler to make the fit snug, such as wrapping the spar with tape at the ends and near the center where it will exit into the central body cavity. With the spar present to provide alignment, test-fit both wings to each respective surface to confirm a proper flush joint. Center the spar such that it extends into the left and right wings an equal amount. (640mm is the longest spar length supported. A shorter spar is fine provided it is centered.) Remove the wings. At this point, the spar may be bonded to the body, if desired. (The spar can be installed without any adhesive if you plan on reusing it later, such as if the aircraft is totaled but the spar survives.) Bond either the left or right wing to the fuselage (not recommended to attach both at once) using Cyanoacrylate. Set aside to cure. When the first wing is cured, bond the second wing and set aside to cure. [Figure-8]
+10. Test-fit each Motor Mount (Tilt Mount/Pod) with its respective completed nacelle. Sand or trim as needed such that the Motor Mount is able to tilt fully flush forward, and able to tilt up past 90 degrees of rotation. [Figure-9]  
+11. (Nacelle Non-Ball-Bearing Version) For each Nacelle with its respective Motor Mount aligned and present, Ream (Drill to size) using a 1.58mm (1/16 Inch, 62.5mil) drill bit. (Should be 85% to 90% of the diameter of hinge rod to be fitted. Hinge Rod diameter is 1.84mm or 72mil for this case.) Keep the Motor Mount and Nacelle together. Adapt a section of hinge rod to be used as a final precision reaming tool by sharpening the tip using a grinder or emery wheel. Use this improvised reaming tool to ream the hole in each nacelle-mount pair to the final diameter of 1.84mm (72mil). Finally, use a 2.00mm (5/64 Inch, 78mil) drill bit to ream the motor tilt mount only. This allows for the outside aircraft-mounted nacelle to have a friction fit retention of the metal shaft, with the motor mount able to rotate, plastic-on-metal. [Figure-10]  
+12. (Nacelle Ball-Bearing Version) Refer to the above steps for the non-ball-bearing nacelle design, but use a 3.00mm (7/64 Inch, 118mil) drill bit to ream the shaft. The mechanical relationship is inverted, with the motor tilt-mount having a strong friction fit with the insert shaft, and the ball bearings providing the smooth rotation interface. Press-fit the ball bearings into the pockets, using mild heat if necessary. Improvise a shaft retention solution that also captures the bearing and prevents either bearing from dislodging. Avoid improvising a solution that conducts compression on the nacelle "forks", as this would cause binding
+13. Remove each Motor Mount from its respective Nacelle and ream only the Motor Mount hole to the next higher drill bit size, not to exceed 107% of diameter of the the hinge rod. Too large will allow for excessive play and possible rattling; too small will result in binding. 1.95mm (77mil, 5/64 Inch) is acceptable for hinge rod diameter of 1.84mm.
+14. Cut the hinge rod pieces, not to exceed 24mm length. Roughen/knurl one or both ends if desired. Press-fit each hinge rod to each Nacelle through the respective Motor Mount. Verify that each Motor Mount can rotate freely and with minimal play in the hinge.
+15. For each Motor Mount, ream the Motor Mount linkage mount hole to 1.19mm (3/64 Inch, 47mil). This should be about 80% of the major diameter of the threaded ball link to be mounted. (Great Planes Threaded Ball Link Set 1/16", GPMQ3843; ball-link is 1.50mm major diameter.) Mount the threaded ball-link to the linkage mount hole. The Motor Mount can sustain up to 3.3mm threaded bolt depth, verify that the bolt does not extend too far into the well, such that it will not make contact with the motor.
+16. Bond each Nacelle to its respective wing; note that the ball-link should align with the respective servo linkage slot/well. Epoxy is recommended, as this is a significant load-bearing structure. Verify alignment and tweak/tune while the glue cures. [Figure-11]
+17. Bond both vertical fins to the wing(s). [Figure-12] Medium Cyanoacrylate should be sufficient. Bond the Rear Strakes to the bottom of the wing(s) and bottom edge of the vertical fins. [Figure-13]
 
 ## Part 2 - Linkages and Component Mounting <a name="buildseq-part2"></a>
 1. Mount the front two motors in their respective Motor Mounts. The motor leads may have heatshrink that may interfere or bind the wires; rework this if needed. Mount the motors using the M2 threaded bolt kit that should be included with each motor. Be careful not to have any mounting bolt over-extend into the motor armature/stator. Verify that each motor turns freely and is well secured. Route the wires through the wing and into the main bay, and test the extension-retraction behavior of the wires as the motor mount pitches between forward and hover tilt positions. For each motor, attach the propeller hub hardware kit that should be included with each, such that it can drive a standard 5-Inch propeller.
