@@ -182,25 +182,25 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |   |
 |   |-- Nose
 |   |   |-- Variant: Full Nose - No Split
-|   |   |   |-- MH7_Nose-NacaDucts.stl
+|   |   |   |-- MH7_Nose.stl
 |   |   |
 |   |   |-- Variant: Nose in Two Pieces
-|   |       |-- MH7_Nose_A-NacaDucts.stl
+|   |       |-- MH7_Nose_A.stl
 |   |       |-- MH7_Nose_B.stl
 |   |
 |   |-- Avionics (Flight Controller) Tray
 |   |   |-- Variant: Solid, No Vibration Dampening
-|   |   |   |-- MH7_ControllerTray.stl
+|   |   |   |-- MH7_AvionicsTray.stl
 |   |   |
 |   |   |-- Variant: Leaf-Spring Compliant Vibration-Dampening Version
-|   |       |-- MH7_ControllerTray2.stl
+|   |       |-- MH7_AvionicsTray2.stl
 |   |
 |   |-- Battery Tray
 |       |-- MH7_BatteryTray.stl
 |
 |-- Hatch/Lid
 |   |-- Variant: FPV 16mm-sized Camera and VTx Support
-|   |   |-- Variant: Long-axis Symmetric Half
+|   |   |-- Variant: Long-axis Symmetric Half (TODO: Needs to be restored to -Full)
 |   |   |   |-- MH7_Hatch-FPV-16mm.stl
 |   |   |
 |   |   |-- Variant: Split for nicer print
@@ -235,12 +235,12 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |
 |-- Left Nacelle
 |   |-- Variant: Ball Bearing Version
-|   |   |-- [MH7_Nacelle_A-Bearing.stl](/stl-SourceFiles/MH7_Nacelle_A-Bearing.stl)
-|   |   |-- [MH7_Nacelle_B-Bearing.stl](/stl-SourceFiles/MH7_Nacelle_B-Bearing.stl)
+|   |   |-- MH7_Nacelle_A-Bearing.stl
+|   |   |-- MH7_Nacelle_B-Bearing.stl
 |   |
 |   |-- Variant: Non-Ball Bearing Version
-|   |   |-- [MH7_Nacelle_A-NoBearing.stl](/stl-SourceFiles/MH7_Nacelle_A-NoBearing.stl)
-|   |   |-- [MH7_Nacelle_B-NoBearing.stl](/stl-SourceFiles/MH7_Nacelle_B-NoBearing.stl)
+|   |   |-- MH7_Nacelle_A-NoBearing.stl
+|   |   |-- MH7_Nacelle_B-NoBearing.stl
 |   |
 |   |-- Motor Tilt-Mount
 |       |-- Variant: Ball Bearing Version
