@@ -1,10 +1,11 @@
+<!-- MiniHawk-VTOL README.md - Enable Word wrap in your Text Viewer/Editor -->
 <img src="MiniHawkIso.png" width="400" />
 
 # MiniHawk-VTOL <a name="head-brief"></a>
 The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable of Vertical Take-off and Landing. As with its predecessor, the [OrangeHawk VTOL](https://diydrones.com/profiles/blogs/the-orange-hawk-tricopter-flying-wing-vtol-uav), the MiniHawk is intended for R/C, FPV and UAV experimentation.  Mechanical artwork, build instructions, and configuration settings are provided in this repository.  
 
 
-> **⚠️WARNING⚠️ PLEASE BE ADVISED - 12 DECEMBER 2021: With the prerelease of Version 2.1 in the works, some parts of this README are being rewritten, such as the build instructions and the _New_ Parts Tree Diagram, and an Exploded Assembly Diagram is being made. The images for the build process are over a year old and need to be updated with new images, but the essence they convey is still the same. A `development` branch really is in order at this point, to hide the mess of creation and retrofitting, but I figure that anything added is only helpful in this situation; one day when the README is truly stable, I'll make a development branch to hide future messes. Just be aware that some of this content needs to be mended or fixed.**
+> **⚠️WARNING⚠️ PLEASE BE ADVISED - 12 DECEMBER 2021: With the prerelease of Version 2.1 in the works, some parts of this README are being rewritten, such as the build instructions and the _New_ Parts Tree Diagram, and an Exploded Assembly Diagram is being made. The images for the build process are over a year old and need to be updated with new images, but the essence they convey is still the same. A `development` branch has been created with the goal to hide as much of the mess as possible; check there if you want to see the cutting-edge. Regardless, just be aware that some of this content needs to be mended or fixed.**
 
 
 **Milestones**
@@ -52,9 +53,9 @@ The MiniHawk is a 3D-Printed VTOL aircraft. It was designed with printability in
 
 ## How To Use This Repo <a name="head-usage"></a>
 This project is hosted on GitHub, which is traditionally a software repository site, but the format works well for a hardware project such as the MiniHawk-VTOL, where a few of the features come in handy:
-- The history for each part file is accessible; if you need a old version, it is available even off-line if you've "cloned" the repo.
+- The history for each part file is accessible; if you need an old version, it is available even off-line if you've "cloned" the repo. (Beware, cloning the repo means hundreds of MB download.)
 - [Versions and Releases](https://github.com/StephenCarlson/MiniHawk-VTOL/releases) are published just like a software project, and this includes setting milestones and planning future releases, keeping the community informed about what is next. Releases are the condensed set of essential files, placed in a zip archive, which represent a snapshot of the project at a moment when the artwork is stable and worth broad public distribution.
-- The [Issues](https://github.com/StephenCarlson/MiniHawk-VTOL/issues) tab allow for the community to participate in the evolution of the design by providing feedback or contribute to improving the design.
+- The [Issues](https://github.com/StephenCarlson/MiniHawk-VTOL/issues) tab allow for the community to participate in the evolution of the design by providing feedback or contributions toward improving the design.
 - The [Discussions](https://github.com/StephenCarlson/MiniHawk-VTOL/discussions) tab is another location for communication on the project.
 
 While I have described the hosting environment, it isn't necessary for you to make a GitHub account or participate in the project; and more than likely, you are just interested in downloading the STLs and making the plane. Here is what you need to do:
@@ -261,7 +262,7 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |       |-- MH7_WingletLeft-GPS.stl
 |
 |-- Right Wing  
-|   |-- Just mirror everyting from the Left above.
+|   |-- Just mirror everything from the Left above.
 To Be Continued
 
 Supporting Devices and Parts
@@ -280,7 +281,7 @@ Supporting Devices and Parts
 
 
 # Build Sequence <a name="buildseq-brief"></a>
-The following instructions assume that a full set of airframe parts have been printed, as enumerated above.
+The following instructions assume that a full set of airframe parts have been printed, as enumerated above. Refer to the [3D Printing Guidelines Section](#3dprinting-brief) for details on the typical slicer settings for each part. Also, 3MF production files are available in the [3mf-Implementations](/3mf-Implementations) repo folder, but whether the print settings properly transfer to your particular printer is a bit of a gamble.
 
 [Figure-1]: </doc-Documentation/Figure-1.png> "Figure 1 - Hinge Pin Clearance" 
 [Figure-2]: </doc-Documentation/Figure-2.png> "Figure 2 - Elevon Movement Cuts"
