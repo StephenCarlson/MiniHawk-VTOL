@@ -70,7 +70,7 @@ While I have described the hosting environment, it isn't necessary for you to ma
 - The aerodynamics and stability of the vehicle are still under analysis and subject to revision. The CFD poses/cases used for aerodynamics analysis are included for independent study.  
 - As of Version 2 of this design, project files are prefixed with "MH7", as this is the 7th internal revision of the design of the MiniHawk VTOL. There may be some old "MH5" parts are retained in the repo; these are from the old version(s). Also, the "MH#" prefix is incidental and not to be confused with the MH airfoil series, of which the MH45 is used for this vehicle. Generally, "MiniHawk-VTOL" is the correct name for this design and any revisions to be released.
 - This vehicle was designed in Autodesk Inventor Professional 2019. While compiled STLs are provided as open-access, the Solid Model and Assembly Source files for this vehicle are withheld at the time of this writing; contact me for inquires on obtaining a copy or further development. One minor accommodation: STEP/STP versions of some parts such as the Hatch/Lid are included for community derivations.
-- There are some variants to each part, such as versions of the nose with and without NACA vents. The Winglet is available as "normal" or with an excavation for a GPS or other devices. The Hatch/Lid has a FPV Variant, which supports the Foxeer -Nano camera formfactor (15mm width) and has a 30.5mm grid for a video transmitter, such as the AKK Infinite DVR. All the part options and variations are detailed below in the [Parts Tree Diagram](#build-airframeparts).
+- There are some variants to each part, such as the wings being available as smooth/plain wings, or with features to accomodate Maxeon™ C60 solar cells. The Winglet is available as "normal" or with an excavation for a GPS or other devices. The Hatch/Lid has a FPV Variant, which supports the Foxeer -Nano camera formfactor (15mm width) and has a 30.5mm grid for a video transmitter, such as the AKK Infinite DVR. All the part options and variations are detailed below in the [Parts Tree Diagram](#build-airframeparts).
 
 ## Metrics <a name="head-metrics"></a>
 | Description              | Value                     |
@@ -170,48 +170,48 @@ While I have described the hosting environment, it isn't necessary for you to ma
 MiniHawk-VTOL Version 2.1 Aircraft
 |-- Fuselage/Body  
 |   |-- Empennage/Tail
-|   |   |-- Variant: Full Part - No Split
+|   |   |-- Print Option 1: As a Single Part - No Split, but layers are not aligned for max. strength
 |   |   |   |-- MH7_Empennage-Full.stl
 |   |   |
-|   |   |-- Variant: Split with Print Layers Aligned for Strength
-|   |       |-- Variant: Explicit Print Supports
+|   |   |-- Print Option 2: Split into Two Parts with print layers aligned for strength
+|   |       |-- Print Option 2a: Explicit Print Supports
 |   |       |   |-- MH7_Empennage-PrintSupports.stl
 |   |       |
-|   |       |-- Variant: Plain Part
+|   |       |-- Print Option 2b: No Explicit Print Supports, plain part
 |   |           |-- MH7_Empennage.stl
 |   |
 |   |-- Nose
-|   |   |-- Variant: Full Nose - No Split
+|   |   |-- Print Option 1: Full Nose - No Split
 |   |   |   |-- MH7_Nose.stl
 |   |   |
-|   |   |-- Variant: Nose in Two Pieces
+|   |   |-- Print Option 2: Nose in Two Pieces
 |   |       |-- MH7_Nose_A.stl
 |   |       |-- MH7_Nose_B.stl
 |   |
 |   |-- Avionics (Flight Controller) Tray
-|   |   |-- Variant: Solid, No Vibration Dampening
+|   |   |-- Part Variant: Solid Tray, No Vibration Dampening
 |   |   |   |-- MH7_AvionicsTray.stl
 |   |   |
-|   |   |-- Variant: Leaf-Spring Compliant Vibration-Dampening Version
+|   |   |-- Part Variant: Leaf-Spring Compliant-Mechanism Vibration-Dampening Version
 |   |       |-- MH7_AvionicsTray2.stl
 |   |
 |   |-- Battery Tray
 |       |-- MH7_BatteryTray.stl
 |
 |-- Hatch/Lid
-|   |-- Variant: FPV 16mm-sized Camera and VTx Support
-|   |   |-- Variant: Long-axis Symmetric Half (TODO: Needs to be restored to -Full)
+|   |-- Part Variant: FPV 16mm-sized Camera and VTx Support
+|   |   |-- Print Option 1: Long-axis Symmetric Half (TODO: Needs to be restored to -Full)
 |   |   |   |-- MH7_Hatch-FPV-16mm.stl
 |   |   |
-|   |   |-- Variant: Split for nicer print
+|   |   |-- Print Option 2: Split into Two Parts for nicer print
 |   |       |-- MH7_Hatch-FPV-16mm_a.stl
 |   |       |-- MH7_Hatch-FPV-16mm_b.stl
 |   |
-|   |-- Variant: Vented with NACA Duct
-|   |   |-- Variant: Entire thing, split it yourself
+|   |-- Part Variant: Vented with NACA Duct
+|   |   |-- Print Option 1: Entire thing, split it yourself
 |   |   |   |-- MH7_Hatch-Vented.stl
 |   |   |
-|   |   |-- Variant: Split for nicer print
+|   |   |-- Print Option 2: Split into Two Parts for nicer print
 |   |       |-- MH7_Hatch-Vented_a.stl
 |   |       |-- MH7_Hatch-Vented_b.stl
 |   |
@@ -220,11 +220,21 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |       |-- 1.85mm Steel Pin, Length=30mm
 |
 |-- Left Wing  
-|   |-- Variant: Plain Wing
-|   |   |-- MH7_WingLeft.stl
+|   |-- Part Variant: Plain Wing
+|   |   |-- Print Option 1: Entire wing
+|   |   |   |-- MH7_WingLeft.stl
+|   |   |
+|   |   |-- Print Option 2: Split into Two Parts for smaller printers
+|   |       |-- MH7_WingLeft_A.stl
+|   |       |-- MH7_WingLeft_B.stl
 |   |
-|   |-- Variant: Solar Wing
-|   |   |-- MH7_WingLeft-Solar.stl
+|   |-- Part Variant: Solar Wing
+|   |   |-- Print Option 1: Entire wing
+|   |   |   |-- MH7_WingLeft-Solar.stl
+|   |   |
+|   |   |-- Print Option 2: Split into Two Parts for smaller printers
+|   |       |-- MH7_WingLeft_A.stl
+|   |       |-- MH7_WingLeft_B.stl
 |   |
 |   |-- Elevon Control Horn
 |       |-- MH7_ControlHorn.stl
@@ -234,20 +244,20 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |   |-- MH7_FinLeft_Upper.stl  
 |
 |-- Left Nacelle
-|   |-- Variant: Ball Bearing Version
+|   |-- Part Variant: Ball Bearing Version
 |   |   |-- MH7_Nacelle_A-Bearing.stl
 |   |   |-- MH7_Nacelle_B-Bearing.stl
 |   |
-|   |-- Variant: Non-Ball Bearing Version
+|   |-- Part Variant: Non-Ball Bearing Version
 |   |   |-- MH7_Nacelle_A-NoBearing.stl
 |   |   |-- MH7_Nacelle_B-NoBearing.stl
 |   |
 |   |-- Motor Tilt-Mount
-|       |-- Variant: Ball Bearing Version
+|       |-- Part Variant: Ball Bearing Version
 |       |   |-- MH7_TiltMount_A-Bearing.stl
 |       |   |-- 3mm Shaft or Threaded Bolt, Length=44mm
 |       |
-|       |-- Variant: Non-Ball Bearing Version
+|       |-- Part Variant: Non-Ball Bearing Version
 |       |   |-- MH7_TiltMount_A-NoBearing.stl
 |       |   |-- 1.85mm Steel Pin, Length=40mm
 |       |
@@ -255,25 +265,30 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |       |-- BLDC Motor
 |    
 |-- Left Winglet
-|   |-- Variant: Plain Winglet
+|   |-- Part Variant: Plain Winglet
 |   |   |-- MH7_WingletLeft.stl
 |   |
-|   |-- Variant: GPS Pocket
+|   |-- Part Variant: GPS Pocket
 |       |-- MH7_WingletLeft-GPS.stl
 |
-|-- Right Wing  
-|   |-- Just mirror everything from the Left above.
-To Be Continued
+|-- Right {Wing, Fin, Nacelle, Motor Tilt-Mount, Winglet} 
+|   |-- For each of the symmetric parts, to create the right-side version, simply mirror the part in your slicer software. 
+        Be _very careful_ please! Be sure you understand how all the parts go together, particularly the Nacelle pieces: 
+        The nacelle _A piece is always near the aircraft center body, with the _B piece on the outboard side, aligned with 
+        the servos and away from the center body. You should print four unique Nacelle pieces, with no two alike: 
+        Two non-mirrored pieces of _A and _B, and two mirrored pieces of _A and _B.
 
 Supporting Devices and Parts
 |-- Weight & Balance Jackpoint Stand
 |   |-- Nacelle-Support Beam
 |   |   |-- MH7_WeightBalanceStand_Beam.stl
 |   |   |-- MH7_WeightBalanceStand_Support.stl
+|   |   |-- Two 1.85mm Steel Pins, Length=50mm each
 |   |
 |   |-- Empennage-Support Jack
 |       |-- MH7_WeightBalanceStand_Foot.stl
-|       |-- MH7_WeightBalanceStand_Support.stl (Bent to form a triangle stance)
+|       |-- MH7_WeightBalanceStand_Support.stl (After gluing, bend the legs with hot water to form a triangle stance)
+|       |-- 1.85mm Steel Pin, Length=50mm
 |
 |-- STEP/STP Version of the Hatch/Lid for Community Mods
     |-- MH7_Hatch_RELEASED.stp
