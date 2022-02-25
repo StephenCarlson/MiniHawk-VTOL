@@ -357,95 +357,121 @@ The following instructions assume that a full set of airframe parts have been pr
 
 
 
-## Part 1 - Airframe Structures and Motor Mount/Tilt Attachment <a name="buildseq-part1"></a>
-1. Clean all 3D-Printed parts, remove all brim/support material. Remove any burrs or blemishes. For each wing, carefully carve away any stringing or over-extrusion in the hinge reinforcement wells such that the hinge pin will fit. [Figure-1] The pitot-probe shaft and other small features may also have stringing that should be removed.  
 
-2. Carefully cut the elevons free if needed (**WARNING!** Only cut slots on either end to allow for surface deflection, DO NOT cut the entire elevon out). [Figure-2] Gently exercise each surface up and down until the living hinge is established. The best way to start is to bend the elevons downward (as if pitching nose down) with a solid planar object to distribute the pressure on the control surface evenly. Only go as far as you feel comfortable, and then reverse direction. Continue to exercise the hinge gently until it is moving +/- 30 degrees. If you printed with PLA or another work-hardening material, don't continue cycling the hinge until the reenforcement tape or tabs are installed; only then should the hinge be further broken-in until it has smooth movement.  
-
-<!-- Hey, if you are reading this, GitHub makes it really hard to inject pictures in a table with nice rows and spacing. -->
-<!-- The HTML below renders the figures nicely in GitHub as of December 2021, may not work in other Markdown Processors. -->
-<table style="width:100%">
-  <tr>
-    <td><figure>
-      <img src="/doc-Documentation/Figure-1.png" alt="Figure 1" height="240" width="auto"><br>
-      <figcaption>Figure 1. Hinge Pin Clearance</figcaption></figure></td>
-    <td><figure>
-      <img src="/doc-Documentation/Figure-2.png" alt="Figure 2" height="240" width="auto"><br>
-      <figcaption>Figure 2. Elevon Movement Cuts</figcaption></figure></td>
-  </tr>
-</table> 
 
 3. Bond the Canopy/Hatch-Lid pieces together using Thin/Medium Cyanoacrylate and set aside to cure. [Figure-3]  
 
+
+## Part 1 - Airframe Structures and Motor Mount/Tilt Attachment <a name="buildseq-part1"></a>
+1. Clean all 3D-Printed parts, remove all brim/support material. Remove any burrs or blemishes. For each wing, carefully carve away any stringing or over-extrusion in the hinge reinforcement wells such that the hinge pin will fit. The pitot-probe shaft and other small features may also have stringing that should be removed. If you printed the Empennage Pair with the explicit support membrane, carefully grind and sand the support membrane away.  
+
+2. Carefully cut/pry the slot between the elevon and the wing, near the wing root and vertical fin mounting pads, such that the living hinge can operate. (**WARNING!** DO NOT cut the entire elevon out). Gently exercise each surface up and down until the living hinge is established. The best way to start is to bend the elevons downward (as if pitching nose down) with a solid planar object to distribute the pressure on the control surface evenly. Only go as far as you feel comfortable, and then reverse direction. Continue to exercise the hinge gently until it is moving +/- 30 degrees. Note: If you printed with PLA or another work-hardening material, don't over-exercise the hinge, as with too many cycles, the plastic will eventually fail. Reenforcement tape or tabs should be installed on the elevons after the hinge is established but before the material fails, as follows:  
+
+3. Glue the Du-Bro Nylon Mini-Hinge pieces (3 per wing, Du-Bro SKU#118) into the recesses along each elevon hinge. Hot-Melt-Adhesive or Cyanoacrylate should work. 3M™ Transpore™ Surgical Tape is also a viable hinge reenforcement solution, and this may be applied now or later in the build.  
+
 4. Bond the Empennage Halves together using Cyanoacrylate. (Skip this step if you printed the -Full one-piece version.) Set aside to cure. [Figure-4]  
 
+5. Lightly sand the bonded empennage/tail interface surface until smooth and planar/flush. Test-fit to the Fuselage/Nose to confirm a proper flush joint, and then bond to the Fuselage/Nose using Cyanoacrylate. Set aside to cure. [Figure-6]  
+
+
+<!-- Hey, if you are reading this, GitHub makes it really hard to inject pictures in a table with nice rows and spacing. -->
+<!-- The HTML below renders the figures nicely in GitHub as of February 2022, may not work in other Markdown Processors. -->
 <table style="width:100%">
   <tr>
     <td><figure>
-      <img src="/doc-Documentation/Figure-3.png" alt="Figure 3" height="240" width="auto"><br>
-      <figcaption>Figure 3. Hatch/Lid Bonding</figcaption></figure></td>
+      <img src="/doc-Documentation/Step1.png" alt="Figure 1" height="240" width="auto"><br>
+      <figcaption>Step 1. Empennage Halves Bonding</figcaption></figure></td>
     <td><figure>
-      <img src="/doc-Documentation/Figure-4.png" alt="Figure 4" height="240" width="auto"><br>
-      <figcaption>Figure 4. Empennage Halves Bonding</figcaption></figure></td>
+      <img src="/doc-Documentation/Step2.png" alt="Figure 2" height="240" width="auto"><br>
+      <figcaption>Figure 2. Empennage/Tail Attachment</figcaption></figure></td>
   </tr>
 </table> 
 
-5. Press-fit the Control Horn pieces into the elevons to test the fit. The Control Horn is inserted from the top, protruding through the elevon with the hole centered below the hingeline, inline with the elevon servo linkage. The pieces should be fairly flush on the Elevon Top Surface, with approximately 0.5mm extending above the surface. The fit should be tight, but do not force the control horn too hard or you may split print layers and cause damage. If it is too tight, carefully carve away any burrs or over-extrusion from the slot in the elevon, or sand the control horn to be thinner. Bond the Control Horn pieces (2) into each Elevon (Left Wing and Right Wing) using Cyanoacrylate. [Figure-5]  
 
-6. Glue the Du-Bro Nylon Mini-Hinge pieces (3 per wing, Du-Bro SKU#118) into the recesses along each elevon hinge. Hot-Melt-Adhesive or Cyanoacrylate should work. 3M™ Transpore™ Surgical Tape is also a viable hinge reenforcement solution, and this may be applied now or later in the build.  
+6. Lightly sand both wing root interface surfaces on the completed fuselage/body until flush and smooth. For each wing, test-fit the carbon-fiber spar and verify that it isn't being halted by any blemishes in the spar shaft. Get creative if there are blemishes; usually some aggressive poking with the spar will clear these without damaging the 3D-printed shaft. If the spar does not completely fill the spar shaft (7mm inside diameter), such as if the carbon spar is a 5mm round tube, then improvise a shim or other filler to make the fit snug, such as wrapping the spar with tape at the ends and near the center where it will exit into the central body cavity. With the spar present to provide alignment, test-fit both wings to each respective surface to confirm a proper flush joint. Center the spar such that it extends into the left and right wings an equal amount. (640mm is the longest spar length supported. A shorter spar is fine provided it is centered.) Bond the spar to the fuselage/body, and then bond either the left or right wing to the fuselage (not recommended to attach both at once) using Cyanoacrylate, using the spar to enforce alignment. Attend the part while the glue cures to be sure alignment is maintained. Bond the second wing and attend alignment while it cures. 
 
-7. Lightly sand the bonded empennage/tail interface surface until smooth and planar/flush. Test-fit to the Fuselage/Nose to confirm a proper flush joint, and then bond to the Fuselage/Nose using Cyanoacrylate. Set aside to cure. [Figure-6]  
 
-<table style="width:100%">
-  <tr>
-    <td><figure>
-      <img src="/doc-Documentation/Figure-5.png" alt="Figure 5" height="240" width="auto"><br>
-      <figcaption>Figure 5. Elevon Control Horn Install (Insert from top into slot)</figcaption></figure></td>
-    <td><figure>
-      <img src="/doc-Documentation/Figure-6.png" alt="Figure 6" height="240" width="auto"><br>
-      <figcaption>Figure 6. Empennage/Tail Attachment</figcaption></figure></td>
-  </tr>
-</table> 
-
-8. Bond the Nacelle Pair Halves together; **Be careful here!** Each nacelle is composed of an `_A` and `_B` piece. There should be four nacelle pieces total, and each of them is unique: An `_A` and `_B` that are non-mirrored, and a `_A` and `_B` that are mirrored. The `_A` has no cutout for the stud-arm, while the `_B` does. The `_A` pieces are always nearest the center body of the aircraft, and the `_B` pieces are always on the outside aligned with the servos. Glue the pieces together as carefully and precisely as possible, using Cyanoacrylate. Set aside to cure. [Figure-7]  
-
-9. Lightly sand both wing root interface surfaces on the completed fuselage/body until flush and smooth. Test-fit the carbon-fiber spar and verify that it isn't being halted by any blemishes in the spar shaft in either wing. Get creative if there are blemishes; usually some aggressive poking with the spar will clear these without damaging the 3D-printed shaft. If the spar does not completely fill the spar shaft (7mm inside diameter), such as if the carbon spar is a 5mm round tube, then improvise a shim or other filler to make the fit snug, such as wrapping the spar with tape at the ends and near the center where it will exit into the central body cavity. With the spar present to provide alignment, test-fit both wings to each respective surface to confirm a proper flush joint. Center the spar such that it extends into the left and right wings an equal amount. (640mm is the longest spar length supported. A shorter spar is fine provided it is centered.) Remove the wings. At this point, the spar may be bonded to the body, if desired. (The spar can be installed without any adhesive if you plan on reusing it later, such as if the aircraft is totaled but the spar survives.) Bond either the left or right wing to the fuselage (not recommended to attach both at once) using Cyanoacrylate. Set aside to cure. When the first wing is cured, bond the second wing and set aside to cure. [Figure-8]  
 
 <table style="width:100%">
   <tr>
     <td><figure>
-      <img src="/doc-Documentation/Figure-7.png" alt="Figure 7" height="240" width="auto"><br>
-      <figcaption>Figure 7. Nacelle Halves Bonding</figcaption></figure></td>
+      <img src="/doc-Documentation/Step3.png" alt="Figure 3" height="240" width="auto"><br>
+      <figcaption>Figure 3. Left Wing Attachment</figcaption></figure></td>
     <td><figure>
-      <img src="/doc-Documentation/Figure-8.png" alt="Figure 8" height="240" width="auto"><br>
-      <figcaption>Figure 8. Wing Attachment</figcaption></figure></td>
+      <img src="/doc-Documentation/Step4.png" alt="Figure 4" height="240" width="auto"><br>
+      <figcaption>Figure 4. Right Wing Attachment w/ Spar Present</figcaption></figure></td>
   </tr>
 </table> 
+
+7. Press-fit the Control Horn pieces into the elevons to test the fit. The Control Horn is inserted from the top, protruding through the elevon with the hole centered below the hingeline, inline with the elevon servo linkage. The pieces should be fairly flush on the Elevon Top Surface, with approximately 0.5mm extending above the surface. The fit should be tight, but do not force the control horn too hard or you may split print layers and cause damage. If it is too tight, carefully carve away any burrs or over-extrusion from the slot in the elevon, or sand the control horn to be thinner. Bond the Control Horn pieces (2) into each Elevon (Left Wing and Right Wing) using Cyanoacrylate. [Figure-5]  
+
+
+<table style="width:100%">
+  <tr>
+    <td><figure>
+      <img src="/doc-Documentation/Step6.png" alt="Figure 3" height="240" width="auto"><br>
+      <figcaption>Figure 3. Elevon Control Horn Install (Insert from top into slot)</figcaption></figure></td>
+    <td><figure>
+      <img src="/doc-Documentation/Step8.png" alt="Figure 4" height="240" width="auto"><br>
+      <figcaption>Figure 4. Flush Top Surface When Bonded</figcaption></figure></td>
+  </tr>
+</table> 
+
+8. (Optional, can be defered to later) If you printed the Solar Wings Option, prepare the Maxeon™ C60 or equivalent cells by soldering each pair together with compatible bus-bar elements, maintaining a positive-to-negative connection between cells. Solder low-loss wire to the remaining pads, leaving enough length for the wire to route to the avionics bay. Test-fit each assembly into the respective top wing surface, making sure wires do not apply stress to the cells and that all wires are properly routed. Bond each completed pair to the top wing surface using 3M™ Super 77 Spray Adhesive or a similar adhesive. The ability to mount solar cells is what defines the MiniHawk-VTOL's wing shape, but the process is still experimental; improvise as necessary. Try to avoid getting debris, adhesive or fingerprints on the array during the build process. Cover and seal the array with transparent self-adhesive film. (Conventional heat-activated adhesive is hazardous to the 3D-printed wing material.)  
+
+<table style="width:100%">
+  <tr>
+    <td><figure>
+      <img src="/doc-Documentation/Step10.png" alt="Figure 5" height="240" width="auto"><br>
+      <figcaption>Figure 5. Solar Cell Adhesive Area</figcaption></figure></td>
+    <td><figure>
+      <img src="/doc-Documentation/Step11.png" alt="Figure 6" height="240" width="auto"><br>
+      <figcaption>Figure 6. Solar Cells Bonded</figcaption></figure></td>
+  </tr>
+</table> 
+
+8. Bond the Nacelle Pair Halves together; **Be careful here!** Each nacelle is composed of an `_A` and `_B` piece. There should be four nacelle pieces total, and each of them is unique: An `_A` and `_B` that are non-mirrored, and an `_A` and `_B` that are mirrored. The `_A` has no cutout for the stud-arm, while the `_B` does. The `_A` pieces are always nearest the center body of the aircraft, and the `_B` pieces are always on the outside aligned with the servos. Glue the pieces together as carefully and precisely as possible, using Cyanoacrylate. Set aside to cure. [Figure-7]  
+
 
 10. Test-fit each Motor Mount (Tilt Mount/Pod) with its respective completed nacelle. Sand or trim as needed such that the Motor Mount is able to tilt fully flush forward, and able to tilt up past 90 degrees of rotation. [Figure-9]  
 
-11. (Nacelle Non-Ball-Bearing Version) For each Nacelle with its respective Motor Mount aligned and present, Ream (Drill to size) using a 1.58mm (1/16 Inch, 62.5mil) drill bit. (Should be 85% to 90% of the diameter of hinge rod to be fitted. Hinge Rod diameter is 1.84mm or 72mil for this case.) Keep the Motor Mount and Nacelle together. Adapt a section of hinge rod to be used as a final precision reaming tool by sharpening the tip using a grinder or emery wheel. Use this improvised reaming tool to ream the hole in each nacelle-mount pair to a final diameter of 1.84mm (72mil). [Figure-10]  
-
 <table style="width:100%">
   <tr>
     <td><figure>
-      <img src="/doc-Documentation/Figure-9.png" alt="Figure 9" height="240" width="auto"><br>
-      <figcaption>Figure 9. Nacelle Pocket Finishing</figcaption></figure></td>
+      <img src="/doc-Documentation/Step12.png" alt="Figure 7" height="240" width="auto"><br>
+      <figcaption>Figure 7. Nacelle Halves Bonding (Note the notch on only one side)</figcaption></figure></td>
     <td><figure>
-      <img src="/doc-Documentation/Figure-10.png" alt="Figure 10" height="240" width="auto"><br>
-      <figcaption>Figure 10. Shaft and Bolt Hole Reaming</figcaption></figure></td>
+      <img src="/doc-Documentation/Step20.png" alt="Figure 8" height="240" width="auto"><br>
+      <figcaption>Figure 8. Test-fit and Nacelle Pocket Finishing</figcaption></figure></td>
   </tr>
 </table> 
+
+
+11. (Nacelle Non-Ball-Bearing Version) For each Nacelle with its respective Motor Mount aligned and present, Ream (Drill to size) using a 1.58mm (1/16 Inch, 62.5mil) drill bit. (Should be 85% to 90% of the diameter of hinge rod to be fitted. Hinge Rod diameter is 1.84mm or 72mil for this case.) Keep the Motor Mount and Nacelle together. Adapt a section of hinge rod to be used as a final precision reaming tool by sharpening the tip using a grinder or emery wheel. Use this improvised reaming tool to ream the hole in each nacelle-mount pair to a final diameter of 1.84mm (72mil). [Figure-10]  
 
 12. (Nacelle Ball-Bearing Version) Refer to the above steps for the non-ball-bearing nacelle design, but use a 3.00mm (7/64 Inch, 118mil) drill bit to ream the shaft. The mechanical friction relationship is inverted, with the motor tilt-mount having a strong friction fit with the insert shaft, and the ball bearings in the nacelle forks/arms providing the smooth rotation interface. Press-fit the ball bearings into the pockets, using mild heat only if appropriate. Improvise a shaft retention solution that also captures the bearings and prevents either bearing from dislodging. Avoid improvising a solution that conducts compression on the nacelle "forks", as this would cause binding and friction.  
 
 13. (Nacelle Non-Ball-Bearing Version) Remove each Motor Mount from its respective Nacelle and ream only the Motor Mount hole to the next higher drill bit size, not to exceed 107% of diameter of the the hinge rod. This allows for the outer nacelle arm to have a friction fit retention of the metal shaft, while the inner motor mount is able to rotate smoothly, plastic-on-metal. Too large will allow for excessive play and possible rattling; too small will result in binding. 1.95mm (77mil, 5/64 Inch) is acceptable for hinge rod diameter of 1.84mm.  
 
-14. (Nacelle Non-Ball-Bearing Version) Cut the hinge rod pieces, not to exceed 40mm length. Roughen/knurl one or both ends if desired. Press-fit each hinge rod to each Nacelle through the respective Motor Mount. Verify that each Motor Mount can rotate freely and with minimal play in the hinge.  
+14. (Nacelle Non-Ball-Bearing Version) Cut the hinge rod pieces, not to exceed 40mm length. Roughen/knurl one or both ends if desired. Press-fit each hinge rod to each Nacelle through the respective Motor Mount. Verify that each Motor Mount can rotate freely and with minimal play in the hinge. Use a Threadlocker (or thick Cyanoacrylate) compound to secure the hinge pins in place.  
 
-15. For each Motor Mount, ream the Motor Mount linkage mount hole to 1.19mm (3/64 Inch, 47mil) if you are using the recommended 1/16 ball-stud. This can potentially be reamed for a larger ball-stud thread size such as 2-56 (1.84mm, 72mil), use careful judgement in this case. The reamed hole should be about 80% of the major diameter of the threaded ball link to be mounted. Mount the threaded ball-link to the linkage mount hole. The Motor Mount can sustain up to 8mm threaded ball-stud bolt depth.  
+15. For each Motor Mount, ream the Motor Mount linkage ball-stud hole to 1.19mm (3/64 Inch, 47mil) if you are using the recommended 1/16 ball-stud. This can potentially be reamed for a larger ball-stud thread size such as 2-56 (1.84mm, 72mil), use careful judgement in this case. The reamed hole should be about 80% of the major diameter of the threaded ball link to be mounted. Mount the threaded ball-stud to the respective shaft on the mount arm. The Motor Mount can sustain up to 8mm threaded ball-stud bolt depth.  
+
+<table style="width:100%">
+  <tr>
+    <td><figure>
+      <img src="/doc-Documentation/Step21.png" alt="Figure 9" height="240" width="auto"><br>
+      <figcaption>Figure 9. Hinge Pin and Ball-Stud Reaming</figcaption></figure></td>
+    <td><figure>
+      <img src="/doc-Documentation/Step23.png" alt="Figure 10" height="240" width="auto"><br>
+      <figcaption>Figure 10. Ball-Stud Mounting</figcaption></figure></td>
+  </tr>
+</table> 
 
 16. Bond each Nacelle to its respective wing; note that the ball-link should align with the respective servo linkage slot/well. Cyanacrylate works great on PLA, but as this is one of the higher load-bearing structures on the aircraft, epoxy is also a candidate. Verify alignment and tweak/tune the position while the glue cures. [Figure-11]  
+
+<img src="/doc-Documentation/Step13.png" alt="Figure 8" height="240" width="auto"><br>
+      <figcaption>Figure 8. Nacelle Attachment (Note the notch position on the outside near the servo)</figcaption></figure></td>
 
 17. Bond the Lower and Upper pieces of the vertical fins. [Figure-13] (The lower piece is sometimes called the "Strake".) Bond both vertical fins to their respective wing(s). [Figure-12] Cyanoacrylate should be sufficient.  
 
