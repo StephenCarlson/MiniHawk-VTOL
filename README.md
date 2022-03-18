@@ -4,11 +4,16 @@
 # MiniHawk-VTOL <a name="head-brief"></a>
 The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable of Vertical Take-off and Landing. As with its predecessor, the [OrangeHawk VTOL](https://diydrones.com/profiles/blogs/the-orange-hawk-tricopter-flying-wing-vtol-uav), the MiniHawk is intended for R/C, FPV and UAV experimentation.  Mechanical artwork, build instructions, and configuration settings are provided in this repository.  
 
-
-> **🔺CRITICAL WARNING🔺 IMPORTANT DIRECTIVE FOR NEW BUILDS - 23 FEBRUARY 2022: The old Version 2.0 Nacelle Arms and Motor Tilt Mounts are NOT RECCOMENDED for new builds; they are buggy and prone to cause yaw and transitions issues, if not dangerous vehicle behavior due to the crank design being too hard for servos to pull. Up until just recently, the ZIP files on Hackaday and the V2.0 zip file here on GitHub had the old nacelle design- DO NOT USE THEM! I've pushed a Hotfix release as of 23 February. If you have downloaded the Version 2.0 ZIP files from either Hackaday or here, or have gotten as far as printing parts, replace the Nacelle and TiltMount STLs with the new ones!**
-
-
-> **⚠️WARNING⚠️ PLEASE BE ADVISED - 12 DECEMBER 2021: With the prerelease of Version 2.1 in the works, some parts of this README are being rewritten, such as the build instructions and the _New_ Parts Tree Diagram, and an Exploded Assembly Diagram is being made. The images for the build process are over a year old and need to be updated with new images, but the essence they convey is still the same. A `development` branch has been created with the goal to hide as much of the mess as possible; check there if you want to see the cutting-edge. Regardless, just be aware that some of this content needs to be mended or fixed.**
+> **⚠️READ-ME - PROJECT STABILITY AND NEW VERSION⚠️ - 18 MARCH 2022: More than likely, you have stumbled on this project from a link on a YouTube video, such as [How NOT to Flight Test a VTOL UAV](https://www.youtube.com/watch?v=FYqH4kHllrU) or one of the other videos out there. If you want to try making this project, go for it! As of this writing, all the STL files on this repo, the _Version 2.0 - Hotfix and 2.1 Preview_ zip file at the left of this text, and the most recent upload to the Hackaday.io page are "safe". Previously, the were some design flaws (the old tilt nacelle design), but these issues only exist for Version 2.0 STLs from prior to the 23 February Hotfix. Again, everything present on the _master_ branch here should be safe to build and will not be altered for most of 2022.**
+> 
+> **Now, with that said, there is a new version coming out soon™, Version 2.1. However, at this point, this next version will not change any of the current STLs, so, again, you are totally safe to use the STLs, everything is working and flying great, and no changes to the aircraft design will be released until late this year or early next year. What the release of V2.1 will do is add some new bonus STLs/features, and otherwise it is just polishing presentation or rewriting documentation. I've been stuck in the prerelease of Version 2.1 for a few months, so some parts of this README are being rewritten, such as the build instructions and adding the Parts Tree Diagram and such. Here are my reccomendations for building the project at this moment in time:**
+> 
+> - Refer to the [Development-Branch Build Instructions](https://github.com/StephenCarlson/MiniHawk-VTOL/tree/development#build-sequence-) for the updated build instructions.
+> - Browse the [Development-Branch Documentation Folder](https://github.com/StephenCarlson/MiniHawk-VTOL/tree/development/doc-Documentation) for all the new build instruction images; many of these are not yet added or used in the updated build instructions.
+> - Watch [MiniHawk-VTOL Assembly in 100 Seconds](https://www.youtube.com/watch?v=nICNlJhoEvw) to see the animated build steps.
+> - Cross-reference with the [Older Build Instructions Below](https://github.com/StephenCarlson/MiniHawk-VTOL#build-sequence-). You will see images and steps for the older Version 1.0 release, so ignore features that do not exist or have been redesigned in the intervening 1.5 years.
+> 
+> **Sorry for the mess, I hope this helps. I enjoy promoting and polishing this project where I have time. Let me know if you have any questions, and have fun building! -Steve**
 
 
 **Milestones**
@@ -17,6 +22,7 @@ The MiniHawk VTOL is a 3D-Printed Tricopter/Fixed-wing hybrid aircraft, capable 
 | 15 Oct 2020  | Initial Release (v1.0)        |
 | 2 Oct 2021   | Version 2 (v2.0, MH7_ prefix) |
 | prerelease   | Version 2.1                   |
+| Q1 2023      | Version 2.2                   |
 
 Project Page at Hackaday: [HACKADAY.IO Page](https://hackaday.io/project/175286-minihawk-vtol)  
 
@@ -148,73 +154,53 @@ While I have described the hosting environment, it isn't necessary for you to ma
 > Note 9: Diameter=[1.83mm to 1.87mm], formed from spare pieces of 2-56 Servo Pushrod. Use non-threaded smooth rod, roughen/knurl only one end slightly for press-fitting to nacelle.  
 
 ## Airframe Parts <a name="build-airframeparts"></a>
-| Part                     | Source File                                                                        |
-|--------------------------|------------------------------------------------------------------------------------|
-| Fuselage Nose            | [MH7_Nose.stl](/stl-SourceFiles/MH7_Nose.stl)                                      |
-| Empennage Left Half      | [MH7_Empennage.stl](/stl-SourceFiles/MH7_Empennage.stl)                            |
-| Empennage Right Half     | [MH7_Empennage.stl](/stl-SourceFiles/MH7_Empennage.stl) *Mirrored*                 |
-| Lid Left Half            | [MH7_Hatch.stl](/stl-SourceFiles/MH7_Hatch.stl)                                    |
-| Lid Right Half           | [MH7_Hatch.stl](/stl-SourceFiles/MH7_Hatch.stl) *Mirrored*                         |
-| Fin Lower (2)            | [MH7_FinLeft_Lower.stl](/stl-SourceFiles/MH7_FinLeft_Lower.stl) *One is Mirrored*  |
-| Fin Upper (2)            | [MH7_FinLeft_Upper.stl](/stl-SourceFiles/MH7_FinLeft_Upper.stl) *One is Mirrored*  |
-| Left Wing                | [MH7_WingLeft.stl](/stl-SourceFiles/MH7_WingLeft.stl)                              |
-| Right Wing               | [MH7_WingLeft.stl](/stl-SourceFiles/MH7_WingLeft.stl) *Mirrored*                   |
-| Elevon Control Horn (2)  | [MH7_ControlHorn.stl](/stl-SourceFiles/MH7_ControlHorn.stl)                        |
-| Left Nacelle Right Half  | [MH7_Nacelle_SideA.stl](/stl-SourceFiles/MH7_Nacelle_SideA.stl)                    |
-| Left Nacelle Left Half   | [MH7_Nacelle_SideB.stl](/stl-SourceFiles/MH7_Nacelle_SideB.stl)                    |
-| Left Motor Mount         | [MH7_TiltMount.stl](/stl-SourceFiles/MH7_TiltMount.stl)                            |
-| Right Nacelle Left Half  | [MH7_Nacelle_SideA.stl](/stl-SourceFiles/MH7_Nacelle_SideA.stl) *Mirrored*         |
-| Right Nacelle Right Half | [MH7_Nacelle_SideB.stl](/stl-SourceFiles/MH7_Nacelle_SideB.stl) *Mirrored*         |
-| Right Motor Mount        | [MH7_TiltMount.stl](/stl-SourceFiles/MH7_TiltMount.stl) *Mirrored*                 |
-| Flight Controller Tray   | [MH7_ControllerTray.stl](/stl-SourceFiles/MH7_ControllerTray2.stl)                 |
-| Battery Tray             | [MH7_BatteryTray.stl](/stl-SourceFiles/MH7_BatteryTray.stl)                        |
 
 ```
 MiniHawk-VTOL Version 2.1 Aircraft
 |-- Fuselage/Body  
 |   |-- Empennage/Tail
-|   |   |-- Variant: Full Part - No Split
+|   |   |-- Print Option 1: As a Single Part - No Split, but layers are not aligned for max. strength
 |   |   |   |-- MH7_Empennage-Full.stl
 |   |   |
-|   |   |-- Variant: Split with Print Layers Aligned for Strength
-|   |       |-- Variant: Explicit Print Supports
+|   |   |-- Print Option 2: Split into Two Parts with print layers aligned for strength
+|   |       |-- Print Option 2a: Explicit Print Supports
 |   |       |   |-- MH7_Empennage-PrintSupports.stl
 |   |       |
-|   |       |-- Variant: Plain Part
+|   |       |-- Print Option 2b: No Explicit Print Supports, plain part
 |   |           |-- MH7_Empennage.stl
 |   |
 |   |-- Nose
-|   |   |-- Variant: Full Nose - No Split
-|   |   |   |-- MH7_Nose-NacaDucts.stl
+|   |   |-- Print Option 1: Full Nose - No Split
+|   |   |   |-- MH7_Nose.stl
 |   |   |
-|   |   |-- Variant: Nose in Two Pieces
-|   |       |-- MH7_Nose_A-NacaDucts.stl
+|   |   |-- Print Option 2: Nose in Two Pieces
+|   |       |-- MH7_Nose_A.stl
 |   |       |-- MH7_Nose_B.stl
 |   |
 |   |-- Avionics (Flight Controller) Tray
-|   |   |-- Variant: Solid, No Vibration Dampening
-|   |   |   |-- MH7_ControllerTray.stl
+|   |   |-- Part Variant: Solid Tray, No Vibration Dampening
+|   |   |   |-- MH7_AvionicsTray.stl
 |   |   |
-|   |   |-- Variant: Leaf-Spring Compliant Vibration-Dampening Version
-|   |       |-- MH7_ControllerTray2.stl
+|   |   |-- Part Variant: Leaf-Spring Compliant-Mechanism Vibration-Dampening Version
+|   |       |-- MH7_AvionicsTray2.stl
 |   |
 |   |-- Battery Tray
 |       |-- MH7_BatteryTray.stl
 |
 |-- Hatch/Lid
-|   |-- Variant: FPV 16mm-sized Camera and VTx Support
-|   |   |-- Variant: Long-axis Symmetric Half
+|   |-- Part Variant: FPV 16mm-sized Camera and VTx Support
+|   |   |-- Print Option 1: Long-axis Symmetric Half (TODO: Needs to be restored to -Full)
 |   |   |   |-- MH7_Hatch-FPV-16mm.stl
 |   |   |
-|   |   |-- Variant: Split for nicer print
+|   |   |-- Print Option 2: Split into Two Parts for nicer print
 |   |       |-- MH7_Hatch-FPV-16mm_a.stl
 |   |       |-- MH7_Hatch-FPV-16mm_b.stl
 |   |
-|   |-- Variant: Vented with NACA Duct
-|   |   |-- Variant: Entire thing, split it yourself
+|   |-- Part Variant: Vented with NACA Duct
+|   |   |-- Print Option 1: Entire thing, split it yourself
 |   |   |   |-- MH7_Hatch-Vented.stl
 |   |   |
-|   |   |-- Variant: Split for nicer print
+|   |   |-- Print Option 2: Split into Two Parts for nicer print
 |   |       |-- MH7_Hatch-Vented_a.stl
 |   |       |-- MH7_Hatch-Vented_b.stl
 |   |
@@ -223,11 +209,21 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |       |-- 1.85mm Steel Pin, Length=30mm
 |
 |-- Left Wing  
-|   |-- Variant: Plain Wing
-|   |   |-- MH7_WingLeft.stl
+|   |-- Part Variant: Plain Wing
+|   |   |-- Print Option 1: Entire wing
+|   |   |   |-- MH7_WingLeft.stl
+|   |   |
+|   |   |-- Print Option 2: Split into Two Parts for smaller printers
+|   |       |-- MH7_WingLeft_A.stl
+|   |       |-- MH7_WingLeft_B.stl
 |   |
-|   |-- Variant: Solar Wing
-|   |   |-- MH7_WingLeft-Solar.stl
+|   |-- Part Variant: Solar Wing
+|   |   |-- Print Option 1: Entire wing
+|   |   |   |-- MH7_WingLeft-Solar.stl
+|   |   |
+|   |   |-- Print Option 2: Split into Two Parts for smaller printers
+|   |       |-- MH7_WingLeft_A.stl
+|   |       |-- MH7_WingLeft_B.stl
 |   |
 |   |-- Elevon Control Horn
 |       |-- MH7_ControlHorn.stl
@@ -237,20 +233,20 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |   |-- MH7_FinLeft_Upper.stl  
 |
 |-- Left Nacelle
-|   |-- Variant: Ball Bearing Version
-|   |   |-- [MH7_Nacelle_A-Bearing.stl](/stl-SourceFiles/MH7_Nacelle_A-Bearing.stl)
-|   |   |-- [MH7_Nacelle_B-Bearing.stl](/stl-SourceFiles/MH7_Nacelle_B-Bearing.stl)
+|   |-- Part Variant: Ball Bearing Version
+|   |   |-- MH7_Nacelle_A-Bearing.stl
+|   |   |-- MH7_Nacelle_B-Bearing.stl
 |   |
-|   |-- Variant: Non-Ball Bearing Version
-|   |   |-- [MH7_Nacelle_A-NoBearing.stl](/stl-SourceFiles/MH7_Nacelle_A-NoBearing.stl)
-|   |   |-- [MH7_Nacelle_B-NoBearing.stl](/stl-SourceFiles/MH7_Nacelle_B-NoBearing.stl)
+|   |-- Part Variant: Non-Ball Bearing Version
+|   |   |-- MH7_Nacelle_A-NoBearing.stl
+|   |   |-- MH7_Nacelle_B-NoBearing.stl
 |   |
 |   |-- Motor Tilt-Mount
-|       |-- Variant: Ball Bearing Version
+|       |-- Part Variant: Ball Bearing Version
 |       |   |-- MH7_TiltMount_A-Bearing.stl
 |       |   |-- 3mm Shaft or Threaded Bolt, Length=44mm
 |       |
-|       |-- Variant: Non-Ball Bearing Version
+|       |-- Part Variant: Non-Ball Bearing Version
 |       |   |-- MH7_TiltMount_A-NoBearing.stl
 |       |   |-- 1.85mm Steel Pin, Length=40mm
 |       |
@@ -258,25 +254,30 @@ MiniHawk-VTOL Version 2.1 Aircraft
 |       |-- BLDC Motor
 |    
 |-- Left Winglet
-|   |-- Variant: Plain Winglet
+|   |-- Part Variant: Plain Winglet
 |   |   |-- MH7_WingletLeft.stl
 |   |
-|   |-- Variant: GPS Pocket
+|   |-- Part Variant: GPS Pocket
 |       |-- MH7_WingletLeft-GPS.stl
 |
-|-- Right Wing  
-|   |-- Just mirror everything from the Left above.
-To Be Continued
+|-- Right {Wing, Fin, Nacelle, Motor Tilt-Mount, Winglet} 
+|   |-- For each of the symmetric parts, to create the right-side version, simply mirror the part in your slicer software. 
+        Be _very careful_ please! Be sure you understand how all the parts go together, particularly the Nacelle pieces: 
+        The nacelle _A piece is always near the aircraft center body, with the _B piece on the outboard side, aligned with 
+        the servos and away from the center body. You should print four unique Nacelle pieces, with no two alike: 
+        Two non-mirrored pieces of _A and _B, and two mirrored pieces of _A and _B.
 
 Supporting Devices and Parts
 |-- Weight & Balance Jackpoint Stand
 |   |-- Nacelle-Support Beam
 |   |   |-- MH7_WeightBalanceStand_Beam.stl
 |   |   |-- MH7_WeightBalanceStand_Support.stl
+|   |   |-- Two 1.85mm Steel Pins, Length=50mm each
 |   |
 |   |-- Empennage-Support Jack
 |       |-- MH7_WeightBalanceStand_Foot.stl
-|       |-- MH7_WeightBalanceStand_Support.stl (Bent to form a triangle stance)
+|       |-- MH7_WeightBalanceStand_Support.stl (After gluing, bend the legs with hot water to form a triangle stance)
+|       |-- 1.85mm Steel Pin, Length=50mm
 |
 |-- STEP/STP Version of the Hatch/Lid for Community Mods
     |-- MH7_Hatch_RELEASED.stp
